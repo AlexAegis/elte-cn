@@ -3,7 +3,7 @@ ELTE IK - Számítógépes Hálózatok
 
 szalaigj.web.inf.elte.hu
 
-Phyton
+Python
 
 
 
