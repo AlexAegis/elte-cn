@@ -47,27 +47,36 @@ def iteration(i):
 
     edges = [(u, v) for (u, v, d) in g.edges(data=True)]
 
-    alphas = []
-    widths = []
-    for edge in g.edges:
-        alphas.append(transform(remainingBandwith(
-            g.edges[edge]), 0, g.edges[edge]["capacity"], 0.2, 1))
-        widths.append(transform(remainingBandwith(
-            g.edges[edge]), 0, g.edges[edge]["capacity"], 12, 30))
-
     edge_has_demand = [(u, v)
                        for (u, v, d) in g.edges(data=True) if "demands" in d]
     edge_has_no_demand = [(u, v) for (u, v, d) in g.edges(
         data=True) if not "demands" in d]
+
+    alphas = []
+    widths_has_demand = []
+    widths_has_no_demand = []
+
+    for edge in edge_has_demand:
+        rem = remainingBandwith(g.edges[edge])
+        alphas.append(transform(rem, 0, g.edges[edge]["capacity"], 0.2, 1))
+        widths_has_demand.append(
+            transform(g.edges[edge]["capacity"] - rem, 0, g.edges[edge]["capacity"], 8, 18))
+
+    for edge in edge_has_no_demand:
+
+        rem = remainingBandwith(g.edges[edge])
+        alphas.append(transform(rem, 0, g.edges[edge]["capacity"], 0.2, 1))
+        widths_has_no_demand.append(
+            transform(rem, 0, g.edges[edge]["capacity"], 8, 18))
 
     # nodes
     nx.draw_networkx_nodes(g, pos, node_size=700)
 
     # edges
     nx.draw_networkx_edges(g, pos, edgelist=edge_has_demand,
-                           width=30, edge_color='r')
+                           width=widths_has_demand, edge_colors=widths_has_demand)
     nx.draw_networkx_edges(g, pos, edgelist=edge_has_no_demand,
-                           width=10, alpha=0.6, style="dashed")
+                           width=widths_has_no_demand, alpha=0.6, style="dashed")
     # labels
     nx.draw_networkx_labels(g, pos, font_size=20,
                             font_family='sans-serif', alpha=0.8)
