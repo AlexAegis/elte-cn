@@ -4,6 +4,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.animation
 import time
+import colorsys
+import random
 
 # Build plot
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -52,20 +54,24 @@ def iteration(i):
     edge_has_no_demand = [(u, v) for (u, v, d) in g.edges(
         data=True) if not "demands" in d]
 
-    alphas = []
+    colors_has_demand = []
     widths_has_demand = []
     widths_has_no_demand = []
 
     for edge in edge_has_demand:
         rem = remainingBandwith(g.edges[edge])
-        alphas.append(transform(rem, 0, g.edges[edge]["capacity"], 0.2, 1))
+        random.seed(hash(str(g.edges[edge]["demands"])))
+        color = colorsys.hsv_to_rgb(random.random(), 0.9, 0.9)
+        c = '#' + str(int(round(color[0] * 64))).zfill(2) + str(
+            int(round(color[1] * 64))).zfill(2) + str(int(round(color[2] * 64))).zfill(2)
+        print c
+        colors_has_demand.append(c)
         widths_has_demand.append(
             transform(g.edges[edge]["capacity"] - rem, 0, g.edges[edge]["capacity"], 8, 18))
 
     for edge in edge_has_no_demand:
 
         rem = remainingBandwith(g.edges[edge])
-        alphas.append(transform(rem, 0, g.edges[edge]["capacity"], 0.2, 1))
         widths_has_no_demand.append(
             transform(rem, 0, g.edges[edge]["capacity"], 8, 18))
 
@@ -74,14 +80,14 @@ def iteration(i):
 
     # edges
     nx.draw_networkx_edges(g, pos, edgelist=edge_has_demand,
-                           width=widths_has_demand, edge_colors=widths_has_demand)
+                           width=widths_has_demand, edge_color=colors_has_demand)
     nx.draw_networkx_edges(g, pos, edgelist=edge_has_no_demand,
-                           width=widths_has_no_demand, alpha=0.6, style="dashed")
+                           width=widths_has_no_demand, alpha=0.6)
     # labels
     nx.draw_networkx_labels(g, pos, font_size=20,
-                            font_family='sans-serif', alpha=0.8)
+                            font_family='sans-serif', alpha=0.9)
     nx.draw_networkx_edge_labels(
-        g, pos, font_size=8, font_family='sans-serif', alpha=0.4, bbox=dict(alpha=0.2))
+        g, pos, font_size=8, font_family='sans-serif', alpha=0.7, bbox=dict(alpha=0.2))
 
 
 def possibleCircuits(circuits, pointA, pointB):
