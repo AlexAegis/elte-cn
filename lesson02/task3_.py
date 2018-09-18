@@ -1,4 +1,4 @@
-import this
+
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -26,23 +26,23 @@ def iteration(i):
             if len(routes) > 0:
 
                 found = False
-                gen = (route for route in routes if not found)
-                for route in gen:
-                    if allocateRoute(route, g.edges, demand, True):
+                for route in routes:
+                    if allocateRoute(route, g.edges, demand, True) and not found:
                         allocateRoute(route, g.edges, demand)
                         print "\t\troute allocated"
                         found = True
                     else:
-                        print "\t\tcouldn't allocated route"
+                        print "\t\tcouldn't allocated route either because there is no bandwith or already found"
 
         # is there any requests to close?
         if demand["end-time"] == i + 1:
             for edge in g.edges:
-                if "demand" in g.edges[edge]:
-                    if g.edges[edge]["demand"] == demand:
-                        print "\tdelete demand between: " + str(edge) + " demand: " +\
-                            str(g.edges[edge]["demand"])
-                        del g.edges[edge]["demand"]
+                print g.edges[edge]
+                if "demands" in g.edges[edge]:
+                    if demand in g.edges[edge]["demands"]:
+                        g.edges[edge]["demands"].remove(demand)
+                        if len(g.edges[edge]["demands"]) == 0:
+                            del g.edges[edge]["demands"]
 
     # this is for only drawing
 
@@ -57,9 +57,9 @@ def iteration(i):
             g.edges[edge]), 0, g.edges[edge]["capacity"], 12, 30))
 
     edge_has_demand = [(u, v)
-                       for (u, v, d) in g.edges(data=True) if "demand" in d]
+                       for (u, v, d) in g.edges(data=True) if "demands" in d]
     edge_has_no_demand = [(u, v) for (u, v, d) in g.edges(
-        data=True) if not "demand" in d]
+        data=True) if not "demands" in d]
 
     # nodes
     nx.draw_networkx_nodes(g, pos, node_size=700)
@@ -93,10 +93,12 @@ def remainingBandwith(edge):
      # is there enough bandwith?
     available_bandwith = edge["capacity"]
 
-    if "demand" in edge:
-        available_bandwith = available_bandwith - \
-            edge["demand"]["demand"]
-
+    if "demands" in edge:
+        #print "shit you not" + str(edge["demands"])
+        for demand in edge["demands"]:
+            #print "!!!! ITER DEMAND REM"
+            available_bandwith = available_bandwith - \
+                demand["demand"]
     return available_bandwith
 
 
@@ -108,14 +110,18 @@ def allocateRoute(route, edges, demand, test=False):
 
             # is there enough bandwith?
             available_bandwith = remainingBandwith(edge)
-
+            print edge
+            print "available_bandwith" + str(available_bandwith)
+            print demand["demand"]
             if available_bandwith - demand["demand"] < 0:
                 # invalid no bandwith left
                 print "\tINVALID DEMAND, NO BANDWITH LEFT ON EDGE"
                 valid = False
             else:
                 if not test:
-                    edge["demand"] = demand
+                    if not "demands" in edge:
+                        edge["demands"] = []
+                    edge["demands"].append(demand)
                     print "\t\tedges along the route appended with the demand: from: " + \
                         str(route[index - 1]) + " to: " + \
                         str(val) + " edge: " + str(edge)
