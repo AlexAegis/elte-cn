@@ -20,3 +20,6 @@ https://canvas.elte.hu/courses/1756/quizzes
   > python -m pip install --upgrade pip
 - Install any dependencies we use throughout the course with pip using the requirements.txt
   > pip install -r requirements.txt
+- To run older version of pip if you have multiple Python installs
+  > py -2.7 -m pip -V
+  > py -2.7 -m pip install -r requirements.txt

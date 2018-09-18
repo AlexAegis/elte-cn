@@ -1,5 +1,7 @@
 import this
 import json
+import networkx as nx
+import matplotlib.pyplot as plt
 
 
 class Simulation:
@@ -14,19 +16,8 @@ class Simulation:
         self.demands.append(demand)
 
     def run(self):
-        for i in range(duration):
+        for i in range(self.duration):
             print (i + 1)
-
-
-class Demand:
-    start = 0
-    end = 0
-    demand = 0
-
-
-class Link:
-    points = []  # 2 at most
-    capacity = 0
 
 
 def possibleCircuits(circuits, pointA, pointB):
@@ -38,24 +29,28 @@ def possibleCircuits(circuits, pointA, pointB):
     return result
 
 
+g = nx.Graph()
+
 with open(".\\lesson02\\cs1.json", "r") as file:
     data = json.load(file)
 
+    for end_point in data["end-points"]:
+        g.add_node(end_point, type="end-point")
+
+    for switch in data["switches"]:
+        g.add_node(switch, type="switch")
+
+    for link in data["links"]:
+        g.add_edge(link["points"][0], link["points"]
+                   [1], capacity=link["capacity"])
+
     # simulation
-    simulation = data["simulation"]
-    demands = simulation["demands"]
-    duration = simulation["duration"]
-
-    # sim = Simulation(duration)
-    # sim.addDemand
-    # sim.run()
-
     currentDemands = []
-    for i in range(duration):
+    for i in range(data["simulation"]["duration"]):
         print (i + 1)
 
         # is there any new request?
-        for demand in demands:
+        for demand in data["simulation"]["demands"]:
             if demand["start-time"] == i + 1:
                 # is it a valid request?
                 currentDemands.append(demand)
@@ -66,3 +61,20 @@ with open(".\\lesson02\\cs1.json", "r") as file:
             if demand["end-time"] == i + 1:
                 currentDemands.remove(demand)
                 print demand
+
+    # this is for only drawing
+    pos = nx.spring_layout(g)  # positions for all nodes
+    edges = [(u, v) for (u, v, d) in g.edges(data=True)]
+    # nodes
+    nx.draw_networkx_nodes(g, pos, node_size=700)
+
+    # edges
+    nx.draw_networkx_edges(g, pos, edgelist=edges,
+                           width=6)
+    # labels
+    nx.draw_networkx_labels(g, pos, font_size=20, font_family='sans-serif')
+    nx.draw_networkx_edge_labels(
+        g, pos, font_size=12, font_family='sans-serif')
+
+    plt.axis('off')
+    plt.show()
