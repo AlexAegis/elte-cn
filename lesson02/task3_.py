@@ -37,7 +37,6 @@ def iteration(i):
         # is there any requests to close?
         if demand["end-time"] == i + 1:
             for edge in g.edges:
-                print g.edges[edge]
                 if "demands" in g.edges[edge]:
                     if demand in g.edges[edge]["demands"]:
                         g.edges[edge]["demands"].remove(demand)
@@ -73,7 +72,7 @@ def iteration(i):
     nx.draw_networkx_labels(g, pos, font_size=20,
                             font_family='sans-serif', alpha=0.8)
     nx.draw_networkx_edge_labels(
-        g, pos, font_size=8, font_family='sans-serif', alpha=0.3)
+        g, pos, font_size=8, font_family='sans-serif', alpha=0.4, bbox=dict(alpha=0.2))
 
 
 def possibleCircuits(circuits, pointA, pointB):
@@ -107,12 +106,8 @@ def allocateRoute(route, edges, demand, test=False):
     for index, val in enumerate(route):
         if not index == 0:
             edge = edges[route[index - 1], val]
-
             # is there enough bandwith?
             available_bandwith = remainingBandwith(edge)
-            print edge
-            print "available_bandwith" + str(available_bandwith)
-            print demand["demand"]
             if available_bandwith - demand["demand"] < 0:
                 # invalid no bandwith left
                 print "\tINVALID DEMAND, NO BANDWITH LEFT ON EDGE"
