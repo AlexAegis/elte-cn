@@ -4,5 +4,8 @@
     "editor.formatOnSave": true,
     "[python]": {
         "editor.formatOnSave": true
-    }
+    },
+    "cSpell.words": [
+        "elte"
+    ]
 }
