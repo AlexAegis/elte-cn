@@ -38,9 +38,7 @@ def allocateRoute(route, edges, demand, test=False):
             # is there enough bandwith?
             available_bandwith = edge["capacity"]
 
-            print "str edge in allocae " + str(edge)
-            if hasattr(edge, "demand"):
-                print "!!!!!hasattr"
+            if "demand" in edge:
                 available_bandwith = available_bandwith - \
                     edge["demand"]["demand"]
 
@@ -108,9 +106,6 @@ with open(".\\lesson02\\cs1.json", "r") as file:
                 for edge in g.edges:
                     print str(g.edges[edge])
                     if "demand" in g.edges[edge]:
-                        print "!!!!!!!!!!!delete?"
-                        print edge
-                        print "Hooray"
                         del g.edges[edge]["demand"]
 
             # this is for only drawing
