@@ -1,4 +1,7 @@
 import json
+
+# write json to file
+
 data = {
     "president": {
         "name": "Zaphod Beeblebrox",
