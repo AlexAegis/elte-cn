@@ -4,22 +4,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 
-class Simulation:
-    endPoints = []
-    demands = []
-    duration = 0
-
-    def __init__(self, duration):
-        self.duration = duration
-
-    def addDemand(self, demand):
-        self.demands.append(demand)
-
-    def run(self):
-        for i in range(self.duration):
-            print (i + 1)
-
-
 def possibleCircuits(circuits, pointA, pointB):
     result = []
     for circuit in circuits:
@@ -52,8 +36,6 @@ def allocateRoute(route, edges, demand, test=False):
                     print "\t\tedges along the route appended with the demand: from: " + \
                         str(route[index - 1]) + " to: " + \
                         str(val) + " edge: " + str(edge)
-
-    print route
     return valid
 
 
@@ -89,24 +71,22 @@ with open(".\\lesson02\\cs1.json", "r") as file:
 
                     found = False
                     gen = (route for route in routes if not found)
-                    print gen
                     for route in gen:
                         if allocateRoute(route, g.edges, demand, True):
                             allocateRoute(route, g.edges, demand)
-                            print "\troute allocated"
+                            print "\t\troute allocated"
                             found = True
                         else:
-                            print "\t couldn't allocated route"
-
-                print demand
+                            print "\t\tcouldn't allocated route"
 
             # is there any requests to close?
             if demand["end-time"] == i + 1:
-                print "in iteration:"
                 for edge in g.edges:
-                    print str(g.edges[edge])
                     if "demand" in g.edges[edge]:
-                        del g.edges[edge]["demand"]
+                        if g.edges[edge]["demand"] == demand:
+                            print "\tdelete demand between: " + str(edge) + " demand: " +\
+                                str(g.edges[edge]["demand"])
+                            del g.edges[edge]["demand"]
 
             # this is for only drawing
     pos = nx.spring_layout(g)  # positions for all nodes
