@@ -36,9 +36,11 @@ def allocateRoute(route, edges, demand, test=False):
             edge = edges[route[index - 1], val]
 
             # is there enough bandwith?
-            available_bandwith = edge["capacity"] - i
+            available_bandwith = edge["capacity"]
 
+            print "str edge in allocae " + str(edge)
             if hasattr(edge, "demand"):
+                print "!!!!!hasattr"
                 available_bandwith = available_bandwith - \
                     edge["demand"]["demand"]
 
@@ -102,11 +104,14 @@ with open(".\\lesson02\\cs1.json", "r") as file:
 
             # is there any requests to close?
             if demand["end-time"] == i + 1:
+                print "in iteration:"
                 for edge in g.edges:
-
-                    if hasattr(edge, "demand") and edge["demand"]["end-points"] == demand["end-points"]:
+                    print str(g.edges[edge])
+                    if "demand" in g.edges[edge]:
+                        print "!!!!!!!!!!!delete?"
+                        print edge
                         print "Hooray"
-                        delattr(edge, "demand")
+                        del g.edges[edge]["demand"]
 
             # this is for only drawing
     pos = nx.spring_layout(g)  # positions for all nodes
