@@ -47,8 +47,6 @@ def iteration(i):
 
     # this is for only drawing
 
-    edges = [(u, v) for (u, v, d) in g.edges(data=True)]
-
     edge_has_demand = [(u, v)
                        for (u, v, d) in g.edges(data=True) if "demands" in d]
     edge_has_no_demand = [(u, v) for (u, v, d) in g.edges(
