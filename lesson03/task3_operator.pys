@@ -1,0 +1,43 @@
+import socket
+import json
+from collections import namedtuple
+import operator
+
+
+def get_operator_fn(op):
+    return {
+        '+': operator.add,
+        '-': operator.sub,
+        '*': operator.mul,
+        '/': operator.div,
+        '%': operator.mod,
+        '^': operator.xor,
+    }[op]
+
+
+def eval(op1, oper, op2):
+    op1, op2 = int(op1), int(op2)
+    return get_operator_fn(oper)(op1, op2)
+
+
+server = socket.socket()
+
+server_addr = ('localhost', 10000)
+
+server.bind(server_addr)
+
+server.listen(1)
+
+connection, client_addr = server.accept()
+
+data = connection.recv(32)
+
+print data
+json = json.loads(data, object_hook=lambda d: namedtuple(
+    'x', d.keys())(*d.values()))
+print json
+
+result = eval(json.a, json.o, json.b)
+print result
+
+connection.sendall(str(result))

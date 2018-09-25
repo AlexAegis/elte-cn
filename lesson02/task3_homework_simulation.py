@@ -1,4 +1,3 @@
-
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -62,7 +61,6 @@ def iteration(i):
         color = colorsys.hsv_to_rgb(random.random(), 0.9, 0.9)
         c = '#' + str(int(round(color[0] * 64))).zfill(2) + str(
             int(round(color[1] * 64))).zfill(2) + str(int(round(color[2] * 64))).zfill(2)
-        print c
         colors_has_demand.append(c)
         widths_has_demand.append(
             transform(g.edges[edge]["capacity"] - rem, 0, g.edges[edge]["capacity"], 8, 18))
@@ -106,9 +104,7 @@ def remainingBandwith(edge):
     available_bandwith = edge["capacity"]
 
     if "demands" in edge:
-        #print "shit you not" + str(edge["demands"])
         for demand in edge["demands"]:
-            #print "!!!! ITER DEMAND REM"
             available_bandwith = available_bandwith - \
                 demand["demand"]
     return available_bandwith
