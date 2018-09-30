@@ -1,46 +1,49 @@
 """ this file is meant to run second so before doing
 anything it should run file a, unless it's called from file a
 """
-
-import task3_hello
 import socket
 import threading
+import task3_hello
 
 
 class Client(threading.Thread):
-	"""[summary]
+	""" Client class
 
 	Arguments:
-		object {[type]} -- [description]
+		threading {Thread} -- runnable
 	"""
 
 	def __init__(self, config):
+		""" Constructor
+
+		Arguments:
+			config {dict} -- server
+		"""
+
 		threading.Thread.__init__(self)
-		print "Initializing " + self.class_name()
+		print "Initializing " + self.__class__.__name__
+		self.config = config
+		self.client = socket.socket()
+		self.server_addr = (self.config["server"].config["host"],
+		                    self.config["server"].config["port"])
+		print "Finished initializing " + self.__class__.__name__
 
 	def run(self):
-		"""test print
+		""" Upon thread start
 		"""
-		print "Starting " + self.class_name()
-		self.client = socket.socket()
+		print "Starting " + self.__class__.__name__
 
-		self.server_addr = ('localhost', 11213)
+		message = 'Hello server'
+
 		self.client.connect(self.server_addr)
+		self.client.sendall(message)
 
-		self.client.sendall('Hello server')
-
+		print "\tClient sent: " + message
 		data = self.client.recv(16)
 
-		print data
+		print "\tClient recieved: " + data
 
 		self.client.close()
-
-	@classmethod
-	def class_name(cls):
-		"""test print
-		"""
-
-		return cls.__name__
 
 
 if __name__ == '__main__':
