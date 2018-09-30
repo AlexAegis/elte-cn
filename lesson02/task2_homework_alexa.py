@@ -18,7 +18,7 @@ def tail(p_file, number):
 			p_file {BufferedIOBase} -- file to get the tail of
 			number {int} -- line count
 
-    Returns:
+	Returns:
 			array<str> -- tail of p_file
     """
 
@@ -44,7 +44,7 @@ def head(p_file, number):
 			p_file {BufferedIOBase} -- file to get the head of
 			number {int} -- number of lines to read
 
-    Returns:
+	Returns:
 			array<str> -- head of p_file
     """
 
@@ -158,5 +158,3 @@ with open("./lesson02/top-1m.csv", 'rb') as csv_file:
 	TAIL = tail(csv_file, 100)
 	query(ping, csv.reader(HEAD + TAIL, delimiter=',', dialect='excel'))
 	query(traceroute, csv.reader(HEAD + TAIL, delimiter=',', dialect='excel'))
-
-print platform.system()  # Windows
