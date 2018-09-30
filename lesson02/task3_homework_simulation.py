@@ -2,7 +2,6 @@ import json
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.animation
-import time
 import colorsys
 import random
 

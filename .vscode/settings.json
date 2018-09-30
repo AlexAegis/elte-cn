@@ -5,7 +5,9 @@
   "[python]": {
     "editor.formatOnSave": true
   },
-  "cSpell.words": ["colorsys", "elte"],
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "cSpell.words": ["colorsys", "elte", "socketobject", "typecheck"],
   "files.associations": {
     "*.pyc": "python",
     "*.pys": "python"
