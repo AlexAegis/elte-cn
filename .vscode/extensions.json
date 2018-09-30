@@ -4,6 +4,7 @@
     "himanoa.python-autopep8",
     "esbenp.prettier-vscode",
     "pkief.material-icon-theme",
-    "daylerees.rainglow"
+    "daylerees.rainglow",
+    "james-yu.latex-workshop"
   ]
 }

@@ -7,7 +7,16 @@
   },
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
-  "cSpell.words": ["colorsys", "elte", "socketobject", "typecheck"],
+  "cSpell.words": [
+    "beeblebrox",
+    "betelgeusian",
+    "colorsys",
+    "elte",
+    "pyplot",
+    "socketobject",
+    "typecheck",
+    "zfill"
+  ],
   "files.associations": {
     "*.pyc": "python",
     "*.pys": "python"
