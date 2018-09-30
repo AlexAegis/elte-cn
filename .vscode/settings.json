@@ -1,5 +1,6 @@
 {
 	"python.pythonPath": "C:\\Python27\\python.exe",
+	"python.envFile": "${workspaceFolder}/dev.env",
 	"python.formatting.provider": "yapf",
 	"python.formatting.yapfArgs": [
 		"--style",
@@ -24,17 +25,11 @@
 	},
 	"python.linting.enabled": true,
 	"python.linting.lintOnSave": true,
+	"python.jediEnabled": true,
 	"files.associations": {
 		"*.pyc": "python",
 		"*.pys": "python"
 	},
-	"spellright.language": [
-		"en",
-		"hu"
-	],
-	"spellright.documentTypes": [
-		"markdown",
-		"latex",
-		"plaintext"
-	]
+	"spellright.language": ["en", "hu"],
+	"spellright.documentTypes": ["markdown", "latex", "plaintext"]
 }
