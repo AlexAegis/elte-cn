@@ -83,7 +83,7 @@ def ping(row):
 	elif platform.system() == 'Linux':
 		ping_iter_arg = '-c'
 
-	pipe = Popen(["ping", ping_iter_arg, "1", row[1]], shell=True, stdout=PIPE)
+	pipe = Popen(["ping", ping_iter_arg, "4", row[1]], shell=True, stdout=PIPE)
 	pipe.wait()
 	return (row[1], "Rank: " + str(row[0]) + pipe.communicate()[0].decode())
 
@@ -107,7 +107,7 @@ def traceroute(row):
 	elif platform.system() == 'Linux':
 		traceroute_hops_arg = '-m'
 
-	pipe = Popen([traceroute_executable, traceroute_hops_arg, "2", row[1]],
+	pipe = Popen([traceroute_executable, traceroute_hops_arg, "10", row[1]],
 	             shell=True,
 	             stdout=PIPE)
 	pipe.wait()
@@ -126,11 +126,11 @@ def query(command, entries):
 		[array<str>] -- all the results of the pings
 	"""
 
-	pool = ThreadPool(processes=30)
+	pool = ThreadPool(processes=200)
 	results = pool.map(command, entries)
 
 	result_pings = {
-	    "date": str(datetime.datetime.now()),
+	    "date": str(datetime.datetime.now().strftime("%Y%m%d")),
 	    "system": str(platform.system()),
 	    command.__name__ + 's': []
 	}

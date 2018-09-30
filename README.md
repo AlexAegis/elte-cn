@@ -12,8 +12,6 @@ If there is no Git in your machine and you don't have privileges to install it. 
 	"git.path": "C:\\Users\\alexaegis\\Downloads\\PortableGit\\cmd\\git.exe",
 ```
 
-https://canvas.elte.hu/courses/1756/quizzes
-
 ## Environment
 
 -Python 2.7
