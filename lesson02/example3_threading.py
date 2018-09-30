@@ -18,13 +18,13 @@ class MyThread(threading.Thread):
 		"""
 
 		print "{} started!".format(self.getName())  # Thread-x started!
-		time.sleep(1)  # Pretend to work for a second
+		time.sleep(2)  # Pretend to work for a second
 		print "{} finished!".format(self.getName())  # "Thread-x finished!"
 
 
 if __name__ == '__main__':
-	for x in range(4):  # Four times...
+	for x in range(50):  # Four times...
 		mythread = MyThread(name="Thread-{}".format(
 		    x + 1))  # ...Instantiate a thread and pass a unique ID to it
 		mythread.start()  # ...Start the thread
-		time.sleep(.6)  # ...Wait 0.6 seconds before starting another
+		time.sleep(.5)  # ...Wait 0.6 seconds before starting another

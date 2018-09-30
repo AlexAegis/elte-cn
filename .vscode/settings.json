@@ -27,5 +27,14 @@
 	"files.associations": {
 		"*.pyc": "python",
 		"*.pys": "python"
-	}
+	},
+	"spellright.language": [
+		"en",
+		"hu"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext"
+	]
 }
