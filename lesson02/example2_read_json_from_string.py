@@ -6,21 +6,20 @@ import json
 from collections import namedtuple
 
 JSON_STRING = """
-    {
-        "researcher": {
-            "name": "Ford Prefect",
-            "species": "Betelgeusian",
-            "relatives": [
-                {
-                    "name": "Zaphod Beeblebrox",
-                    "species": "Betelgeusian"
-                }
-            ]
-        }
-    }
+	{
+		"researcher": {
+			"name": "Ford Prefect",
+			"species": "Betelgeusian",
+			"relatives": [{
+					"name": "Zaphod Beeblebrox",
+					"species": "Betelgeusian"
+			}
+			]
+		}
+	}
 """
-DATA = json.loads(JSON_STRING, object_hook=lambda d: namedtuple(
-    'x', d.keys())(*d.values()))
+DATA = json.loads(
+    JSON_STRING, object_hook=lambda d: namedtuple('x', d.keys())(*d.values()))
 
 print DATA
 print DATA.researcher

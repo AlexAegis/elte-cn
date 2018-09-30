@@ -1,3 +1,7 @@
 [TYPECHECK]
 ignored-classes=SQLObject,_socketobject
+[FORMAT]
+indent-string='\t'
+indent-after-parent=1
 [MESSAGES CONTROL]
+disable=C0330

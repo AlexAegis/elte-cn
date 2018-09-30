@@ -11,21 +11,21 @@ Non leap years: 1993, 1900.
 
 
 Returns:
-    void -- prints the result of is_leap_year for multiple examples
+	void -- prints the result of is_leap_year for multiple examples
 """
 
 
 def is_leap_year(year):
-    """ Determines from a year whether it's a leap year or not
+	""" Determines from a year whether it's a leap year or not
 
-    Arguments:
-        year {int} -- year as an integer
+	Arguments:
+		year {int} -- year as an integer
 
-    Returns:
-        bool -- is a leap year or not
-    """
+	Returns:
+		bool -- is a leap year or not
+	"""
 
-    return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
+	return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
 
 
 print "year: " + "is leap year"

@@ -13,4 +13,40 @@ foglalas: A<->C st:7 –sikertelen
 
 ## Házi feladat I. (4 pont) Alexa-top-1M
 
-Szept 30-ig
+Az [Alexa-top-1M](http://s3.amazonaws.com/alexa-static/top-1m.csv.zip) adathalmaz tartalmazza a legnépszerűbb 1 millió website domain nevét népszerűségi sorrendben:
+Válasszuk ki az első és utolsó 100 nevet a listából, írjunk egy python programot, ami végig megy a leszűkített 200 elemű listán és minden címre lefuttatja a traceroute és ping toolokat, majd az eredményeket rendezett formában két fájlba írja! Ld.subprocess! Lehetőség szerint ne az egyetemi hálózaton futassuk az adatbegyűjtést!
+Traceroute paraméterek: max.30 hopot vizsgáljunk
+Ping paraméterek: 10 próba legyen
+Kimenetifájlok (ld.következődia):
+traceroute.json
+ping.json
+
+traceroute.json:
+
+```json
+{
+	"date": "20180916",
+	"system": "windows",
+	"traces": [
+		{
+			"target": "www.valami.com",
+			"output": "Tracing route to www. . . "
+		}
+	]
+}
+```
+
+ping.json:
+
+```json
+{
+	"date": "20180916",
+	"system": "linux",
+	"pings": [
+		{
+			"target": "www.valami.com",
+			"output": "Pingingwww. . . "
+		}
+	]
+}
+```

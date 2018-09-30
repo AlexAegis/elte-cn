@@ -1,24 +1,31 @@
 {
-  "git.path": "C:\\Users\\alexaegis\\Downloads\\PortableGit\\cmd\\git.exe",
-  "python.pythonPath": "C:\\Python27\\python.exe",
-  "editor.formatOnSave": true,
-  "[python]": {
-    "editor.formatOnSave": true
-  },
-  "python.linting.enabled": true,
-  "python.linting.lintOnSave": true,
-  "cSpell.words": [
-    "beeblebrox",
-    "betelgeusian",
-    "colorsys",
-    "elte",
-    "pyplot",
-    "socketobject",
-    "typecheck",
-    "zfill"
-  ],
-  "files.associations": {
-    "*.pyc": "python",
-    "*.pys": "python"
-  }
+	"python.pythonPath": "C:\\Python27\\python.exe",
+	"python.formatting.provider": "yapf",
+	"python.formatting.yapfArgs": [
+		"--style",
+		"{based_on_style: chromium, use_tabs: true, indent_width: 1 }"
+	],
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"editor.autoIndent": true,
+	"editor.detectIndentation": false,
+	"[python]": {
+		"editor.formatOnSave": true,
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": false,
+		"editor.tabSize": 4,
+		"editor.fontLigatures": true
+	},
+	"markdownlint.config": {
+		"default": true,
+		"MD007": { "indent": 4 },
+		"no-hard-tabs": false
+	},
+	"python.linting.enabled": true,
+	"python.linting.lintOnSave": true,
+	"files.associations": {
+		"*.pyc": "python",
+		"*.pys": "python"
+	}
 }

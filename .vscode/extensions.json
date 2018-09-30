@@ -1,10 +1,20 @@
 {
-  "recommendations": [
-    "ms-python.python",
-    "himanoa.python-autopep8",
-    "esbenp.prettier-vscode",
-    "pkief.material-icon-theme",
-    "daylerees.rainglow",
-    "james-yu.latex-workshop"
-  ]
+	"recommendations": [
+		"ms-python.python",
+		"himanoa.python-autopep8",
+		"esbenp.prettier-vscode",
+		"pkief.material-icon-theme",
+		"daylerees.rainglow",
+		"james-yu.latex-workshop",
+		"grapecity.gc-excelviewer",
+		"jasonlhy.hungry-delete",
+		"njpwerner.autodocstring",
+		"batisteo.vscode-django",
+		"npxms.hide-gitignored",
+		"karyfoundation.theme-karyfoundation-themes",
+		"magicstack.magicpython",
+		"davidanson.vscode-markdownlint",
+		"ibm.output-colorizer",
+		"visualstudioexptteam.vscodeintellicode"
+	]
 }
