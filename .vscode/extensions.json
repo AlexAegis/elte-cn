@@ -15,7 +15,6 @@
 		"magicstack.magicpython",
 		"davidanson.vscode-markdownlint",
 		"ibm.output-colorizer",
-		"visualstudioexptteam.vscodeintellicode",
 		"mikestead.dotenv"
 	]
 }
