@@ -31,6 +31,11 @@
 		"*.pyc": "python",
 		"*.pys": "python"
 	},
+	"git.enableSmartCommit": true,
+	"python.jediEnabled": false,
+	"workbench.colorTheme": "Coffee (rainglow)",
+	"git.confirmSync": false,
+	"git.autofetch": true,
 	"spellright.language": ["en", "hu"],
 	"spellright.documentTypes": ["markdown", "latex", "plaintext"]
 }
