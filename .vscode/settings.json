@@ -32,7 +32,6 @@
 		"*.pys": "python"
 	},
 	"git.enableSmartCommit": true,
-	"python.jediEnabled": false,
 	"workbench.colorTheme": "Coffee (rainglow)",
 	"git.confirmSync": false,
 	"git.autofetch": true,
