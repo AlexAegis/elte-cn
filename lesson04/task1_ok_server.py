@@ -8,6 +8,7 @@ imports, it still lets the first file run twice, as running
 the script is not considered as an import
 """
 import socket
+import select
 import threading
 import json
 from collections import namedtuple
@@ -34,6 +35,7 @@ class Server(threading.Thread):
 		logging.info("Initializing %s", self.__class__.__name__)
 		self.config = config
 		self.server = socket.socket()
+		self.server.setsockopt(socket.IPPROTO_IP, socket.SO_REUSEADDR, 1)
 		self.server_addr = (config["host"], config["port"])
 		self.server.bind(self.server_addr)
 		logging.info("Finished initializing %s", self.__class__.__name__)
@@ -41,7 +43,7 @@ class Server(threading.Thread):
 	def run(self):
 		""" Upon thread start
 		"""
-		logging.info("Starting %s", self.__class__.__name__)
+		logging.info("Starting %s Listener ", self.__class__.__name__)
 
 		self.server.listen(1)
 		connection, client_addr = self.server.accept()
