@@ -26,15 +26,13 @@
 	},
 	"python.linting.enabled": true,
 	"python.linting.lintOnSave": true,
-	"python.jediEnabled": false,
+	"python.jediEnabled": true,
 	"files.associations": {
 		"*.pyc": "python",
 		"*.pys": "python"
 	},
 	"git.enableSmartCommit": true,
-	"workbench.colorTheme": "Coffee (rainglow)",
+	"workbench.colorTheme": "Kary Pro Colors － Dark",
 	"git.confirmSync": false,
-	"git.autofetch": true,
-	"spellright.language": ["en", "hu"],
-	"spellright.documentTypes": ["markdown", "latex", "plaintext"]
+	"git.autofetch": true
 }

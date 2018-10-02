@@ -12,7 +12,8 @@ import threading
 import json
 from collections import namedtuple
 import operator
-import task4_operator
+import logging
+import task1_ok
 
 
 class Server(threading.Thread):
@@ -30,17 +31,17 @@ class Server(threading.Thread):
 		"""
 
 		threading.Thread.__init__(self)
-		print "Initializing " + self.__class__.__name__
+		logging.info("Initializing %s", self.__class__.__name__)
 		self.config = config
 		self.server = socket.socket()
 		self.server_addr = (config["host"], config["port"])
 		self.server.bind(self.server_addr)
-		print "Finished initializing " + self.__class__.__name__
+		logging.info("Finished initializing %s", self.__class__.__name__)
 
 	def run(self):
 		""" Upon thread start
 		"""
-		print "Starting " + self.__class__.__name__
+		logging.info("Starting %s", self.__class__.__name__)
 
 		self.server.listen(1)
 		connection, client_addr = self.server.accept()
@@ -99,4 +100,4 @@ class Server(threading.Thread):
 
 
 if __name__ == '__main__':
-	task4_operator.run()
+	task1_ok.run()

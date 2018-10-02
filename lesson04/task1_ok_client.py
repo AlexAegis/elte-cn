@@ -1,9 +1,10 @@
 """ this file is meant to run second so before doing
 anything it should run file a, unless it's called from file a
 """
+import logging
 import socket
 import threading
-import task4_operator
+import task1_ok
 
 
 class Client(threading.Thread):
@@ -21,17 +22,17 @@ class Client(threading.Thread):
 		"""
 
 		threading.Thread.__init__(self)
-		print "Initializing " + self.__class__.__name__
+		logging.info("Initializing %s", self.__class__.__name__)
 		self.config = config
 		self.client = socket.socket()
 		self.server_addr = (self.config["server"].config["host"],
 		                    self.config["server"].config["port"])
-		print "Finished initializing " + self.__class__.__name__
+		logging.info("Finished initializing %s", self.__class__.__name__)
 
 	def run(self):
 		""" Upon thread start
 		"""
-		print "Starting " + self.__class__.__name__
+		logging.info("Starting %s", self.__class__.__name__)
 
 		message = '''{"a": 1, "b": 2, "o": "+"}'''
 
@@ -47,4 +48,4 @@ class Client(threading.Thread):
 
 
 if __name__ == '__main__':
-	task4_operator.run()
+	task1_ok.run()
