@@ -16,6 +16,7 @@
 		"davidanson.vscode-markdownlint",
 		"ibm.output-colorizer",
 		"visualstudioexptteam.vscodeintellicode",
-		"mikestead.dotenv"
+		"mikestead.dotenv",
+		"shan.code-settings-sync"
 	]
 }
