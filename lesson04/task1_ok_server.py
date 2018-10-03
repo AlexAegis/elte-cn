@@ -25,80 +25,100 @@ class Server(threading.Thread):
 	"""
 
 	def __init__(self, config):
-		""" Cosntructor
+		""" Constructor
 
 		Arguments:
 			config {dict} -- host, port
 		"""
 
 		threading.Thread.__init__(self)
-		logging.info("Initializing %s", self.__class__.__name__)
+		self.logger = logging.getLogger(self.__class__.__name__)
+		self.logger.info("Initializing %s", self.__class__.__name__)
 		self.config = config
-		self.server = socket.socket()
-		self.server.setsockopt(socket.IPPROTO_IP, socket.SO_REUSEADDR, 1)
+		self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.server.setblocking(0)
+		self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		self.server_addr = (config["host"], config["port"])
 		self.server.bind(self.server_addr)
-		logging.info("Finished initializing %s", self.__class__.__name__)
+
+		self.connections = [self.server]
+		self.logger.info("Finished initializing %s", self.__class__.__name__)
 
 	def run(self):
 		""" Upon thread start
 		"""
-		logging.info("Starting %s Listener ", self.__class__.__name__)
+		self.logger.info("Starting %s Listening on port: %s ",
+		                 self.__class__.__name__, self.config["port"])
 
-		self.server.listen(1)
-		connection, client_addr = self.server.accept()
-		print "client_addr: " + str(client_addr)
+		self.server.listen(5)
 
-		data = connection.recv(32)
+		while True:
+			try:
+				readables, writables, exceptionals = select.select(
+				    self.connections, [], self.connections, self.config["timeout"])
 
-		print data
-		json_obj = json.loads(
-		    data, object_hook=lambda d: namedtuple('x', d.keys())(*d.values()))
-		print json_obj
+				if not (readables or writables or exceptionals):
+					continue
 
-		result = self.eval(json_obj.a, json_obj.o, json_obj.b)
+				self.handle(readables)
+				self.handleExceptionals(exceptionals)
 
-		print "\tServer recieved: " + data
+			except KeyboardInterrupt:
+				self.logger.info("Exit")
+				for c in self.connections:
+					c.close()
+				self.connections = []
 
-		connection.sendall(str(result))
-
-		print "\tServer sent: " + str(result)
-
-	@classmethod
-	def get_operator_fn(cls, opr):
-		""" returns the operator function from a string
-
-		Arguments:
-			opr {str} -- operator as a string
-
-		Returns:
-			function -- [description]
-		"""
-
-		return {
-		    '+': operator.add,
-		    '-': operator.sub,
-		    '*': operator.mul,
-		    '/': operator.div,
-		    '%': operator.mod,
-		    '^': operator.xor,
-		}[opr]
-
-	@classmethod
-	def eval(cls, op1, opr, op2):
-		"""evaluates the two operands with the operator
+	def handle(self, readables):
+		"""[summary]
 
 		Arguments:
-			op1 {str} -- first operand
-			opr {str} -- operator to be applied
-			op2 {str} -- second operand
-
-		Returns:
-			int -- result
+			readables {[type]} -- [description]
 		"""
 
-		op1, op2 = int(op1), int(op2)
-		return cls.get_operator_fn(opr)(op1, op2)
+		for sock in readables:
+			if sock is self.server:
+				self.create(sock)
+			else:
+				self.read(sock)
+
+	def handleExceptionals(self, exceptionals):
+		for sock in exceptionals:
+			self.logger.warning("Exceptional connection closed %s", sock.getpeername())
+			self.inputs.remove(sock)
+			sock.close()
+
+	def create(self, sock):
+		"""[summary]
+
+		Arguments:
+			sock {[type]} -- [description]
+		"""
+
+		connection, address = sock.accept()
+		self.logger.info("connection created from %s", address)
+		connection.setblocking(0)
+		self.connections.append(connection)
+
+	def read(self, sock):
+		"""[summary]
+
+		Arguments:
+			sock {[type]} -- [description]
+		"""
+
+		data = sock.recv(1024)
+		data = data.strip()
+
+		if data:
+			answer = "OK"
+			self.logger.info("%s recieved %s, confirming by returning message: %s to %s",
+			                 self.__class__.__name__, data, answer, sock.getpeername())
+			sock.sendall(answer)
+		else:
+			self.logger.info("no data, closing connection %s", sock.getpeername())
+			self.connections.remove(sock)
+			sock.close()
 
 
 if __name__ == '__main__':

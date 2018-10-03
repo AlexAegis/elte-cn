@@ -3,6 +3,7 @@ anything it should run file a, unless it's called from file a
 """
 import logging
 import socket
+import time
 import threading
 import task1_ok
 
@@ -22,27 +23,32 @@ class Client(threading.Thread):
 		"""
 
 		threading.Thread.__init__(self)
-		logging.info("Initializing %s", self.__class__.__name__)
+		self.logger = logging.getLogger(self.__class__.__name__)
+		self.logger.info("Initializing %s", self.__class__.__name__)
 		self.config = config
-		self.client = socket.socket()
+		self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 		self.server_addr = (self.config["server"].config["host"],
 		                    self.config["server"].config["port"])
-		logging.info("Finished initializing %s", self.__class__.__name__)
+		self.logger.info("Finished initializing %s", self.__class__.__name__)
 
 	def run(self):
 		""" Upon thread start
 		"""
-		logging.info("Starting %s", self.__class__.__name__)
-
-		message = '''{"a": 1, "b": 2, "o": "+"}'''
-
 		self.client.connect(self.server_addr)
-		self.client.sendall(message)
+		self.logger.info(
+		    "Starting %s, Connected to server on port: %s, Listening from port: %s",
+		    self.__class__.__name__, self.server_addr[1],
+		    self.client.getsockname()[1])
 
-		print "\tClient sent: " + message
-		data = self.client.recv(16)
+		message = '''Hello!'''
 
-		print "\tClient recieved: " + data
+		for i in range(0, 5):
+			self.client.sendall(message)
+			self.logger.info("\tSent: %s", message)
+			data = self.client.recv(16)
+			self.logger.info("\tRecieved: %s", data)
+			time.sleep(2)
 
 		self.client.close()
 
