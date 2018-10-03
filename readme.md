@@ -20,3 +20,5 @@ If there is no Git in your machine and you don't have privileges to install it. 
 
 > py -2.7 -m pip -V
 > py -2.7 -m pip install -r requirements.txt
+
+Also on GitLab!
