@@ -17,6 +17,7 @@
 		"ibm.output-colorizer",
 		"visualstudioexptteam.vscodeintellicode",
 		"mikestead.dotenv",
-		"shan.code-settings-sync"
+		"shan.code-settings-sync",
+		"codezombiech.gitignore"
 	]
 }

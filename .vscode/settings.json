@@ -1,4 +1,5 @@
 {
+	"workbench.iconTheme": "material-icon-theme",
 	"python.pythonPath": "C:\\Python27\\python.exe",
 	"python.envFile": "${workspaceFolder}/dev.env",
 	"python.formatting.provider": "yapf",
@@ -30,6 +31,8 @@
 		"*.pyc": "python",
 		"*.pys": "python"
 	},
-	"spellright.language": ["en", "hu"],
-	"spellright.documentTypes": ["markdown", "latex", "plaintext"]
+	"git.enableSmartCommit": true,
+	"workbench.colorTheme": "Kary Pro Colors － Dark",
+	"git.confirmSync": false,
+	"git.autofetch": true
 }
