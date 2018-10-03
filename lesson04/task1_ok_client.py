@@ -43,7 +43,7 @@ class Client(threading.Thread):
 
 		message = '''Hello!'''
 
-		for i in range(0, 5):
+		for _ in range(0, 5):
 			self.client.sendall(message)
 			self.logger.info("\tSent: %s", message)
 			data = self.client.recv(16)

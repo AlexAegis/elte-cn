@@ -10,9 +10,6 @@ the script is not considered as an import
 import socket
 import select
 import threading
-import json
-from collections import namedtuple
-import operator
 import logging
 import task1_ok
 
@@ -61,12 +58,12 @@ class Server(threading.Thread):
 					continue
 
 				self.handle(readables)
-				self.handleExceptionals(exceptionals)
+				self.handle_exceptionals(exceptionals)
 
 			except KeyboardInterrupt:
 				self.logger.info("Exit")
-				for c in self.connections:
-					c.close()
+				for connection in self.connections:
+					connection.close()
 				self.connections = []
 
 	def handle(self, readables):
@@ -82,7 +79,13 @@ class Server(threading.Thread):
 			else:
 				self.read(sock)
 
-	def handleExceptionals(self, exceptionals):
+	def handle_exceptionals(self, exceptionals):
+		""" Handle the exeptional sockets
+
+		Arguments:
+			exceptionals {[type]} -- [description]
+		"""
+
 		for sock in exceptionals:
 			self.logger.warning("Exceptional connection closed %s", sock.getpeername())
 			self.inputs.remove(sock)
