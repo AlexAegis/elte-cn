@@ -43,9 +43,9 @@ class Client(threading.Thread):
 
 		message = '''Hello!'''
 
-		for _ in range(0, 5):
-			self.client.sendall(message)
-			self.logger.info("\tSent: %s", message)
+		for i in range(0, 5):
+			self.client.sendall(message + " " + str(i))
+			self.logger.info("\tSent: %s", message + " " + str(i))
 			data = self.client.recv(16)
 			self.logger.info("\tRecieved: %s", data)
 			time.sleep(2)
