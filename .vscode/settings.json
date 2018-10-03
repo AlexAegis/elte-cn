@@ -32,7 +32,7 @@
 		"*.pys": "python"
 	},
 	"git.enableSmartCommit": true,
-	"workbench.colorTheme": "Kary Pro Colors － Dark",
+	"workbench.colorTheme": "Laravel (rainglow)",
 	"git.confirmSync": false,
 	"git.autofetch": true
 }

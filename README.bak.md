@@ -9,7 +9,7 @@ Python
 If there is no Git in your machine and you don't have privileges to install it. Download the portable (thumb drive edition) and link it like in the workspace settings but it has to be in the settings of the vs code itself and not as a workspace setting.
 
 ```json
-	"git.path": "C:\\Users\\alexaegis\\Downloads\\PortableGit\\cmd\\git.exe",
+"git.path": "C:\\Users\\alexaegis\\Downloads\\PortableGit\\cmd\\git.exe"
 ```
 
 ## Environment
