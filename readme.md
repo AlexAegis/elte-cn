@@ -15,12 +15,10 @@ If there is no Git in your machine and you don't have privileges to install it. 
 ## Environment
 
 -Python 2.7
--Install any dependencies we use throughout the course with pip using the requirements.txt > pip install -r requirements.txt
+-Install any dependencies we use throughout the course with pip using the requirements.txt 
+
+> pip install -r requirements.txt
+
 -To run older version of pip if you have multiple Python installs
 
-> py -2.7 -m pip -V
 > py -2.7 -m pip install -r requirements.txt
-
-Also on GitLab!
-
-Gitlab Test
