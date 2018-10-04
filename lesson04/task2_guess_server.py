@@ -1,21 +1,15 @@
-""" this file is meant to run first then it
-should run file b unless it's called from file b
-
-Note that an import will run the script, so anything
-whats directly in there will run
-Also note that this import syntax altough deals with circular
-imports, it still lets the first file run twice, as running
-the script is not considered as an import
+""" Server of the Guess application
 """
 import socket
 import select
 import threading
 import logging
+import random
 import task2_guess
 
 
 class Server(threading.Thread):
-	""" Server class
+	""" Server
 
 	Arguments:
 		threading {Thread} -- runnable
@@ -39,6 +33,7 @@ class Server(threading.Thread):
 		self.server.bind(self.server_addr)
 
 		self.connections = [self.server]
+		self.numbers = {}
 		self.logger.info("Finished initializing %s", self.__class__.__name__)
 
 	def run(self):
@@ -102,6 +97,9 @@ class Server(threading.Thread):
 		self.logger.info("connection created from %s", address)
 		connection.setblocking(0)
 		self.connections.append(connection)
+		self.numbers[connection] = random.randint(1, 101)
+		self.logger.info("random number generated for %s, which is: %i", address,
+		                 self.numbers[connection])
 
 	def read(self, sock):
 		"""[summary]
@@ -114,9 +112,21 @@ class Server(threading.Thread):
 		data = data.strip()
 
 		if data:
-			answer = "OK"
-			self.logger.info("%s recieved %s, confirming by returning message: %s to %s",
-			                 self.__class__.__name__, data, answer, sock.getpeername())
+			answer = "NaN"
+			try:
+
+				if int(data) > self.numbers[sock]:
+					answer = ">"
+				elif int(data) < self.numbers[sock]:
+					answer = "<"
+				else:
+					answer = "="
+
+			except ValueError:
+				self.logger.error("\tClient's guess is not an int, instead: %s", data)
+			self.logger.info(
+			    "\t%s recieved %s, confirming by returning message: %s to %s",
+			    self.__class__.__name__, data, answer, sock.getpeername())
 			sock.sendall(answer)
 		else:
 			self.logger.info("no data, closing connection %s", sock.getpeername())

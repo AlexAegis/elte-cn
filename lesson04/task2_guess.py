@@ -1,7 +1,6 @@
-""" Task 1
-Create a TCP application what is capable of recieving messages from
-multiple clients at once, and for every message it replies "OK".
-(Use the "select" function)
+""" Task 2
+Create a TCP application what is capable of playing the guess game
+all by itself
 """
 import logging
 import time
@@ -20,8 +19,8 @@ def run():
 	    "port": 11232,
 	    "timeout": 5
 	})
-	client_a = task2_guess_client.Client({"server": server})
-	client_b = task2_guess_client.Client({"server": server})
+	client_a = task2_guess_client.Client({"id": "a", "server": server})
+	client_b = task2_guess_client.Client({"id": "b", "server": server})
 	server.start()
 	client_a.start()
 	time.sleep(1)

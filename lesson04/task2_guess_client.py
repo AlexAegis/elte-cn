@@ -1,10 +1,10 @@
-""" this file is meant to run second so before doing
-anything it should run file a, unless it's called from file a
+""" Client for the guesser application
 """
 import logging
 import socket
 import time
 import threading
+import random
 import task2_guess
 
 
@@ -16,14 +16,14 @@ class Client(threading.Thread):
 	"""
 
 	def __init__(self, config):
-		""" Constructor
+		""" Constructor of the guesser client
 
 		Arguments:
-			config {dict} -- server
+			config {dict} -- server, id
 		"""
 
 		threading.Thread.__init__(self)
-		self.logger = logging.getLogger(self.__class__.__name__)
+		self.logger = logging.getLogger(self.__class__.__name__ + "_" + config["id"])
 		self.logger.info("Initializing %s", self.__class__.__name__)
 		self.config = config
 		self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,14 +41,25 @@ class Client(threading.Thread):
 		    self.__class__.__name__, self.server_addr[1],
 		    self.client.getsockname()[1])
 
-		message = '''Hello!'''
+		guess_l = 0
+		guess_h = 100
 
-		for i in range(0, 5):
-			self.client.sendall(message + " " + str(i))
-			self.logger.info("\tSent: %s", message + " " + str(i))
+		while guess_l != guess_h:
+			guess = random.randint(guess_l, guess_h + 1)
+			self.client.sendall(str(guess))
+			self.logger.info("\tTaken guess between %i and %i, guess is: %i", guess_l,
+			                 guess_h, guess)
 			data = self.client.recv(16)
-			self.logger.info("\tRecieved: %s", data)
-			time.sleep(2)
+			self.logger.info("\tRecieved result of guess: %s", data)
+
+			if data == "<":
+				guess_l = guess
+			elif data == ">":
+				guess_h = guess
+			elif data == "=":
+				guess_l = guess
+				guess_h = guess
+			time.sleep(1)
 
 		self.client.close()
 
