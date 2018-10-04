@@ -71,11 +71,11 @@ class Client(threading.Thread):
 				elif comparision == ">":
 					guess_h = guess
 			elif data == "win":
-				self.logger.info("Hooray, I won! I guessed %i!", guess)
+				self.logger.info("\t\tHooray, I won! I guessed %i!", guess)
 				guess_l = None
 				guess_h = None
 			elif data == "end":
-				self.logger.info("Oof! They game ended me!")
+				self.logger.info("\t\tOof! They game ended me!")
 				guess_l = None
 				guess_h = None
 

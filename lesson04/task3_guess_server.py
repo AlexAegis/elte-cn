@@ -36,7 +36,9 @@ class Server(threading.Thread):
 		self.connections = [self.server]
 		self.number = random.randint(1, 101)
 		self.logger.info("Random number generated: %i", self.number)
+		self.finished = False
 		self.ops = {"<": operator.lt, ">": operator.gt, "=": operator.eq}
+
 		self.logger.info("Finished initializing %s", self.__class__.__name__)
 
 	def run(self):
@@ -47,7 +49,7 @@ class Server(threading.Thread):
 
 		self.server.listen(5)
 
-		while True:
+		while not self.finished:
 			try:
 				readables, writables, exceptionals = select.select(
 				    self.connections, [], self.connections, self.config["timeout"])
@@ -62,7 +64,11 @@ class Server(threading.Thread):
 				self.logger.info("Exit")
 				for connection in self.connections:
 					connection.close()
+
 				self.connections = []
+
+		self.logger.info("Game Ended. Closing...")
+		self.server.close()
 
 	def handle(self, readables):
 		"""[summary]
@@ -132,23 +138,11 @@ class Server(threading.Thread):
 			    self.__class__.__name__, data, answer, sock.getpeername())
 			sock.sendall(answer)
 		else:
-			self.logger.info("no data, closing connection %s", sock.getpeername())
+			self.logger.info("No data, closing connection for %s", sock.getpeername())
 			self.connections.remove(sock)
 			sock.close()
-
-	def broadcast(self, sock):
-		""" Broadcast the winner among the participants
-
-		Arguments:
-			sock {[type]} -- The winner
-		"""
-
-		for connection in self.connections:
-			if connection != sock:
-				connection.sendall("end")
-				connection.close()
-
-		self.connections = [sock]
+			if len(self.connections) == 1:
+				self.finished = True
 
 
 if __name__ == '__main__':

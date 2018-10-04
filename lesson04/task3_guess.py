@@ -21,10 +21,13 @@ def run():
 	})
 	client_a = task3_guess_client.Client({"id": "a", "server": server})
 	client_b = task3_guess_client.Client({"id": "b", "server": server})
+	client_c = task3_guess_client.Client({"id": "c", "server": server})
 	server.start()
 	client_a.start()
-	time.sleep(1)
+	time.sleep(0.4)
 	client_b.start()
+	time.sleep(0.4)
+	client_c.start()
 
 
 if __name__ == '__main__':
