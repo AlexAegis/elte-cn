@@ -1,17 +1,17 @@
 {
-    "date": "20181002",
+    "date": "20181006",
     "system": "Windows",
     "pings": [
         {
-            "output": "Rank: 1\r\nPinging google.com [216.58.214.206] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.206:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 1\r\nPinging google.com [216.58.209.174] with 32 bytes of data:\r\nReply from 216.58.209.174: bytes=32 time=16ms TTL=52\r\nReply from 216.58.209.174: bytes=32 time=16ms TTL=52\r\n\r\nPing statistics for 216.58.209.174:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 16ms, Maximum = 16ms, Average = 16ms\r\n",
             "target": "google.com"
         },
         {
-            "output": "Rank: 2\r\nPinging youtube.com [216.58.214.206] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.206:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 2\r\nPinging youtube.com [172.217.16.110] with 32 bytes of data:\r\nReply from 172.217.16.110: bytes=32 time=17ms TTL=52\r\nReply from 172.217.16.110: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.110:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 17ms, Average = 16ms\r\n",
             "target": "youtube.com"
         },
         {
-            "output": "Rank: 3\r\nPinging facebook.com [31.13.90.36] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 31.13.90.36:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 3\r\nPinging facebook.com [31.13.84.36] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 31.13.84.36:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "facebook.com"
         },
         {
@@ -23,55 +23,55 @@
             "target": "wikipedia.org"
         },
         {
-            "output": "Rank: 6\r\nPinging yahoo.com [98.138.219.231] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 98.138.219.231:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 6\r\nPinging yahoo.com [72.30.35.10] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 72.30.35.10: bytes=32 time=114ms TTL=46\r\n\r\nPing statistics for 72.30.35.10:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 114ms, Maximum = 114ms, Average = 114ms\r\n",
             "target": "yahoo.com"
         },
         {
-            "output": "Rank: 7\r\nPinging qq.com [111.161.64.40] with 32 bytes of data:\r\nReply from 111.161.64.40: bytes=32 time=257ms TTL=40\r\nReply from 111.161.64.40: bytes=32 time=259ms TTL=40\r\n\r\nPing statistics for 111.161.64.40:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 257ms, Maximum = 259ms, Average = 258ms\r\n",
+            "output": "Rank: 7\r\nPinging qq.com [111.161.64.48] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 111.161.64.48:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "qq.com"
         },
         {
-            "output": "Rank: 8\r\nPinging taobao.com [140.205.94.189] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 140.205.94.189:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 8\r\nPinging taobao.com [140.205.220.96] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 140.205.220.96: bytes=32 time=329ms TTL=77\r\n\r\nPing statistics for 140.205.220.96:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 329ms, Maximum = 329ms, Average = 329ms\r\n",
             "target": "taobao.com"
         },
         {
-            "output": "Rank: 9\r\nPinging tmall.com [140.205.94.193] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 140.205.94.193:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 9\r\nPinging tmall.com [140.205.94.193] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 140.205.94.193: bytes=32 time=219ms TTL=82\r\n\r\nPing statistics for 140.205.94.193:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 219ms, Maximum = 219ms, Average = 219ms\r\n",
             "target": "tmall.com"
         },
         {
-            "output": "Rank: 10\r\nPinging twitter.com [104.244.42.129] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.244.42.129:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 10\r\nPinging twitter.com [104.244.42.65] with 32 bytes of data:\r\nReply from 104.244.42.65: bytes=32 time=16ms TTL=53\r\nReply from 104.244.42.65: bytes=32 time=14ms TTL=53\r\n\r\nPing statistics for 104.244.42.65:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 14ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "twitter.com"
         },
         {
-            "output": "Rank: 11\r\nPinging vk.com [87.240.129.71] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 87.240.129.71:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 11\r\nPinging vk.com [87.240.129.71] with 32 bytes of data:\r\nReply from 87.240.129.71: bytes=32 time=48ms TTL=44\r\nReply from 87.240.129.71: bytes=32 time=48ms TTL=44\r\n\r\nPing statistics for 87.240.129.71:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 48ms, Maximum = 48ms, Average = 48ms\r\n",
             "target": "vk.com"
         },
         {
-            "output": "Rank: 12\r\nPinging instagram.com [34.233.11.34] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 34.233.11.34:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 12\r\nPinging instagram.com [52.0.49.15] with 32 bytes of data:\r\nReply from 52.0.49.15: bytes=32 time=112ms TTL=230\r\nReply from 52.0.49.15: bytes=32 time=112ms TTL=230\r\n\r\nPing statistics for 52.0.49.15:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 112ms, Maximum = 112ms, Average = 112ms\r\n",
             "target": "instagram.com"
         },
         {
-            "output": "Rank: 13\r\nPinging google.co.in [216.58.209.163] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.209.163:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 13\r\nPinging google.co.in [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.co.in"
         },
         {
-            "output": "Rank: 14\r\nPinging sohu.com [123.125.116.28] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 123.125.116.28:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 14\r\nPinging sohu.com [220.181.90.52] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 220.181.90.52:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "sohu.com"
         },
         {
-            "output": "Rank: 15\r\nPinging amazon.com [176.32.98.166] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 176.32.98.166:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 15\r\nPinging amazon.com [176.32.103.205] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 176.32.103.205:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "amazon.com"
         },
         {
-            "output": "Rank: 16\r\nPinging reddit.com [151.101.1.140] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.1.140:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 16\r\nPinging reddit.com [151.101.65.140] with 32 bytes of data:\r\nReply from 151.101.65.140: bytes=32 time=19ms TTL=53\r\nReply from 151.101.65.140: bytes=32 time=26ms TTL=53\r\n\r\nPing statistics for 151.101.65.140:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 19ms, Maximum = 26ms, Average = 22ms\r\n",
             "target": "reddit.com"
         },
         {
-            "output": "Rank: 17\r\nPinging jd.com [111.13.28.118] with 32 bytes of data:\r\nReply from 111.13.28.118: bytes=32 time=335ms TTL=30\r\nReply from 111.13.28.118: bytes=32 time=331ms TTL=30\r\n\r\nPing statistics for 111.13.28.118:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 331ms, Maximum = 335ms, Average = 333ms\r\n",
+            "output": "Rank: 17\r\nPinging jd.com [120.52.148.118] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 120.52.148.118:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "jd.com"
         },
         {
-            "output": "Rank: 18\r\nPinging yandex.ru [5.255.255.88] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 5.255.255.88:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 18\r\nPinging yandex.ru [5.255.255.80] with 32 bytes of data:\r\nReply from 5.255.255.80: bytes=32 time=43ms TTL=43\r\nReply from 5.255.255.80: bytes=32 time=43ms TTL=43\r\n\r\nPing statistics for 5.255.255.80:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 43ms, Maximum = 43ms, Average = 43ms\r\n",
             "target": "yandex.ru"
         },
         {
@@ -79,7 +79,7 @@
             "target": "sina.com.cn"
         },
         {
-            "output": "Rank: 20\r\nPinging live.com [204.79.197.212] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 204.79.197.212:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 20\r\nPinging live.com [204.79.197.212] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 204.79.197.212: bytes=32 time=6ms TTL=114\r\n\r\nPing statistics for 204.79.197.212:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 6ms, Maximum = 6ms, Average = 6ms\r\n",
             "target": "live.com"
         },
         {
@@ -91,23 +91,23 @@
             "target": "360.cn"
         },
         {
-            "output": "Rank: 23\r\nPinging login.tmall.com.danuoyi.tbcache.com [212.98.178.253] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 212.98.178.253:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 23\r\nPinging login.tmall.com.danuoyi.tbcache.com [212.98.178.157] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 212.98.178.157:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "login.tmall.com"
         },
         {
-            "output": "Rank: 24\r\nPinging google.co.jp [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 24\r\nPinging google.co.jp [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 15ms, Average = 15ms\r\n",
             "target": "google.co.jp"
         },
         {
-            "output": "Rank: 25\r\nPinging blogspot.com [216.58.214.233] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.233:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 25\r\nPinging blogspot.com [172.217.16.105] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 172.217.16.105: bytes=32 time=16ms TTL=52\r\n\r\nPing statistics for 172.217.16.105:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 16ms, Maximum = 16ms, Average = 16ms\r\n",
             "target": "blogspot.com"
         },
         {
-            "output": "Rank: 26\r\nPinging netflix.com [52.50.212.245] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.50.212.245:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 26\r\nPinging netflix.com [52.3.32.33] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.3.32.33:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "netflix.com"
         },
         {
-            "output": "Rank: 27\r\nPinging google.com.hk [108.177.126.94] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 108.177.126.94:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 27\r\nPinging google.com.hk [108.177.127.94] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 108.177.127.94:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "google.com.hk"
         },
         {
@@ -115,19 +115,19 @@
             "target": "pornhub.com"
         },
         {
-            "output": "Rank: 29\r\nPinging google.com.br [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 29\r\nPinging google.com.br [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.com.br"
         },
         {
-            "output": "Rank: 30\r\nPinging google.co.uk [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 30\r\nPinging google.co.uk [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.co.uk"
         },
         {
-            "output": "Rank: 31\r\nPinging twitch.tv [151.101.194.167] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.194.167:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 31\r\nPinging twitch.tv [151.101.130.167] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 151.101.130.167: bytes=32 time=14ms TTL=53\r\n\r\nPing statistics for 151.101.130.167:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 14ms, Maximum = 14ms, Average = 14ms\r\n",
             "target": "twitch.tv"
         },
         {
-            "output": "Rank: 32\r\nPinging pages.tmall.com.danuoyi.alicdn.com [212.98.178.157] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 212.98.178.157:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 32\r\nPinging pages.tmall.com.danuoyi.alicdn.com [212.98.178.253] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 212.98.178.253:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "pages.tmall.com"
         },
         {
@@ -139,35 +139,35 @@
             "target": "csdn.net"
         },
         {
-            "output": "Rank: 35\r\nPinging yahoo.co.jp [182.22.59.229] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 182.22.59.229:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 35\r\nPinging yahoo.co.jp [183.79.135.206] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 183.79.135.206:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "yahoo.co.jp"
         },
         {
-            "output": "Rank: 36\r\nPinging google.ru [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 36\r\nPinging google.ru [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 16ms, Maximum = 16ms, Average = 16ms\r\n",
             "target": "google.ru"
         },
         {
-            "output": "Rank: 37\r\nPinging google.fr [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 37\r\nPinging google.fr [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.fr"
         },
         {
-            "output": "Rank: 38\r\nPinging mail.ru [217.69.139.201] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 217.69.139.201:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 38\r\nPinging mail.ru [217.69.139.200] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 217.69.139.200:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "mail.ru"
         },
         {
-            "output": "Rank: 39\r\nPinging ebay.com [66.211.162.12] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 66.211.162.12:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 39\r\nPinging ebay.com [66.211.185.25] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 66.211.185.25:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "ebay.com"
         },
         {
-            "output": "Rank: 40\r\nPinging google.de [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 40\r\nPinging google.de [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.de"
         },
         {
-            "output": "Rank: 41\r\nPinging ok.ru [217.20.147.1] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 217.20.147.1:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 41\r\nPinging ok.ru [5.61.23.11] with 32 bytes of data:\r\nReply from 5.61.23.11: bytes=32 time=44ms TTL=243\r\nReply from 5.61.23.11: bytes=32 time=44ms TTL=243\r\n\r\nPing statistics for 5.61.23.11:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 44ms, Maximum = 44ms, Average = 44ms\r\n",
             "target": "ok.ru"
         },
         {
-            "output": "Rank: 42\r\nPinging xvideos.com [185.88.181.8] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 185.88.181.8:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 42\r\nPinging xvideos.com [185.88.181.9] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 185.88.181.9:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "xvideos.com"
         },
         {
@@ -179,7 +179,7 @@
             "target": "imdb.com"
         },
         {
-            "output": "Rank: 45\r\nPinging t.co [199.16.156.11] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 199.16.156.11:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 45\r\nPinging t.co [199.16.156.11] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 199.16.156.11: bytes=32 time=125ms TTL=50\r\n\r\nPing statistics for 199.16.156.11:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 125ms, Maximum = 125ms, Average = 125ms\r\n",
             "target": "t.co"
         },
         {
@@ -187,7 +187,7 @@
             "target": "aliexpress.com"
         },
         {
-            "output": "Rank: 47\r\nPinging microsoft.com [23.100.122.175] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 23.100.122.175:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 47\r\nPinging microsoft.com [23.96.52.53] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 23.96.52.53:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "microsoft.com"
         },
         {
@@ -195,19 +195,19 @@
             "target": "linkedin.com"
         },
         {
-            "output": "Rank: 49\r\nPinging xhamster.com [88.208.18.30] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 88.208.18.30:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 49\r\nPinging xhamster.com [88.208.29.24] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 88.208.29.24:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "xhamster.com"
         },
         {
-            "output": "Rank: 50\r\nPinging wikia.com [151.101.0.194] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.0.194:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 50\r\nPinging wikia.com [151.101.192.194] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.192.194:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "wikia.com"
         },
         {
-            "output": "Rank: 51\r\nPinging naver.com [210.89.160.88] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 210.89.160.88:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 51\r\nPinging naver.com [210.89.164.90] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 210.89.164.90:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "naver.com"
         },
         {
-            "output": "Rank: 52\r\nPinging amazon.co.jp [52.119.164.121] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.119.164.121:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 52\r\nPinging amazon.co.jp [52.119.161.5] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 52.119.161.5: bytes=32 time=191ms TTL=211\r\n\r\nPing statistics for 52.119.161.5:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 191ms, Maximum = 191ms, Average = 191ms\r\n",
             "target": "amazon.co.jp"
         },
         {
@@ -215,15 +215,15 @@
             "target": "tumblr.com"
         },
         {
-            "output": "Rank: 54\r\nPinging google.com.mx [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 54\r\nPinging google.com.mx [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 16ms, Maximum = 16ms, Average = 16ms\r\n",
             "target": "google.com.mx"
         },
         {
-            "output": "Rank: 55\r\nPinging google.it [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 55\r\nPinging google.it [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.it"
         },
         {
-            "output": "Rank: 56\r\nPinging office.com [52.108.248.7] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.108.248.7:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 56\r\nPinging office.com [52.108.236.1] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.108.236.1:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "office.com"
         },
         {
@@ -235,7 +235,7 @@
             "target": "livejasmin.com"
         },
         {
-            "output": "Rank: 59\r\nPinging whatsapp.com [184.173.147.38] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 184.173.147.38:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 59\r\nPinging whatsapp.com [192.155.212.202] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 192.155.212.202:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "whatsapp.com"
         },
         {
@@ -243,51 +243,51 @@
             "target": "msn.com"
         },
         {
-            "output": "Rank: 61\r\nPinging google.es [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 61\r\nPinging google.es [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 15ms, Average = 15ms\r\n",
             "target": "google.es"
         },
         {
-            "output": "Rank: 62\r\nPinging wordpress.com [192.0.78.9] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 192.0.78.9:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 62\r\nPinging wordpress.com [192.0.78.17] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 192.0.78.17:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "wordpress.com"
         },
         {
-            "output": "Rank: 63\r\nPinging imgur.com [151.101.12.193] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.12.193:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 63\r\nPinging imgur.com [151.101.84.193] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.84.193:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "imgur.com"
         },
         {
-            "output": "Rank: 64\r\nPinging google.com.tr [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 64\r\nPinging google.com.tr [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.com.tr"
         },
         {
-            "output": "Rank: 65\r\nPinging apple.com [17.172.224.47] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 17.172.224.47:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 65\r\nPinging apple.com [17.142.160.59] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 17.142.160.59:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "apple.com"
         },
         {
-            "output": "Rank: 66\r\nPinging google.ca [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 66\r\nPinging google.ca [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.ca"
         },
         {
-            "output": "Rank: 67\r\nPinging google.com.tw [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 67\r\nPinging google.com.tw [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 15ms, Average = 15ms\r\n",
             "target": "google.com.tw"
         },
         {
-            "output": "Rank: 68\r\nPinging paypal.com [64.4.250.33] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 64.4.250.33:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 68\r\nPinging paypal.com [64.4.250.32] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 64.4.250.32:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "paypal.com"
         },
         {
-            "output": "Rank: 69\r\nPinging microsoftonline.com [52.178.167.109] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.178.167.109:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 69\r\nPinging microsoftonline.com [40.84.199.233] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 40.84.199.233:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "microsoftonline.com"
         },
         {
-            "output": "Rank: 70\r\nPinging xnxx.com [185.88.181.53] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 185.88.181.53:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 70\r\nPinging xnxx.com [185.88.181.57] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 185.88.181.57:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "xnxx.com"
         },
         {
-            "output": "Rank: 71\r\nPinging google.co.kr [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 71\r\nPinging google.co.kr [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=17ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 17ms, Average = 16ms\r\n",
             "target": "google.co.kr"
         },
         {
-            "output": "Rank: 72\r\nPinging stackoverflow.com [151.101.65.69] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.65.69:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 72\r\nPinging stackoverflow.com [151.101.193.69] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.193.69:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "stackoverflow.com"
         },
         {
@@ -295,19 +295,19 @@
             "target": "github.com"
         },
         {
-            "output": "Rank: 74\r\nPinging cobalten.com [188.42.162.170] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 188.42.162.170:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 74\r\nPinging cobalten.com [188.42.162.184] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 188.42.162.184:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "cobalten.com"
         },
         {
-            "output": "Rank: 75\r\nPinging thestartmagazine.com [184.168.221.23] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 184.168.221.23:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 75\r\nPinging thestartmagazine.com [50.63.202.16] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 50.63.202.16:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "thestartmagazine.com"
         },
         {
-            "output": "Rank: 76\r\nPinging hao123.com [220.181.163.1] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 220.181.163.1:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 76\r\nPinging hao123.com [180.149.132.3] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 180.149.132.3:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "hao123.com"
         },
         {
-            "output": "Rank: 77\r\nPinging e.proxy.sogou.com [118.191.216.42] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 118.191.216.42:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 77\r\nPinging e.proxy.sogou.com [119.28.109.132] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 119.28.109.132:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "soso.com"
         },
         {
@@ -319,7 +319,7 @@
             "target": "exosrv.com"
         },
         {
-            "output": "Rank: 80\r\nPinging amazon.de [52.95.120.34] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.95.120.34:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 80\r\nPinging amazon.de [176.32.108.185] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 176.32.108.185:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "amazon.de"
         },
         {
@@ -327,23 +327,23 @@
             "target": "espn.com"
         },
         {
-            "output": "Rank: 82\r\nPinging fbcdn.net [31.13.90.36] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 31.13.90.36:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 82\r\nPinging fbcdn.net [31.13.84.36] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 31.13.84.36:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "fbcdn.net"
         },
         {
-            "output": "Rank: 83\r\nPinging dnckawxatc.com [198.134.112.242] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 198.134.112.242:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 83\r\nPinging dnckawxatc.com [198.134.112.241] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 198.134.112.241:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "dnckawxatc.com"
         },
         {
-            "output": "Rank: 84\r\nPinging pinterest.com [151.101.0.84] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.0.84:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 84\r\nPinging pinterest.com [151.101.192.84] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.192.84:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "pinterest.com"
         },
         {
-            "output": "Rank: 85\r\nPinging detail.tmall.com.danuoyi.tbcache.com [121.42.17.239] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 121.42.17.239:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 85\r\nPinging detail.tmall.com.danuoyi.tbcache.com [121.42.17.238] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 121.42.17.238:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "detail.tmall.com"
         },
         {
-            "output": "Rank: 86\r\nPinging amazon.in [52.95.116.115] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.95.116.115:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 86\r\nPinging amazon.in [52.95.120.67] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.95.120.67:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "amazon.in"
         },
         {
@@ -359,7 +359,7 @@
             "target": "roblox.com"
         },
         {
-            "output": "Rank: 90\r\nPinging google.co.id [216.58.214.195] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.195:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 90\r\nPinging google.co.id [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 15ms, Average = 15ms\r\n",
             "target": "google.co.id"
         },
         {
@@ -367,7 +367,7 @@
             "target": "tianya.cn"
         },
         {
-            "output": "Rank: 92\r\nPinging google.com.au [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 92\r\nPinging google.com.au [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.com.au"
         },
         {
@@ -379,19 +379,19 @@
             "target": "so.com"
         },
         {
-            "output": "Rank: 95\r\nPinging pixnet.net [103.23.108.107] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 103.23.108.107:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 95\r\nPinging pixnet.net [103.23.108.107] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 103.23.108.107: bytes=32 time=323ms TTL=221\r\n\r\nPing statistics for 103.23.108.107:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 323ms, Maximum = 323ms, Average = 323ms\r\n",
             "target": "pixnet.net"
         },
         {
-            "output": "Rank: 96\r\nPinging google.co.th [216.58.214.227] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.227:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 96\r\nPinging google.co.th [172.217.16.99] with 32 bytes of data:\r\nReply from 172.217.16.99: bytes=32 time=16ms TTL=52\r\nReply from 172.217.16.99: bytes=32 time=15ms TTL=52\r\n\r\nPing statistics for 172.217.16.99:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 15ms, Maximum = 16ms, Average = 15ms\r\n",
             "target": "google.co.th"
         },
         {
-            "output": "Rank: 97\r\nPinging bitmedianetwork.com [52.216.84.186] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.216.84.186:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 97\r\nPinging bitmedianetwork.com [52.216.64.146] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.216.64.146:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "bitmedianetwork.com"
         },
         {
-            "output": "Rank: 98\r\nPinging bbc.co.uk [151.101.128.81] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.128.81:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 98\r\nPinging bbc.co.uk [151.101.64.81] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 151.101.64.81:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "bbc.co.uk"
         },
         {
@@ -407,7 +407,7 @@
             "target": "datahostbd.com"
         },
         {
-            "output": "Rank: 999902\r\nPinging downloadfbvideos.net [104.27.168.38] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.168.38:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999902\r\nPinging downloadfbvideos.net [104.27.169.38] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.169.38:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "downloadfbvideos.net"
         },
         {
@@ -415,11 +415,11 @@
             "target": "drlokman.com"
         },
         {
-            "output": "Rank: 999904\r\nPinging freeasiantubes.com [104.31.85.158] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.31.85.158:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999904\r\nPinging freeasiantubes.com [104.31.84.158] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.31.84.158:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "freeasiantubes.com"
         },
         {
-            "output": "Rank: 999905\r\nPinging blogspot.l.googleusercontent.com [216.58.214.225] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.225:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999905\r\nPinging blogspot.l.googleusercontent.com [172.217.16.97] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 172.217.16.97:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "inboxengineering.blogspot.com"
         },
         {
@@ -427,7 +427,7 @@
             "target": "incra.com"
         },
         {
-            "output": "Rank: 999907\r\nPinging blogspot.l.googleusercontent.com [216.58.214.225] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.225:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999907\r\nPinging blogspot.l.googleusercontent.com [172.217.16.97] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 172.217.16.97:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "inhyup.blogspot.com"
         },
         {
@@ -439,7 +439,7 @@
             "target": "japanese-porn-videos.com"
         },
         {
-            "output": "Rank: 999910\r\nPinging journal-surgery.net [65.156.1.100] with 32 bytes of data:\r\nReply from 65.156.1.100: bytes=32 time=169ms TTL=225\r\nReply from 65.156.1.100: bytes=32 time=169ms TTL=225\r\n\r\nPing statistics for 65.156.1.100:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 169ms, Maximum = 169ms, Average = 169ms\r\n",
+            "output": "Rank: 999910\r\nPinging journal-surgery.net [65.156.1.100] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 65.156.1.100:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "journal-surgery.net"
         },
         {
@@ -479,7 +479,7 @@
             "target": "spiral.ac"
         },
         {
-            "output": "Rank: 999920\r\nPinging blogspot.l.googleusercontent.com [216.58.214.225] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.225:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999920\r\nPinging blogspot.l.googleusercontent.com [172.217.16.97] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 172.217.16.97:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "telecom-hyb.blogspot.com"
         },
         {
@@ -551,11 +551,11 @@
             "target": "sbfactory.ru"
         },
         {
-            "output": "Rank: 999938\r\nPinging youngteenporn.tv [104.27.169.161] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.169.161:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999938\r\nPinging youngteenporn.tv [104.27.168.161] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.168.161:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "youngteenporn.tv"
         },
         {
-            "output": "Rank: 999939\r\nPinging filmswebrip720p.com [104.27.134.176] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.134.176:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999939\r\nPinging filmswebrip720p.com [104.27.135.176] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.135.176:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "filmswebrip720p.com"
         },
         {
@@ -595,7 +595,7 @@
             "target": "my-test.ru"
         },
         {
-            "output": "Rank: 999949\r\nPinging omnicpa.com [104.27.149.6] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.149.6:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999949\r\nPinging omnicpa.com [104.27.148.6] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.27.148.6:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "omnicpa.com"
         },
         {
@@ -611,7 +611,7 @@
             "target": "e-podlaskie.eu"
         },
         {
-            "output": "Rank: 999953\r\nPinging alhoomsi.com [50.63.202.57] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 50.63.202.57:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999953\r\nPinging alhoomsi.com [184.168.221.40] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 184.168.221.40:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "alhoomsi.com"
         },
         {
@@ -627,7 +627,7 @@
             "target": "dalilhijra.com"
         },
         {
-            "output": "Rank: 999957\r\nPinging blogspot.l.googleusercontent.com [216.58.214.225] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 216.58.214.225:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999957\r\nPinging blogspot.l.googleusercontent.com [172.217.16.97] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 172.217.16.97:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "icofp-soratemplates.blogspot.com"
         },
         {
@@ -663,7 +663,7 @@
             "target": "figarocms.net"
         },
         {
-            "output": "Rank: 999966\r\nPinging froggiesdivers.com [198.185.159.144] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 198.185.159.144:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999966\r\nPinging froggiesdivers.com [198.49.23.144] with 32 bytes of data:\r\nRequest timed out.\r\nReply from 198.49.23.144: bytes=32 time=136ms TTL=238\r\n\r\nPing statistics for 198.49.23.144:\r\n    Packets: Sent = 2, Received = 1, Lost = 1 (50% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 136ms, Maximum = 136ms, Average = 136ms\r\n",
             "target": "froggiesdivers.com"
         },
         {
@@ -691,7 +691,7 @@
             "target": "lesjoyauxdesherazade.com"
         },
         {
-            "output": "Rank: 999973\r\nPinging liguebasket971.com [94.23.103.162] with 32 bytes of data:\r\nReply from 94.23.103.162: bytes=32 time=26ms TTL=47\r\nReply from 94.23.103.162: bytes=32 time=26ms TTL=47\r\n\r\nPing statistics for 94.23.103.162:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 26ms, Maximum = 26ms, Average = 26ms\r\n",
+            "output": "Rank: 999973\r\nPinging liguebasket971.com [94.23.103.162] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 94.23.103.162:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "liguebasket971.com"
         },
         {
@@ -727,11 +727,11 @@
             "target": "khomich.info"
         },
         {
-            "output": "Rank: 999982\r\nPinging web-models.su [104.28.8.228] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.28.8.228:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 999982\r\nPinging web-models.su [104.28.9.228] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 104.28.9.228:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "web-models.su"
         },
         {
-            "output": "Rank: 999983\r\nPinging topra.org [94.102.146.66] with 32 bytes of data:\r\nReply from 94.102.146.66: bytes=32 time=55ms TTL=109\r\nReply from 94.102.146.66: bytes=32 time=52ms TTL=109\r\n\r\nPing statistics for 94.102.146.66:\r\n    Packets: Sent = 2, Received = 2, Lost = 0 (0% loss),\r\nApproximate round trip times in milli-seconds:\r\n    Minimum = 52ms, Maximum = 55ms, Average = 53ms\r\n",
+            "output": "Rank: 999983\r\nPinging topra.org [94.102.146.66] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 94.102.146.66:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "topra.org"
         },
         {
@@ -799,7 +799,7 @@
             "target": "zombotron3.ru"
         },
         {
-            "output": "Rank: 1000000\r\nPinging topformation.fr [52.85.183.101] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.85.183.101:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
+            "output": "Rank: 1000000\r\nPinging topformation.fr [52.85.58.117] with 32 bytes of data:\r\nRequest timed out.\r\nRequest timed out.\r\n\r\nPing statistics for 52.85.58.117:\r\n    Packets: Sent = 2, Received = 0, Lost = 2 (100% loss),\r\n",
             "target": "topformation.fr"
         }
     ]

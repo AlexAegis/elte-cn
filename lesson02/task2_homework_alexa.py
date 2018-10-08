@@ -51,21 +51,6 @@ def head(p_file, number):
 	return list(islice(p_file, number))
 
 
-class PingThread(threading.Thread):
-	""" Pinging Class
-
-	Arguments:
-		threading {[type]} -- [description]
-	"""
-
-	def __init__(self, target):
-		super(PingThread, self).__init__()
-		self.target = target
-
-	def run(self):
-		print "lol"
-
-
 def ping(row):
 	""" Runs the ping command a certain times
 

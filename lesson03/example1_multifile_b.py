@@ -18,7 +18,6 @@ class ExampleB(object):
 	def test(cls):
 		"""test print
 		"""
-
 		print cls.class_name()
 
 	@classmethod
