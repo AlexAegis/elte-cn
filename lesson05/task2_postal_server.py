@@ -47,13 +47,18 @@ class Server(threading.Thread):
 		                 self.__class__.__name__, self.config["port"])
 		while True:
 			data, address = self.server.recvfrom(4096)
-			client_inbox = None  #self.clients[address]
-			if not client_inbox:
-				self.clients[address] = Queue.Queue
-			unpacker = struct.Struct('s s')
+			unpacker = struct.Struct('5s 5s')
 			unpacked = unpacker.unpack(data)
 			print unpacked
-			if unpacked[0] == 'QUERY':
+
+			if unpacked[0] == 'LOGIN':
+				if not address in self.clients:
+					print "NOT IN CLIENTS"
+					self.clients[str(address)] = Queue.Queue
+				else:
+					print "ALREADY LOGGED IN"
+
+			elif unpacked[0] == 'QUERY':
 				print "QUERR"
 			self.server.sendto('Hello kliens', address)
 
