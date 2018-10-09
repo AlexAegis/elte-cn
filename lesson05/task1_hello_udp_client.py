@@ -2,9 +2,7 @@
 """
 import logging
 import socket
-import time
 import threading
-import random
 import task1_hello_udp
 
 

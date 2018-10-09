@@ -1,11 +1,8 @@
 """ Server of the Guess application
 """
 import socket
-import select
 import threading
 import logging
-import random
-import operator
 import task1_hello_udp
 
 
