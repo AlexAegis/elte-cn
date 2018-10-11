@@ -79,14 +79,12 @@ class Server(host.Host):
 				if incoming["action"] == "login" and not client:
 					if incoming["id"]:
 						if not incoming["id"] in self.clients:
-							print "clean login"
 							self.clients[incoming["id"]] = {
 							    "inbox": Queue.Queue(),
 							    "address": address
 							}
 						else:
 							if not self.clients[incoming["id"]]["address"]:
-								print "unclean login"
 								self.clients[incoming["id"]]["address"] = address
 
 						response["result"] = "logged in"
