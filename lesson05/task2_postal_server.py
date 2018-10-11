@@ -32,6 +32,12 @@ class Server(host.Host):
 		self.logger.info("Finished initializing %s", self.__class__.__name__)
 
 	def get_client_by_address(self, address):
+		"""Gets the client entry for the given address
+
+		Arguments:
+			address {[type]} -- [description]
+		"""
+
 		for client in self.clients.values():
 			if client["address"] == address:
 				yield client
@@ -87,16 +93,11 @@ class Server(host.Host):
 						self.logger.info("\tClient '%s' successfully logged in from address %s",
 						                 incoming["id"], address)
 				elif incoming["action"] == "query" and client:
-					print "DASD"
 					inbox_content = []
-					print "DASD"
 					while not client["inbox"].empty():
 						incoming = client["inbox"].get()
 						inbox_content.append(str(incoming[0]) + " - " + incoming[1])
-						print "DAS3D"
-					# print inbox_content
 					response["result"] = ", ".join(inbox_content)
-					print "DASD4"
 
 				elif incoming["action"] == "send" and client:
 					if not incoming["recipient"] in self.clients:
@@ -112,9 +113,8 @@ class Server(host.Host):
 					response["result"] = "message sent"
 
 			except ValueError as error:
-				print "FUZCSD"
-				# self.logger.exception("\tException raised %s", error)
-				#response["errors"].append({"error": "exception", "reason": str(error)})
+				self.logger.exception("\tException raised %s", error)
+				response["errors"].append({"error": "exception", "reason": str(error)})
 
 			if not response["result"]:
 				response["errors"].append({

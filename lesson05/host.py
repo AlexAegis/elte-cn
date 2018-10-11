@@ -1,7 +1,6 @@
 """ Host class
 """
 
-import socket
 import threading
 import logging
 
@@ -21,7 +20,8 @@ class Host(threading.Thread):
 		"""
 
 		threading.Thread.__init__(self)
-		self.logger = logging.getLogger(self.__class__.__name__)
+		print config["id"]
+		self.logger = logging.getLogger(self.__class__.__name__ + "_" + config["id"])
 		self.logger.info("Initializing %s", self.__class__.__name__)
 		self.config = config
 		self.running = True

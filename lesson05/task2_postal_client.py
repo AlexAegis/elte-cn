@@ -36,10 +36,6 @@ class Client(host.Host):
 		    "Starting %s, Connected to server on port: %s, Listening from port: %s",
 		    self.__class__.__name__, self.server_addr[1],
 		    self.client.getsockname()[1])
-		self.login()
-		self.send('a', "something for myself")
-		self.send('b', "something for b")
-		self.query()
 
 	def login(self):
 		"""Initiates a login to the server
@@ -76,11 +72,6 @@ class Client(host.Host):
 		data, address = self.client.recvfrom(4096)
 		self.logger.info("\tMessage (%s) sent to server %s, receieved result: %s",
 		                 message, address, data)
-		#message = self.packer.pack("QUERY", "EMPTY")
-		#print message
-		#self.client.sendto(message, self.server_addr)
-		#data, address = self.client.recvfrom(4096)
-		#print data
 
 
 if __name__ == '__main__':
