@@ -11,6 +11,8 @@
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
 	"editor.autoIndent": true,
+	"editor.cursorStyle": "line",
+	"editor.cursorBlinking": "smooth",
 	"editor.detectIndentation": false,
 	"[python]": {
 		"editor.formatOnSave": true,
@@ -26,13 +28,13 @@
 	},
 	"python.linting.enabled": true,
 	"python.linting.lintOnSave": true,
-	"python.jediEnabled": true,
+	"python.jediEnabled": false,
 	"files.associations": {
 		"*.pyc": "python",
 		"*.pys": "python"
 	},
 	"git.enableSmartCommit": true,
-	"workbench.colorTheme": "Laravel (rainglow)",
+	"workbench.colorTheme": "Sublime Material Theme - Dark",
 	"git.confirmSync": false,
 	"git.autofetch": true
 }

@@ -12,7 +12,7 @@ JSON_STRING = """
 			"species": "Betelgeusian",
 			"relatives": [{
 					"name": "Zaphod Beeblebrox",
-					"species": "Betelgeusian"
+					"species"- "Betelgeusian"
 			}
 			]
 		}
