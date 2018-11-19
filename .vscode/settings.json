@@ -36,5 +36,6 @@
 	"git.enableSmartCommit": true,
 	"workbench.colorTheme": "Sublime Material Theme - Dark",
 	"git.confirmSync": false,
-	"git.autofetch": true
+	"git.autofetch": true,
+	"python.linting.pylintEnabled": true
 }
