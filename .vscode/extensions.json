@@ -18,6 +18,7 @@
 		"visualstudioexptteam.vscodeintellicode",
 		"mikestead.dotenv",
 		"shan.code-settings-sync",
-		"codezombiech.gitignore"
+		"codezombiech.gitignore",
+		"eamodio.gitlens"
 	]
 }
