@@ -3,7 +3,7 @@
 import socket
 import json
 import Queue
-import task2_postal
+import task1_calc
 import host
 
 
@@ -76,40 +76,6 @@ class Server(host.Host):
 				self.logger.info("\tIncoming message %s from %s", data, address)
 				incoming = json.loads(data)
 
-				if incoming["action"] == "login" and not client:
-					if incoming["id"]:
-						if not incoming["id"] in self.clients:
-							self.clients[incoming["id"]] = {
-							    "inbox": Queue.Queue(),
-							    "address": address
-							}
-						else:
-							if not self.clients[incoming["id"]]["address"]:
-								self.clients[incoming["id"]]["address"] = address
-
-						response["result"] = "logged in"
-						self.logger.info("\tClient '%s' successfully logged in from address %s",
-						                 incoming["id"], address)
-				elif incoming["action"] == "query" and client:
-					inbox_content = []
-					while not client["inbox"].empty():
-						incoming = client["inbox"].get()
-						inbox_content.append(str(incoming[0]) + " - " + incoming[1])
-					response["result"] = ", ".join(inbox_content)
-
-				elif incoming["action"] == "send" and client:
-					if not incoming["recipient"] in self.clients:
-						self.logger.info("\t\tCreate inbox for unlogged client %s",
-						                 incoming["recipient"])
-						self.clients[incoming["recipient"]] = {
-						    "inbox": Queue.Queue(),
-						    "address": None
-						}
-
-					self.clients[incoming["recipient"]]["inbox"].put((address,
-					                                                  incoming["message"]))
-					response["result"] = "message sent"
-
 			except ValueError as error:
 				self.logger.exception("\tException raised %s", error)
 				response["errors"].append({"error": "exception", "reason": str(error)})
@@ -124,4 +90,4 @@ class Server(host.Host):
 
 
 if __name__ == '__main__':
-	task2_postal.run()
+	task1_calc.run()
