@@ -14,7 +14,7 @@ def run():
 	Bootstrap the application
 	"""
 	logging.basicConfig(level="INFO")
-	logging.info("Bootstrapping application")
+	logging.info("\t\tBootstrapping application")
 	server = task1_calc_server.Server({
 	    "id": "server",
 	    "host": "localhost",
@@ -30,13 +30,31 @@ def run():
 	    "server": server
 	})
 
-	client_a = task1_calc_client.Client({"id": "a", "server": cache})
+	client_a = task1_calc_client.Client({
+	    "id": "a",
+	    "server": cache
+	}, [
+	    '{"a": 1, "b": 2, "o": "+"}',
+	    '{"a": 1, "b": 2, "o": "+"}',
+	    '{"a": 2, "b": 2, "o": "+"}',
+	    '{"a": 1, "b": 4, "o": "*"}',
+	    '{"a": 2, "b": 2, "o": "+"}',
+	    '{"a": 2, "b": 2, "o": "/"}',
+	    '{"a": 1, "b": 2, "o": "-"}',
+	])
 
-	#client_b = task3_guess_client.Client({"id": "b", "server": server})
-	#client_c = task3_guess_client.Client({"id": "c", "server": server})
+	client_b = task1_calc_client.Client({
+	    "id": "b",
+	    "server": cache
+	}, [
+	    '{"a": 2, "b": 2, "o": "/"}',
+	    '{"a": 1, "b": 2, "o": "-"}',
+	])
+
 	server.start()
 	cache.start()
 	client_a.start()
+	client_b.start()
 
 
 if __name__ == '__main__':

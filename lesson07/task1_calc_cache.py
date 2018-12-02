@@ -7,6 +7,7 @@ import logging
 import operator
 import task1_calc
 import host
+import datetime
 
 
 class Cache(host.Host):
@@ -35,6 +36,8 @@ class Cache(host.Host):
 
 		self.connections = [self.server]
 
+		self.cache = {}
+
 		self.finished = False
 		#self.ops = {"<": operator.lt, ">": operator.gt, "=": operator.eq}
 
@@ -47,6 +50,7 @@ class Cache(host.Host):
 		                 self.__class__.__name__, self.config["port"])
 
 		self.server.listen(5)
+		self.backend.connect(self.backend_addr)
 
 		while not self.finished:
 			try:
@@ -117,32 +121,37 @@ class Cache(host.Host):
 		data = data.strip()
 
 		if data:
-			answer = "Im the cache"
+			answer = None
 
-			self.backend.connect(self.backend_addr)
-			self.backend.sendto("gimme balls", self.backend_addr)
-			self.logger.info("Cache sent message to server: %s", "gimme balls")
-			data, address = self.backend.recvfrom(4096)
-			answer = data
-			self.logger.info("Cache recieved message from server: %s", data)
-			self.backend.close()
+			if (data in self.cache):
+				self.logger.info("\t\tcache exists for: %s, cache is: %s", data,
+				                 self.cache[data])
+				if (self.cache[data]["created"] >
+				    datetime.datetime.now() - datetime.timedelta(seconds=2)):
+					self.logger.info("\t\tcache valid")
+					answer = self.cache[data]["result"]
+				else:
+					self.logger.info("\t\tcache invalid. Invalidating.")
+					del self.cache[data]
+
+			if (answer is None):
+				self.backend.sendto(data, self.backend_addr)
+				self.logger.info("\t\t\tCache sent message to server: %s", data)
+				answer, address = self.backend.recvfrom(4096)
+
+				self.cache[data] = {"result": answer, "created": datetime.datetime.now()}
+				self.logger.info("\t\t\tCache recieved message from server: %s", answer)
 
 			sock.sendall(answer)
-			"""
-			try:
-				answer = "end"
-			except ValueError:
-				self.logger.error("\tClient's guess is not an int, instead: %s", data)
-			self.logger.info(
-			    "\t%s recieved %s, confirming by returning message: %s to %s",
-			    self.__class__.__name__, data, answer, sock.getpeername())"""
 
 		else:
-			self.logger.info("No data, closing connection for %s", sock.getpeername())
+			self.logger.info("\t\tNo data, closing connection for %s",
+			                 sock.getpeername())
 			self.connections.remove(sock)
 			sock.close()
 			if len(self.connections) == 1:
 				self.finished = True
+				self.backend.close()
 
 
 if __name__ == '__main__':
