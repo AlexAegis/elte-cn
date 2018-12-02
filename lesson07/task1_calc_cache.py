@@ -24,10 +24,14 @@ class Cache(host.Host):
 		"""
 		host.Host.__init__(self, config)
 		self.server_addr = (config["host"], config["port"])
-		self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.backend_addr = (config["server"].config["host"],
+		                     config["server"].config["port"])
+		self.server = socket.socket()
 		self.server.setblocking(0)
 		self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		self.server.bind(self.server_addr)
+
+		self.backend = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 		self.connections = [self.server]
 
@@ -114,6 +118,16 @@ class Cache(host.Host):
 
 		if data:
 			answer = "Im the cache"
+
+			self.backend.connect(self.backend_addr)
+			self.backend.sendto("gimme balls", self.backend_addr)
+			self.logger.info("Cache sent message to server: %s", "gimme balls")
+			data, address = self.backend.recvfrom(4096)
+			answer = data
+			self.logger.info("Cache recieved message from server: %s", data)
+			self.backend.close()
+
+			sock.sendall(answer)
 			"""
 			try:
 				answer = "end"
@@ -123,7 +137,6 @@ class Cache(host.Host):
 			    "\t%s recieved %s, confirming by returning message: %s to %s",
 			    self.__class__.__name__, data, answer, sock.getpeername())"""
 
-			sock.sendall(answer)
 		else:
 			self.logger.info("No data, closing connection for %s", sock.getpeername())
 			self.connections.remove(sock)

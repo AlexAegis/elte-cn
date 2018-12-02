@@ -47,7 +47,6 @@ class Client(threading.Thread):
 		print "Message:", data
 
 		self.client.close()
-		self.client.close()
 
 
 if __name__ == '__main__':
