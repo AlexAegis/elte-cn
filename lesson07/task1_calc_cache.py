@@ -6,9 +6,10 @@ import threading
 import logging
 import operator
 import task1_calc
+import host
 
 
-class Server(threading.Thread):
+class Cache(host.Host):
 	""" Server
 
 	Arguments:
@@ -21,21 +22,17 @@ class Server(threading.Thread):
 		Arguments:
 			config {dict} -- host, port
 		"""
-
-		threading.Thread.__init__(self)
-		self.logger = logging.getLogger(self.__class__.__name__)
-		self.logger.info("Initializing %s", self.__class__.__name__)
-		self.config = config
+		host.Host.__init__(self, config)
+		self.server_addr = (config["host"], config["port"])
 		self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		self.server.setblocking(0)
 		self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-		self.server_addr = (config["host"], config["port"])
 		self.server.bind(self.server_addr)
 
 		self.connections = [self.server]
 
 		self.finished = False
-		self.ops = {"<": operator.lt, ">": operator.gt, "=": operator.eq}
+		#self.ops = {"<": operator.lt, ">": operator.gt, "=": operator.eq}
 
 		self.logger.info("Finished initializing %s", self.__class__.__name__)
 
@@ -90,7 +87,7 @@ class Server(threading.Thread):
 
 		for sock in exceptionals:
 			self.logger.warning("Exceptional connection closed %s", sock.getpeername())
-			self.inputs.remove(sock)
+			self.connections.remove(sock)
 			sock.close()
 
 	def create(self, sock):
@@ -112,18 +109,20 @@ class Server(threading.Thread):
 			sock {[type]} -- [description]
 		"""
 
-		data = sock.recv(1024)
+		data = sock.recv(4096)
 		data = data.strip()
 
 		if data:
-			answer = "NaN"
+			answer = "Im the cache"
+			"""
 			try:
 				answer = "end"
 			except ValueError:
 				self.logger.error("\tClient's guess is not an int, instead: %s", data)
 			self.logger.info(
 			    "\t%s recieved %s, confirming by returning message: %s to %s",
-			    self.__class__.__name__, data, answer, sock.getpeername())
+			    self.__class__.__name__, data, answer, sock.getpeername())"""
+
 			sock.sendall(answer)
 		else:
 			self.logger.info("No data, closing connection for %s", sock.getpeername())
