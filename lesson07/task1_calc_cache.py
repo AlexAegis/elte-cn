@@ -8,6 +8,7 @@ import operator
 import task1_calc
 import host
 import datetime
+import colorer
 
 
 class Cache(host.Host):
@@ -64,7 +65,7 @@ class Cache(host.Host):
 				self.handle_exceptionals(exceptionals)
 
 			except KeyboardInterrupt:
-				self.logger.info("Exit")
+				self.logger.error("Exit")
 				for connection in self.connections:
 					connection.close()
 
@@ -124,14 +125,14 @@ class Cache(host.Host):
 			answer = None
 
 			if (data in self.cache):
-				self.logger.info("\t\tcache exists for: %s, cache is: %s", data,
+				self.logger.warn("\t\tcache exists for: %s, cache is: %s", data,
 				                 self.cache[data])
 				if (self.cache[data]["created"] >
-				    datetime.datetime.now() - datetime.timedelta(seconds=2)):
-					self.logger.info("\t\tcache valid")
+				    datetime.datetime.now() - datetime.timedelta(seconds=4)):
+					self.logger.warn("\t\tcache valid")
 					answer = self.cache[data]["result"]
 				else:
-					self.logger.info("\t\tcache invalid. Invalidating.")
+					self.logger.error("\t\tcache invalid. Invalidating.")
 					del self.cache[data]
 
 			if (answer is None):

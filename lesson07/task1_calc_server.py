@@ -83,8 +83,7 @@ class Server(host.Host):
 
 			response["result"] = self.eval(json_obj.a, json_obj.o, json_obj.b)
 
-			self.logger.info("\t\tevaluated: %s", response["result"])
-			print "\tServer recieved: " + data
+			self.logger.critical("\t\tevaluated: %s", response["result"])
 
 			self.server.sendto(json.dumps(response), address)
 
