@@ -73,10 +73,6 @@ class Elf(host.Host):
 						self.logger.critical("\tYES!")
 						self.one_more = True
 						self.dismissed = False
-
-				if self.one_more:
-					self.logger.error("thanks for the last chance!")
-					self.dismissed = True
 		"""
 		for message in self.messages:
 			time.sleep(1)
