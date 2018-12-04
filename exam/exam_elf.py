@@ -1,14 +1,14 @@
 import socket
 import host
 import datetime
-import exam_santa
+import exam
 import json
 import time
 import random
 
 
-class Client(host.Host):
-	""" Client class
+class Elf(host.Host):
+	""" Elf class
 
 	Arguments:
 		threading {Thread} -- runnable
@@ -22,8 +22,8 @@ class Client(host.Host):
 		"""
 		host.Host.__init__(self, config)
 		self.client = socket.socket()
-		self.server_addr = (self.config["server"].config["host"],
-		                    self.config["server"].config["port"])
+		self.santa_addr = (self.config["santa"].config["host"],
+		                   self.config["santa"].config["port"])
 		self.logger.info("\t\tFinished initializing %s, id: %s",
 		                 self.__class__.__name__, self.config['id'])
 		self.dismissed = False
@@ -31,7 +31,7 @@ class Client(host.Host):
 	def run(self):
 		""" Upon thread start
 		"""
-		self.client.connect(self.server_addr)
+		self.client.connect(self.santa_addr)
 		while not self.dismissed:
 
 			request = {"action": "where"}
@@ -70,4 +70,4 @@ class Client(host.Host):
 
 
 if __name__ == '__main__':
-	exam_santa.run()
+	exam.run()

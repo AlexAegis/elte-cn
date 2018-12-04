@@ -2,13 +2,13 @@
 """
 import socket
 import json
-import exam_santa
+import exam
 import host
 import operator
 from collections import namedtuple
 
 
-class Server(host.Host):
+class Fairy(host.Host):
 	""" Server
 
 	Arguments:
@@ -89,4 +89,4 @@ class Server(host.Host):
 
 
 if __name__ == '__main__':
-	exam_santa.run()
+	exam.run()
