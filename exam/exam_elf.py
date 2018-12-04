@@ -26,7 +26,7 @@ class Elf(host.Host):
 		                   self.config["santa"].config["port"])
 		self.fairy_addr = (self.config["fairy"].config["host"],
 		                   self.config["fairy"].config["port"])
-
+		self.one_more = False
 		self.fairy = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self.logger.info("\t\tFinished initializing %s, id: %s",
 		                 self.__class__.__name__, self.config['id'])
@@ -71,7 +71,12 @@ class Elf(host.Host):
 						self.logger.critical("\tBoo-hoo-HOO!")
 					else:
 						self.logger.critical("\tYES!")
+						self.one_more = True
 						self.dismissed = False
+
+				if self.one_more:
+					self.logger.error("thanks for the last chance!")
+					self.dismissed = True
 		"""
 		for message in self.messages:
 			time.sleep(1)

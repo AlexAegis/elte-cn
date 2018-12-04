@@ -49,8 +49,6 @@ class Fairy(host.Host):
 
 				self.logger.info("\t\tGot data: %s", data)
 				json_obj = json.loads(data)
-				print json_obj
-
 				request = {"action": "help_request"}
 
 				self.santa.sendall(json.dumps(request))
