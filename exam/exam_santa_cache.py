@@ -21,7 +21,7 @@ class Cache(host.Host):
 		threading {Thread} -- runnable
 	"""
 
-	def __init__(self, config, destinations):
+	def __init__(self, config, destinations_file):
 		""" Constructor
 
 		Arguments:
@@ -37,7 +37,8 @@ class Cache(host.Host):
 		self.server.bind(self.server_addr)
 
 		self.backend = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-		self.destinations = destinations
+		with open(destinations_file) as destinations:
+			self.destinations = json.load(destinations)
 		self.connections = [self.server]
 		self.tasks = {}
 		self.cache = {}
@@ -130,9 +131,10 @@ class Cache(host.Host):
 			self.logger.info("\t\tGot data: %s", data)
 			if request['action'] == 'where':
 				if self.destinations:
-					response["result"] = random.choice(self.destinations)
+					dest, present = random.choice(list(self.destinations.items()))
+					response["result"] = dest
 					self.tasks[sock] = (response["result"], datetime.datetime.now())
-					self.destinations.remove(response["result"])
+					del self.destinations[dest]
 				else:
 					response["result"] = "nowhere"
 

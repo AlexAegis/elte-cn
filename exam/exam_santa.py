@@ -29,7 +29,7 @@ def run():
 	    "port": 11233,
 	    "timeout": 5,
 	    "server": server
-	}, ["a", "b", "c", "d", "e", "f", "g", "h"])
+	}, "./exam/destinations.json")
 
 	elf_a = exam_santa_client.Client({"id": "a", "server": santa})
 	elf_b = exam_santa_client.Client({"id": "b", "server": santa})
