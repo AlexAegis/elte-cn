@@ -134,12 +134,12 @@ class Cache(host.Host):
 					self.tasks[sock] = (response["result"], datetime.datetime.now())
 					self.destinations.remove(response["result"])
 				else:
-					response["result"] = "NOWHERE"
+					response["result"] = "nowhere"
 
 			if request['action'] == 'done':
 				if sock in self.tasks:
 					client, issued_at = self.tasks[sock]
-					if issued_at < datetime.datetime.now() - datetime.timedelta(seconds=4):
+					if issued_at < datetime.datetime.now() - datetime.timedelta(seconds=6):
 						response["result"] = "dismissed"
 					else:
 						response["result"] = "good_job"

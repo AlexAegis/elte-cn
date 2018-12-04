@@ -14,7 +14,7 @@ class Client(host.Host):
 		threading {Thread} -- runnable
 	"""
 
-	def __init__(self, config, messages=[]):
+	def __init__(self, config):
 		""" Constructor
 
 		Arguments:
@@ -26,29 +26,34 @@ class Client(host.Host):
 		                    self.config["server"].config["port"])
 		self.logger.info("\t\tFinished initializing %s, id: %s",
 		                 self.__class__.__name__, self.config['id'])
-		self.messages = messages
+		self.dismissed = False
 
 	def run(self):
 		""" Upon thread start
 		"""
 		self.client.connect(self.server_addr)
+		while not self.dismissed:
 
-		request = {"action": "where"}
-		self.client.sendall(json.dumps(request))
-		data = self.client.recv(4096)
-		result = json.loads(data)
-		self.logger.info("\t\tClient recieved result for login: %s", data)
+			request = {"action": "where"}
+			self.client.sendall(json.dumps(request))
+			data = self.client.recv(4096)
+			result = json.loads(data)
+			self.logger.info("\t\tClient recieved result for login: %s", data)
+			if result['result'] == 'nowhere':
+				self.logger.error('no more destination..')
+				self.dismissed = True
+			else:
+				time.sleep(random.randint(1, 11))
+				response = {"action": "done"}
+				self.client.sendall(json.dumps(response))
+				data = self.client.recv(4096)
+				result = json.loads(data)
 
-		time.sleep(random.randint(1, 11))
-		response = {"action": "done"}
-		self.client.sendall(json.dumps(response))
-		data = self.client.recv(4096)
-		result = json.loads(data)
-
-		if result['result'] == 'good_job':
-			self.logger.info("\tHooray!")
-		elif result['result'] == 'dismissed':
-			self.logger.critical("\tFML!")
+				if result['result'] == 'good_job':
+					self.logger.info("\tHooray!")
+				elif result['result'] == 'dismissed':
+					self.logger.critical("\tFML!")
+					self.dismissed = True
 		"""
 		for message in self.messages:
 			time.sleep(1)
