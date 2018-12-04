@@ -20,7 +20,7 @@ def run():
 	    "host": "localhost",
 	    "port": 11232,
 	    "timeout": 5
-	})
+	}, ["a", "b", "c"])
 
 	cache = exam_santa_cache.Cache({
 	    "id": "cache",
@@ -35,26 +35,11 @@ def run():
 	    "server": cache
 	}, [
 	    '{"a": 1, "b": 2, "o": "+"}',
-	    '{"a": 1, "b": 2, "o": "+"}',
-	    '{"a": 2, "b": 2, "o": "+"}',
-	    '{"a": 1, "b": 4, "o": "*"}',
-	    '{"a": 2, "b": 2, "o": "+"}',
-	    '{"a": 2, "b": 2, "o": "/"}',
-	    '{"a": 1, "b": 2, "o": "-"}',
-	])
-
-	client_b = exam_santa_client.Client({
-	    "id": "b",
-	    "server": cache
-	}, [
-	    '{"a": 2, "b": 2, "o": "/"}',
-	    '{"a": 1, "b": 2, "o": "-"}',
 	])
 
 	server.start()
 	cache.start()
 	client_a.start()
-	client_b.start()
 
 
 if __name__ == '__main__':

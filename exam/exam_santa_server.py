@@ -5,6 +5,7 @@ import json
 import exam_santa
 import host
 import operator
+import random
 from collections import namedtuple
 
 
@@ -15,7 +16,7 @@ class Server(host.Host):
 		threading {Thread} -- runnable
 	"""
 
-	def __init__(self, config):
+	def __init__(self, config, destinations):
 		""" Constructor
 
 		Arguments:
@@ -26,44 +27,8 @@ class Server(host.Host):
 		self.server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self.server.bind(self.server_addr)
 		self.connections = [self.server]
-
+		self.destinations = destinations
 		self.logger.info("\t\tFinished initializing %s", self.__class__.__name__)
-
-	@classmethod
-	def get_operator_fn(cls, opr):
-		""" returns the operator function from a string
-
-		Arguments:
-			opr {str} -- operator as a string
-
-		Returns:
-			function -- [description]
-		"""
-
-		return {
-		    '+': operator.add,
-		    '-': operator.sub,
-		    '*': operator.mul,
-		    '/': operator.div,
-		    '%': operator.mod,
-		    '^': operator.xor,
-		}[opr]
-
-	@classmethod
-	def eval(cls, op1, opr, op2):
-		"""evaluates the two operands with the operator
-
-		Arguments:
-			op1 {str} -- first operand
-			opr {str} -- operator to be applied
-			op2 {str} -- second operand
-
-		Returns:
-			int -- result
-		"""
-
-		op1, op2 = int(op1), int(op2)
-		return cls.get_operator_fn(opr)(op1, op2)
 
 	def run(self):
 		""" Upon thread start
@@ -75,16 +40,16 @@ class Server(host.Host):
 
 			response = {"action": "response", "result": "hello", "errors": []}
 
-			self.logger.info("\t\tGot data: %s", data)
-			json_obj = json.loads(
-			    data, object_hook=lambda d: namedtuple('x', d.keys())(*d.values()))
+			if data:
+				request = json.loads(data)
+				self.logger.info("\t\tGot data: %s", data)
+				if request['action'] == 'where':
+					response["result"] = random.choice(self.destinations)
+					self.destinations.remove(response["result"])
+					self.logger.critical("\t\tresponse: %s", response["result"])
 
-			print json_obj
-
-			response["result"] = self.eval(json_obj.a, json_obj.o, json_obj.b)
-
-			self.logger.critical("\t\tevaluated: %s", response["result"])
-
+				if request['action'] == 'done':
+					self.logger.info("\tCLIENT IS DONE")
 			self.server.sendto(json.dumps(response), address)
 
 

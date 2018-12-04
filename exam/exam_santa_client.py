@@ -4,6 +4,7 @@ import datetime
 import exam_santa
 import json
 import time
+import random
 
 
 class Client(host.Host):
@@ -30,8 +31,19 @@ class Client(host.Host):
 	def run(self):
 		""" Upon thread start
 		"""
-
 		self.client.connect(self.server_addr)
+
+		request = {"action": "where"}
+		self.client.sendall(json.dumps(request))
+		data = self.client.recv(4096)
+		result = json.loads(data)
+		self.logger.info("\t\tClient recieved result for login: %s", data)
+
+		time.sleep(random.randint(1, 11))
+		response = {"action": "done"}
+		self.client.sendall(json.dumps(response))
+		data = self.client.recv(4096)
+		"""
 		for message in self.messages:
 			time.sleep(1)
 			self.client.sendall(message)
@@ -41,6 +53,8 @@ class Client(host.Host):
 			result = json.loads(data)
 
 			self.logger.info("\t\t\t\t result of: %s, is: %s", message, result["result"])
+		
+		"""
 		self.client.close()
 
 
