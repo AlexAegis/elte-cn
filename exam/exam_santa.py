@@ -15,30 +15,31 @@ def run():
 	"""
 	logging.basicConfig(level="INFO")
 	logging.info("\t\tBootstrapping application")
+
 	server = exam_santa_server.Server({
 	    "id": "server",
 	    "host": "localhost",
 	    "port": 11232,
 	    "timeout": 5
-	}, ["a", "b", "c"])
+	})
 
-	cache = exam_santa_cache.Cache({
+	santa = exam_santa_cache.Cache({
 	    "id": "cache",
 	    "host": "localhost",
 	    "port": 11233,
 	    "timeout": 5,
 	    "server": server
-	})
+	}, ["a", "b", "c"])
 
 	client_a = exam_santa_client.Client({
 	    "id": "a",
-	    "server": cache
+	    "server": santa
 	}, [
 	    '{"a": 1, "b": 2, "o": "+"}',
 	])
 
-	server.start()
-	cache.start()
+	#server.start()
+	santa.start()
 	client_a.start()
 
 

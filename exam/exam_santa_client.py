@@ -43,6 +43,12 @@ class Client(host.Host):
 		response = {"action": "done"}
 		self.client.sendall(json.dumps(response))
 		data = self.client.recv(4096)
+		result = json.loads(data)
+
+		if result['result'] == 'good_job':
+			self.logger.info("\tHooray!")
+		elif result['result'] == 'dismissed':
+			self.logger.critical("\tFML!")
 		"""
 		for message in self.messages:
 			time.sleep(1)

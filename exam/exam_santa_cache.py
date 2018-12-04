@@ -9,6 +9,9 @@ import exam_santa
 import host
 import datetime
 import colorer
+import json
+import time
+import random
 
 
 class Cache(host.Host):
@@ -18,7 +21,7 @@ class Cache(host.Host):
 		threading {Thread} -- runnable
 	"""
 
-	def __init__(self, config):
+	def __init__(self, config, destinations):
 		""" Constructor
 
 		Arguments:
@@ -34,9 +37,9 @@ class Cache(host.Host):
 		self.server.bind(self.server_addr)
 
 		self.backend = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+		self.destinations = destinations
 		self.connections = [self.server]
-
+		self.tasks = {}
 		self.cache = {}
 
 		self.finished = False
@@ -120,30 +123,32 @@ class Cache(host.Host):
 
 		data = sock.recv(4096)
 		data = data.strip()
-
 		if data:
-			answer = None
+			request = json.loads(data)
+			response = {"action": "response", "result": "hello", "errors": []}
 
-			if (data in self.cache):
-				self.logger.warn("\t\tcache exists for: %s, cache is: %s", data,
-				                 self.cache[data])
-				if (self.cache[data]["created"] >
-				    datetime.datetime.now() - datetime.timedelta(seconds=4)):
-					self.logger.warn("\t\tcache valid")
-					answer = self.cache[data]["result"]
+			self.logger.info("\t\tGot data: %s", data)
+			if request['action'] == 'where':
+				if self.destinations:
+					response["result"] = random.choice(self.destinations)
+					self.tasks[sock] = (response["result"], datetime.datetime.now())
+					self.destinations.remove(response["result"])
 				else:
-					self.logger.error("\t\tcache invalid. Invalidating.")
-					del self.cache[data]
+					response["result"] = "NOWHERE"
 
-			if (answer is None):
-				self.backend.sendto(data, self.backend_addr)
-				self.logger.info("\t\t\tCache sent message to server: %s", data)
-				answer, address = self.backend.recvfrom(4096)
+			if request['action'] == 'done':
+				if sock in self.tasks:
+					client, issued_at = self.tasks[sock]
+					if issued_at < datetime.datetime.now() - datetime.timedelta(seconds=4):
+						response["result"] = "dismissed"
+					else:
+						response["result"] = "good_job"
 
-				self.cache[data] = {"result": answer, "created": datetime.datetime.now()}
-				self.logger.info("\t\t\tCache recieved message from server: %s", answer)
+				self.logger.info("\tCLIENT IS DONE")
 
-			sock.sendall(answer)
+			self.logger.critical("\t\tresponse: %s", response["result"])
+
+			sock.sendall(json.dumps(response))
 
 		else:
 			self.logger.info("\t\tNo data, closing connection for %s",
