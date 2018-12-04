@@ -24,6 +24,10 @@ class Elf(host.Host):
 		self.client = socket.socket()
 		self.santa_addr = (self.config["santa"].config["host"],
 		                   self.config["santa"].config["port"])
+		self.fairy_addr = (self.config["fairy"].config["host"],
+		                   self.config["fairy"].config["port"])
+
+		self.fairy = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self.logger.info("\t\tFinished initializing %s, id: %s",
 		                 self.__class__.__name__, self.config['id'])
 		self.dismissed = False
@@ -32,6 +36,7 @@ class Elf(host.Host):
 		""" Upon thread start
 		"""
 		self.client.connect(self.santa_addr)
+		self.fairy.connect(self.fairy_addr)
 		while not self.dismissed:
 
 			request = {"action": "where"}
@@ -52,8 +57,21 @@ class Elf(host.Host):
 				if result['result'] == 'good_job':
 					self.logger.info("\tHooray!")
 				elif result['result'] == 'dismissed':
-					self.logger.critical("\tFML!")
 					self.dismissed = True
+					self.logger.critical("\tBoo-hoo!")
+					fairy_request = json.dumps({"action": "help"})
+					self.fairy.sendto(fairy_request, self.fairy_addr)
+					self.logger.info("\t\t\tWent to the fairy!: %s", fairy_request)
+
+					fairy_response_str, address = self.fairy.recvfrom(4096)
+					self.logger.info("\t\t\tGot message from the fairy!: %s",
+					                 fairy_response_str)
+					fairy_response = json.loads(fairy_response_str)
+					if fairy_response["response"] == 'nowhere':
+						self.logger.critical("\tBoo-hoo-HOO!")
+					else:
+						self.logger.critical("\tYES!")
+						self.dismissed = False
 		"""
 		for message in self.messages:
 			time.sleep(1)

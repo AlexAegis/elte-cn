@@ -29,42 +29,6 @@ class Fairy(host.Host):
 
 		self.logger.info("\t\tFinished initializing %s", self.__class__.__name__)
 
-	@classmethod
-	def get_operator_fn(cls, opr):
-		""" returns the operator function from a string
-
-		Arguments:
-			opr {str} -- operator as a string
-
-		Returns:
-			function -- [description]
-		"""
-
-		return {
-		    '+': operator.add,
-		    '-': operator.sub,
-		    '*': operator.mul,
-		    '/': operator.div,
-		    '%': operator.mod,
-		    '^': operator.xor,
-		}[opr]
-
-	@classmethod
-	def eval(cls, op1, opr, op2):
-		"""evaluates the two operands with the operator
-
-		Arguments:
-			op1 {str} -- first operand
-			opr {str} -- operator to be applied
-			op2 {str} -- second operand
-
-		Returns:
-			int -- result
-		"""
-
-		op1, op2 = int(op1), int(op2)
-		return cls.get_operator_fn(opr)(op1, op2)
-
 	def run(self):
 		""" Upon thread start
 		"""
@@ -73,17 +37,13 @@ class Fairy(host.Host):
 		while True:
 			data, address = self.server.recvfrom(4096)
 
-			response = {"action": "response", "result": "hello", "errors": []}
+			response = {"response": "a"}
 
 			self.logger.info("\t\tGot data: %s", data)
-			json_obj = json.loads(
-			    data, object_hook=lambda d: namedtuple('x', d.keys())(*d.values()))
-
+			json_obj = json.loads(data)
 			print json_obj
 
-			response["result"] = self.eval(json_obj.a, json_obj.o, json_obj.b)
-
-			self.logger.critical("\t\tevaluated: %s", response["result"])
+			self.logger.critical("\t\tAsked santa, got this: %s", response["response"])
 
 			self.server.sendto(json.dumps(response), address)
 
