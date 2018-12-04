@@ -27,25 +27,42 @@ class Fairy(host.Host):
 		self.server.bind(self.server_addr)
 		self.connections = [self.server]
 
+		self.santa = socket.socket()
+		self.santa_addr = (self.config["santa"].config["host"],
+		                   self.config["santa"].config["port"])
+		self.finished = False
+
 		self.logger.info("\t\tFinished initializing %s", self.__class__.__name__)
 
 	def run(self):
 		""" Upon thread start
 		"""
+		self.santa.connect(self.santa_addr)
 		self.logger.info("\t\tStarting %s Listening on port: %s ",
 		                 self.__class__.__name__, self.config["port"])
-		while True:
+		while not self.finished:
 			data, address = self.server.recvfrom(4096)
 
-			response = {"response": "a"}
+			if data:
 
-			self.logger.info("\t\tGot data: %s", data)
-			json_obj = json.loads(data)
-			print json_obj
+				response = {"response": "a"}
 
-			self.logger.critical("\t\tAsked santa, got this: %s", response["response"])
+				self.logger.info("\t\tGot data: %s", data)
+				json_obj = json.loads(data)
+				print json_obj
 
-			self.server.sendto(json.dumps(response), address)
+				request = {"action": "help_request"}
+
+				self.santa.sendall(json.dumps(request))
+				data = self.santa.recv(4096)
+				result = json.loads(data)
+
+				self.logger.critical("\t\tAsked santa, got this: %s", result["result"])
+				response["response"] = result["result"]
+
+				self.server.sendto(json.dumps(response), address)
+			else:
+				self.finished = True
 
 
 if __name__ == '__main__':

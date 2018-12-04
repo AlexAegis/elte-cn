@@ -125,7 +125,7 @@ class Santa(host.Host):
 			response = {"action": "response", "result": "hello", "errors": []}
 
 			self.logger.info("\t\tGot data: %s", data)
-			if request['action'] == 'where':
+			if request['action'] == 'where' or request['action'] == 'help_request':
 				if self.destinations:
 					dest, present = random.choice(list(self.destinations.items()))
 					response["result"] = dest
