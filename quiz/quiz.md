@@ -1,20 +1,62 @@
 # Quiz
 
--   Az ISO/OSI modell mely rétegéhez sorlhatók a következő fogalmak: Optikai kábel, Wifi jel, CAT6 UTP kábel?
+-   Az ISO/OSI modell mely rétegéhez sorlhatók a következő fogalmak:
+    Optikai kábel, Wifi jel, CAT6 UTP kábel?
 
     -   Fizikai réteg/Physical
+
+-   Az ISO/OSI modell mely rétege foglalja magába a közeghozzáférés vezérlését (MAC)?
+
+    -   Adatkapcsolati réteg/Data link
+
+-   Az ISO/OSI modell mely rétege definiálja az átvitelre szánt adatok keretekre tördelését?
+
+    -   Adatkapcsolati réteg/Data Link
+
+-   Az ISO/OSI modell mely rétege felel az útvonal választásért?
+
+    -   Hálózati réteg/Network
+
+-   Az ISO/OSI modell mely rétege felel a csomagtovábbításért?
+
+    -   Hálózati réteg/Network
 
 -   Az ISO/OSI modell mely rétegel felel az üzenetek adott állomáson belüli forgalom multiplexálásáért/demultiplexálásáért?
 
     -   Szállítói réteg/Transport
 
+-   Az ISO/OSI modell mely rétegéhez tartozik a TCP protokoll?
+
+    -   Szállítói réteg/Transport
+
+-   Az ISO/OSI modell mely rétegéhez tartozik az UDP protokoll?
+
+    -   Szállítói réteg/Transport
+
+-   Az ISO/OSI modell mely rétege felel az adatkonverziókért különböző reprezentációk között?
+
+    -   Munkamenet (Ülés) réteg/Session
+
+-   Az ISO/OSI modell mely rétege felelhet szinkronizációs pont menedzsmentért (checkpoint beszúrása, stb.)?
+
+    -   Munkamanet (Ülés) réteg/Session
+
+-   Az ISO/OSI modell mély rétege felel az adatkonverzióért különböző reprezentációk között?
+
+    -   Megjelenítési réteg/Presentation
+
+-   Az ISO/OSI modell mely rétegéhez sorolhatók a következő fogalmak: BitTorrent, HTTP, BitCoin kliens?
+
+    -   Alkalmazási réteg/Application
+
+-   Az ISO/OSI mely rétegeit nem használjuk az Internet architektúrájának leírásához? (Segítség: avagy mely rétegek nem képeik részét a bevezetett hibrid modellnek?)
+
+    -   Megjelenítési réteg/Presentation
+    -   Munkamenet (Ülés) réteg/Session
+
 -   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk feldolgozási késleltetésnek (processing delay) egy csomag átvitele esetén?
 
     -   Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntésének meghozatala igényel.
-
--   Az ISO/OSI modell mely rétege foglalja magába a közeghozzáférés vezérlését (MAC)?
-
-    -   Adatkapcsolati réteg/Data link
 
 -   Mennyi az átviteli késleltetése egy 1500 bájtos cosmagnak egy olyan hálózaton, ahol az elérhető adatráta 12Gbps? A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
 
@@ -34,30 +76,10 @@
 
     -   8.0
 
--   Az ISO/OSI modell mely rétege felel az útvonal választásért?
-
-    -   Hálózati réteg/Network
-
--   Az ISO/OSI modell mely rétege felel az adatkonverziókért különböző reprezentációk között?
-
-    -   Munkamenet (Ülés) réteg/Session
-
--   Az ISO/OSI modell mely rétege felel az útvonal választásért?
-
-    -   Hálózati réteg/Network
-
--   Az ISO/OSI modell mely rétegéhez sorolhatók a következő fogalmak: BitTorrent, HTTP, BitCoin kliens?
-
-    -   ALkalmazási réteg/Application
-
 -   Mennyi az átviteli késleltetése egy 1500 bájtos csomagnak egy olyan hálózaton, ahol az elérhető adatráta 12 Gbps?
     A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
 
     -   1.0
-
--   Az ISO/OSI modell mely rétege felel a acsomagtovábbításért?
-
-    -   Hálózati réteg/Network
 
 -   Egy optikai gerinchálózaton két routert 200km üvegszál köti össze. Az üvegszálban a jelterjedési sebesség 2x10^8 m/s. Mekkor propagációs késést tapasztalunk a fenti optikai linken ezredmásodpercben kifejezve (ms)? (segítség: 1ms = 10^3 s) - 1.0
 
@@ -65,63 +87,10 @@
 
     -   Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntések meghozatala igényel.
 
--   Az ISO/OSI modell mely rétege felelhet szinkronizációs pont menedzsmentért (checkpoint beszúrása, stb.)?
-
-    -   Munkamanet (Ülés) réteg/Session
-
--   Az ISO/OSI modell mely rétege felel az üzenetek adott állomáson belüli forgalom multiplexálásáért/demultiplexálásáért?
-
-    -   Szállítói réteg/Transport
-
--   Az ISO/OSI modell mély rétege felel az adatkonverzióért különböző reprezentációk között?
-
-    -   Megjelenítési réteg/Presentation
-
--   Az ISO/OSI modell mely rétege definiálja az átvitelre szánt adatok keretekre tördelését?
-
-    -   Adatkapcsolati réteg/Data Link
-
--   Az ISO/OSI modell mely rétege felel az útvonal választásért?
-
-    -   Hálózati réteg/Network
-
--   Az ISO/OSI modell mely rétegéhez tartozik a TCP protokoll?
-
-    -   Szállítói réteg/Transport
-
 -   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének.
     Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
 
     -   Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
-
--   Az ISO/OSI modell mely rétege felel az adatkonverziókért különböző reprezentációk között?
-
-    -   Munkamenet (Ülés) réteg/Session
-
--   Az ISO/OSI modell mely rétege foglalja magába a közeghozzáférés vezérlését (MAC)?
-
-    -   Adatkapcsolati réteg/Data link
-
--   Az ISO/OSI modell mely rétege felel a acsomagtovábbításért?
-
-    -   Hálózati réteg/Network
-
--   Az ISO/OSI modell mely rétegéhez sorlhatók a következő fogalmak: Optikai kábel, Wifi jel, CAT6 UTP kábel?
-
-    -   Fizikai réteg/Physical
-
--   Az ISO/OSI modell mely rétegéhez sorolhatók a következő fogalmak: BitTorrent, HTTP, BitCoin kliens?
-
-    -   ALkalmazási réteg/Application
-
--   Az ISO/OSI mely rétegeit nem használjuk az Internet architektúrájának leírásához? (Segítség: avagy mely rétegek nem képeik részét a bevezetett hibrid modellnek?)
-
-    -   Megjelenítési réteg/Presentation
-    -   Munkamenet (Ülés) réteg/Session
-
--   Az ISO/OSI modell mely rétegéhez tartozik az UDP protokoll?
-
-    -   Szállítói réteg/Transport
 
 -   Melyik állítási igazak a csomagtovábbításra (forwarding)?
 
