@@ -381,7 +381,9 @@
 
 -   Mi az összefüggés a frekvencia (f), a hullámhossz (L (LAMBDA)) és a fénysebesség (c) között? - f\*L = c
 
--   Mely állítások igazak a fizikai rétegre? - Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
+-   Mely állítások igazak a fizikai rétegre?
+
+    -   Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
 
 -   Mekkora következő két bitsorozat Hamming-távolsága?
     d( 1001, 1011 )
@@ -496,7 +498,9 @@
     -   Lényegében elosztott Bellman-Ford algoritmus.
     -   Midnen router csak a szomszédjával kommunikál.
 
--   Melyik állítás igaz? - Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
+-   Melyik állítás igaz?
+
+    -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
 
 -   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor polinom fokszáma 12. Hány biten ábrázolható a CRC kontrollöszeg (a maradék polinom)?
 
@@ -516,13 +520,15 @@
 
     -   ahol a hiba polinom E(x) = x^33 + x^32 + x^2 + x
 
--   Melyik állítások igazak az alternáló bit protokollra (ABP)? - Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidpn belül. - Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
+-   Melyik állítások igazak az alternáló bit protokollra (ABP)? - Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidőn belül.
+
+    -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
 
 -   Mely csatornára igaz az alábbi állítás? Mindkét irányba folyhat a kommunikáció szimultán módon.
 
     -   Duplex csatorna
 
--   Adott N állomás, melyek Alapvető bittérkép protokollt használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell egy állomásnak várnia a saját keretre átvitelének megkezsée előtt? [Azt az időrést már ne számoljuk, amiben a sajkár keret is átvitelre kerül. Továbbá tegyük fel, hogy kötvetlenül a versengési időrés előtt állunk!]
+-   Adott N állomás, melyek Alapvető bittérkép protokollt használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell egy állomásnak várnia a saját keretre átvitelének megkezsée előtt? [Azt az időrést már ne számoljuk, amiben a sajkár keret is átvitelre kerül. Továbbá tegyük fel, hogy kötvetlenül a versengési időrés előtt állunk]!
 
     -   N
 
@@ -582,3 +588,26 @@
 -   Mely állíts igaz a bride-eknél (hidaknál) látott feszítőfa protokollra? (STP)?
 
     -   Egy bridge a szomszéd bridge-eknek küldi el a konfigurációs üzenetét, mely alapján azok frissítik a gyökér csomópont és a hozzá vezető úthoz kapcsolódó információkat.
+
+-   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
+    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
+    dA(B) = 12, dA(C) = 3, dA(D) = 4,
+    dB(A) = 3, dB(C) = 8, dB(D) = 2,
+    dC(A) = 1, dC(B) = 2, dC(D) = 1
+
+    u vektorainak frissítése után adjuk meg dU(A) távolságot!
+
+    -   3.0
+
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 7. Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
+
+    -   7
+
+-   Melyik állítás igaz?
+
+    -   A pipelineing technika nem segít a csatornakihasználtság javításában.
+
+-           Mely csatornára igaz az alábbi állítás?
+            	A kommunikáció pusztán az egyik iránybe lehetséges
+
+            	-	Szimplex csatorna
