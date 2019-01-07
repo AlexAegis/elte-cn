@@ -1,172 +1,407 @@
 # Quiz
 
-24. page:
+-   Az ISO/OSI modell mely rétegéhez sorlhatók a következő fogalmak: Optikai kábel, Wifi jel, CAT6 UTP kábel?
 
-    -   A megbízató adatátvitel 4 fő célja közül melyik szól az adat leszállítási idejének minimalizálásáról.
+    -   Fizikai réteg/Physical
 
-        -   Időbeliség/Timeliness
+-   Az ISO/OSI modell mely rétegel felel az üzenetek adott állomáson belüli forgalom multiplexálásáért/demultiplexálásáért?
 
-    -   Egy csúszóablak (sliding window) protokoll esetén a sorszámok tere 0,1,2,3,4,5,6,7, a négy hosszú küldési ablakban az 1,2,3,4 sorszámok vannak. Az 1-es sorszámú nyugta beérkezése után, milyen sorszámmal lehetnek elküldött de nem nyugtázott csomagok.
+    -   Szállítói réteg/Transport
 
-        -   2,3,4,5
+-   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk feldolgozási késleltetésnek (processing delay) egy csomag átvitele esetén?
 
-    -   Melyik nyugtázási módszerre igaz az alábbi állítás? A nyugta a legnagyobb sorszámot tartalmazza, amelyre igaz, hogy az összes kisebb (vagy egyenlő) sorszámú csomag már sikeresen megérkezett a vevőhöz.
+    -   Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntésének meghozatala igényel.
 
-        -   Kumulatív nyugta - cummulative ACK
+-   Az ISO/OSI modell mely rétege foglalja magába a közeghozzáférés vezérlését (MAC)?
 
-    -   Egy csúszóablak (sliding window) protokoll esetén a sorszámok tere 0,1,2,3,4,5,6,7. A fogadó 2 csomagot tud pufferelni, a vételi ablakában 2,3 sorszámok szerepelnek. Mit tesz a fogadó egy 1-es sorszámú csomag beérkezése esetén?
+    -   Adatkapcsolati réteg/Data link
 
-        -   Eldobja a csomagot és nyugtát küld.
+-   Mennyi az átviteli késleltetése egy 1500 bájtos cosmagnak egy olyan hálózaton, ahol az elérhető adatráta 12Gbps? A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
 
-    -   Kumulatív nyugta (cummulative ACK) esetén miként tudjuk detektálni a csomagvesztést?
+    -   1.0
 
-        -   Az izolált csomagvesztéseket nyugta dupliokátumok jelzik. Emelett timerekkel is dolgozik a módszer.
+-   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk sorban-állási késleltetésnek (queueing delay) egy csomag átvitele esetén?
 
-    -   Melyik nyugtázási módszerre igaz az alábbi állítás?
-        Teljes információt ad a forrásnak és jól kezeli a nyugták elvesztését is, azonban az a nagy hálózati overheadje miatt csökkenti a teljesítményt.
+    -   Azt az időt, amit a csomag a switch/router várakozási sorában várakozással tölt.
 
-            -   Teljes információ visszacsatolás - Full Information Feedback
+-   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének. Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
 
-    -   Hogyan definiáltuk a helyességet!
-        Egy szállítási mechanizmus helyes, akkor és csak akkor...
+    -   Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
 
-        -   Minden elvesztett vagy hibás csomagot újraküld.
+-   Adott két végpont, melyek között egy 120MB-os (megabájtos) fájl letöltése 2 percet vesz igénybe.
+    Mekkora az átviteli ráta (throughput) a két oldal között? A választ Mpbs-ben (megabits/second) adja meg!
+    (Segíség: 1 Mpbs = 10^6 bps, 1MB = 10^6 Bájt)
 
-    -   Adott egy hálózat:
-        A------------1 Gbps---------B------------10 Gbps--------C
+    -   8.0
 
-        és adott 3 folyam:
+-   Az ISO/OSI modell mely rétege felel az útvonal választásért?
 
-        1. folyam: A-ból B-be küld adatot
-        2. folyam: B-ból C-be küld adatot
-        3. folyam: A-ból C-be küld adatot
+    -   Hálózati réteg/Network
 
-        Milyen rátát kap a 2. folyam Mbps-ben kifejezve, ha max-min fair allocation-t alkalmazunk a sávszélességek kiosztására (a fenti példában)?
+-   Az ISO/OSI modell mely rétege felel az adatkonverziókért különböző reprezentációk között?
 
-        -   9500.0 (megközelítőleg : 0.0)
-            9.5 (megközelítőleg: 0.0)
+    -   Munkamenet (Ülés) réteg/Session
 
-    -   Mi a folyam vezérlés (flow control) célja a megbízható adatátvitel során?
+-   Az ISO/OSI modell mely rétege felel az útvonal választásért?
 
-        -   A lassú vevő túlterhelésének megakadályozása.
+    -   Hálózati réteg/Network
 
-    -   Mely állítások igazak a végpont-végpont megbízhatóságra?
+-   Az ISO/OSI modell mely rétegéhez sorolhatók a következő fogalmak: BitTorrent, HTTP, BitCoin kliens?
 
-        -   A végpont-végpont megbízhatóságot az L4 (Transport - Szállítói) réteg biztosítja.
-        -   A hálózat legyen a lehető legegyszerűbb, azaz nem biztosít végpont-végpont megbízhatóságot.
-        -   Az alkalmazásoknak nem kell a hálózati problémákkal foglalkozniuk, így a megbízhatóság biztosításával sem.
+    -   ALkalmazási réteg/Application
 
-25. page:
+-   Mennyi az átviteli késleltetése egy 1500 bájtos csomagnak egy olyan hálózaton, ahol az elérhető adatráta 12 Gbps?
+    A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
 
-    -   Mik történhetnek egy csomaggal átvitel során, melyet egy megbízható végpont-végpont adattranszport protokollnak kezelnie kell?
+    -   1.0
 
-        -   csomagvesztés - loss
-        -   meghibásodás - being corrupted
-        -   duplikátumok - duplicates
-        -   várakoztatás - being delayed
-        -   csomagok sorrendjének megváltoztatása - reordering
+-   Az ISO/OSI modell mely rétege felel a acsomagtovábbításért?
 
-    -   Melyik nyugtázási módszerre igaz az alábbi állítás?
-        A nyugta a legnagyobb sorszámot tartalmazza, amelyre igaz, hogy az összes kisebb (vagy egyenlő) sorszámú csomag már sikeresen megérkezett a vevőhöz.
-        -   Kumulatív nyugta - cummulative ACK
+    -   Hálózati réteg/Network
 
-26. page:
+-   Egy optikai gerinchálózaton két routert 200km üvegszál köti össze. Az üvegszálban a jelterjedési sebesség 2x10^8 m/s. Mekkor propagációs késést tapasztalunk a fenti optikai linken ezredmásodpercben kifejezve (ms)? (segítség: 1ms = 10^3 s) - 1.0
 
-    -   Kumulatív nyugta (cummulative ACK) esetén miként tudjuk detektálni a csomagvesztést?
-        -   Az izolált csomagvesztéseket nyugta duplikátumok jelzik. Emellett timerekkel is dolgozik a módszer.
+-   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk feldolgozási késleltetésnek (processing delay) egy csomag átvitele esetén?
 
-27. page:
+    -   Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntések meghozatala igényel.
 
-    -   A megbízható adatátvitel 4 fő célja körül melyik szól arról, hogy:
-        "az adat leszállítása biztosított, sorrend helyes és átvitel során nem módosul".
-        -   Helyesség/Correctness
+-   Az ISO/OSI modell mely rétege felelhet szinkronizációs pont menedzsmentért (checkpoint beszúrása, stb.)?
 
-28. 32page:
+    -   Munkamanet (Ülés) réteg/Session
 
-    -   Jelölje be, hogy az állítások mely multiplexálási technikákra igazak!
+-   Az ISO/OSI modell mely rétege felel az üzenetek adott állomáson belüli forgalom multiplexálásáért/demultiplexálásáért?
 
-        -   A teljes frekvencia tartományt szűkebb sávokra bontja
-            > **Frekvencia multiplexálás**
-        -   Vezetékes kommunikáció esetén minden egyes csatornához külön pont-pont fizikai kapcsolat tartozik
-            > **Térbeli multiplexálás**
-        -   Vezeték nélküli kommunikáció esetén minden egyes csatornához külön antenna rendelődik
-            > **Térbeli multiplexálás**
-        -   Minden állomás saját frekvencia tartományt kap
-            > **Frekvencia multiplexálás**
-        -   Diszkrét időszeletek használata
-            > **Idő-osztásos multiplexálás (TDM)**
-        -   Minden állomás saját időszeletet kap
-            > **Idő-osztásos multiplexálás (TDM)**
+    -   Szállítói réteg/Transport
 
-    -   Mely állítások igazak az alapsávú átvitelre?
+-   Az ISO/OSI modell mély rétege felel az adatkonverzióért különböző reprezentációk között?
 
-        -   a digitális jel direkt árammá vagy feszültséggé alakul
-        -   a jel minden frekvencián átvitelre kerül
+    -   Megjelenítési réteg/Presentation
 
-    -   Mit nevezünk elnyelődésnek?
+-   Az ISO/OSI modell mely rétege definiálja az átvitelre szánt adatok keretekre tördelését?
 
-        -   A küldési és vételi energiák hányadosát.
+    -   Adatkapcsolati réteg/Data Link
 
-    -   Egy s(t) függvényt a sin(t) vivőhullámra a következőképp kódolunk: s(t)\*sin(t)
-        Melyik modulációs technikát alkalmaztuk?
+-   Az ISO/OSI modell mely rétege felel az útvonal választásért?
 
-        -   Amplitúdó moduláció
+    -   Hálózati réteg/Network
 
-    -   Egy s(t) függvényt a sin(t) vivőhullámra a következőképp kódolunk: sin(t\*s(t))
-        Melyik modulációs technikát alkalmaztuk?
+-   Az ISO/OSI modell mely rétegéhez tartozik a TCP protokoll?
 
-        -   Frekvencia moduláció
+    -   Szállítói réteg/Transport
 
-    -   Mely modulációs technika használja a vivőhullám több jellemzőjét is a szimbólumok kifejezésére?
+-   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének.
+    Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
 
-        -   QAM-16 technika
+    -   Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
 
-    -   A 100 Mbps Ethernetnél alkalmazott 4/5 kódolással 20 %-ot veszítünk a hatékonyságból!
+-   Az ISO/OSI modell mely rétege felel az adatkonverziókért különböző reprezentációk között?
 
-    -   Két szimbólum használata esetén a szimbólum ráta 4 Baud. Négy szombólum használata mellett mekkora lesz a szimbólum ráta, ha semmi mást nem változtatunk?
+    -   Munkamenet (Ülés) réteg/Session
 
-        -   4 Baud
+-   Az ISO/OSI modell mely rétege foglalja magába a közeghozzáférés vezérlését (MAC)?
 
-    -   Egy s(t) függvényt a sin(t) vivőhullámra a következőképp kódolunk: sin(t + s(t))
-        Melyik modulációs technikát alkalmaztuk?
+    -   Adatkapcsolati réteg/Data link
 
-        -   Fázis moduláció
+-   Az ISO/OSI modell mely rétege felel a acsomagtovábbításért?
 
-    -   Mely állítások igazak az szélessávú átvitelre?
-        -   egy széles frekcencia tartományban történik az átvitel, nem minden frekvencián kerül átvitelre a jel **NOT VERIFIED**
-        -   a jelet modulálással ülteti egy vivóhullámra **NOT VERIFIED**
+    -   Hálózati réteg/Network
 
-29. 33page:
+-   Az ISO/OSI modell mely rétegéhez sorlhatók a következő fogalmak: Optikai kábel, Wifi jel, CAT6 UTP kábel?
 
-    -   Négy szimbólum használata esetén hány bitet tudunk egy szombólumba kódolnu?
+    -   Fizikai réteg/Physical
 
-        -   2
+-   Az ISO/OSI modell mely rétegéhez sorolhatók a következő fogalmak: BitTorrent, HTTP, BitCoin kliens?
 
-    -   Mi az összefüggés a frekvencia (f), a hullámhossz (L (LAMBDA)) és a fénysebesség (c) között? - f\*L = c
+    -   ALkalmazási réteg/Application
 
-    -   Mely állítások igazak a fizikai rétegre? - Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
+-   Az ISO/OSI mely rétegeit nem használjuk az Internet architektúrájának leírásához? (Segítség: avagy mely rétegek nem képeik részét a bevezetett hibrid modellnek?)
 
-30. 41page:
+    -   Megjelenítési réteg/Presentation
+    -   Munkamenet (Ülés) réteg/Session
 
-    -   Mekkora következő két bitsorozat Hamming-távolsága?
+-   Az ISO/OSI modell mely rétegéhez tartozik az UDP protokoll?
 
-        -   d( 11111, 11000 ) = 3
+    -   Szállítói réteg/Transport
 
-    -   Mekkora következő két bitsorozat Hamming-távolsága?
+-   Melyik állítási igazak a csomagtovábbításra (forwarding)?
 
-        -   d( 1001, 1011 ) = 1
+    -   Időskála: nanosecundum
+    -   Adat síkban (data plane) valósul meg
+    -   A csomagot egy kimenő vonal felé irányítja
+    -   Helyi folyamat
 
-    -   Minek kell teljesülnie a chip vektorokra a CDMA módszer esetén?
+-   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
+    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
+    dA(B) = 12, dA(C) = 3, dA(D) = 4,
+    dB(A) = 3, dB(C) = 8, dB(D) = 2,
+    dC(A) = 1, dC(B) = 2, dC(D) = 1
+    u vektorainak frissítése után adjuk meg dU(C) távolságot!
 
-        -   Páronként ortogonális vektoroknak kell lenniük.
+    -   6.0
 
-    -   Alkosson párokat a keretezési technikák jellemzőiből és neveiből!
+-   Melyik állítások igazak az útvonal-meghatározásra (routing)?
 
-        -   A fogadó az adatban előforduló minden 11111 részsorozat után ellenőrzi a követező bitet, majd ez alapján lép tovább.
-            > **Bit beszúrás**
-        -   Nagyon érzékeny a bithibákra (pl. fejléc meghibásodása)
-            > **Karakterszámlálás**
-        -   Egy speciális ESC (Escape) bájtot szúr be az "adat" ESC bájtok elé
-            > **Bájt beszórás**
-        -   SONET hálózatoknál alkalmazzák
-            > **Óra alapú keretezés**
+    -   A csomagok által követendő útvonalak kiszámítása.
+    -   Időskála: kb. 10 ezredmásodperc.
+    -   Vezérlési rétegben valósítják meg.
+    -   Globális folyamat
+
+-   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
+    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
+    dA(B) = 12, dA(C) = 3, dA(D) = 4,
+    dB(A) = 3, dB(C) = 8, dB(D) = 2,
+    dC(A) = 1, dC(B) = 2, dC(D) = 1
+    u vektorainak frissítése után adjuk meg dU(D) távolságot!
+
+    -   3.0
+
+-   Hogyan tanulják meg a switch-ek a forrás állomás címét?
+
+    -   Ha egy A porton érkezik egy csomag B állomástól, és B nem szerepel a továbbítási táblában, akkor megtanulja, hogy B állomás az A port irányában érhető el.
+
+-   Egy globális továbbítási állapot (global forwarding state) akkor és csak akkor érvényes ha...
+    (Több helyes válasz is lehet.)
+
+    -   Nincsenek hurkok/körök a hálózatban.
+    -   Nincsenek zsákutcák (dead ends) a hálózatban.
+
+-   A adat sík (data plane) a csomagok feldolgozásáért és továbbításáért felel.
+
+    -   Igaz.
+
+-   A adat sík (data plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
+
+    -   Hamis.
+
+-   Mi a fő probléma a forrás-cél alapú csomagtovábbítással (source- and destination-based forwarding)?
+
+    -   A továbbítási táblákban sokkal több (-n^2) bejegyzést kell nyilvántartani, mint a cél-alapú megoldásnál.
+
+-   Mi igaz egy hálózat C végpontjához a készített feszítőfájára? (A hálózat routerekből és végpontokból áll. Tegyük fel, hogy a cél, amihez a feszítőfát elkészíjük csak végpont lehet.)
+    Több válasz is helyes!
+
+    -   C miden routerből elérhető a feszíőfa élei mentén.
+    -   Minden router egy kimenő éllel rendelkezik.
+    -   Minden routert tartalmaz.
+
+-   A adat sík (data plane) a csomagok feldolgozásáért és továbbításáért felel.
+
+    -   Igaz.
+
+-   Egy globális továbbítási állapot (global forwarding state) akkor és csak akkor érvényes ha...
+    (Több helyes válasz is lehet.)
+
+    -   Nincsenek hurkok/körök a hálózatban.
+    -   Nincsenek zsákutcák (dead ends) a hálózatban.
+
+-   A vezérlési sík (control plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
+
+    -   Igaz.
+
+-   Melyik állítások igazak az útvonal-meghatározásra (routing)?
+
+    -   A csomagok által követendő útvonalak kiszámítása.
+    -   Időskála: kb. 10 ezredmásodperc.
+    -   Vezérlési rétegben valósítják meg.
+    -   Globális folyamat.
+
+-   Mikor érvényes egy globális továbbítási állapot (global forwarding state)?
+
+    -   Ha a csomagokat mindig leszállítja a célállomásnak.
+
+-   Mi a fő probléma a forrás-cél alapú csomagtovábbítással (source- and destination-based forwarding)?
+
+    -   A továbbítási táblákban sokkal több (-n^2) bejegyzést kell nyilvántartani, mint a cél-alapú megoldásnál.
+
+-   A adat sík (data plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
+
+    -   Hamis.
+
+-   Mikor használ egy switch elárasztást egy csomag továbbítása során?
+
+    -   Ha a csomag célállomása nem szerepel a továbbítási táblában.
+
+-   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
+    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
+    dA(B) = 12, dA(C) = 3, dA(D) = 4,
+    dB(A) = 3, dB(C) = 8, dB(D) = 2,
+    dC(A) = 1, dC(B) = 2, dC(D) = 1
+
+    u vektorainak frissítése után adjuk meg dU(C) távolságot!
+
+    -   6.0
+
+-   Hogyan tanulják meg a switch-ek a forrás állomás címét?
+
+    -   Ha egy A porton érkezik egy csomag, melyet B állomásnak küldtek, és B nem szerepel a továbbítási táblában, akkor megtanulja, hogy B állomás az A port irányában érhető el.
+
+-   Mely állítások igazak a Link-State Routing-re?
+
+    -   A hálózat globális szerkezetét (topológiáját) igényli.
+    -   Lokálisan minden router egy Dijkstra algoritmust futtat.
+    -   Elárasztással, minden routernek eljuttatja a lokális információkat.
+
+-   Egy kód Hamming-távolsága 25. Hány egyszerű bithibát tudunk javíani ezzel a kóddal?
+
+    -   12
+
+-   A megbízató adatátvitel 4 fő célja közül melyik szól az adat leszállítási idejének minimalizálásáról.
+
+    -   Időbeliség/Timeliness
+
+-   Egy csúszóablak (sliding window) protokoll esetén a sorszámok tere 0,1,2,3,4,5,6,7, a négy hosszú küldési ablakban az 1,2,3,4 sorszámok vannak. Az 1-es sorszámú nyugta beérkezése után, milyen sorszámmal lehetnek elküldött de nem nyugtázott csomagok.
+
+    -   2,3,4,5
+
+-   Melyik nyugtázási módszerre igaz az alábbi állítás? A nyugta a legnagyobb sorszámot tartalmazza, amelyre igaz, hogy az összes kisebb (vagy egyenlő) sorszámú csomag már sikeresen megérkezett a vevőhöz.
+
+    -   Kumulatív nyugta - cummulative ACK
+
+-   Egy csúszóablak (sliding window) protokoll esetén a sorszámok tere 0,1,2,3,4,5,6,7. A fogadó 2 csomagot tud pufferelni, a vételi ablakában 2,3 sorszámok szerepelnek. Mit tesz a fogadó egy 1-es sorszámú csomag beérkezése esetén?
+
+    -   Eldobja a csomagot és nyugtát küld.
+
+-   Kumulatív nyugta (cummulative ACK) esetén miként tudjuk detektálni a csomagvesztést?
+
+    -   Az izolált csomagvesztéseket nyugta dupliokátumok jelzik. Emelett timerekkel is dolgozik a módszer.
+
+-   Melyik nyugtázási módszerre igaz az alábbi állítás?
+    Teljes információt ad a forrásnak és jól kezeli a nyugták elvesztését is, azonban az a nagy hálózati overheadje miatt csökkenti a teljesítményt.
+
+    -   Teljes információ visszacsatolás - Full Information Feedback
+
+-   Hogyan definiáltuk a helyességet!
+    Egy szállítási mechanizmus helyes, akkor és csak akkor...
+
+    -   Minden elvesztett vagy hibás csomagot újraküld.
+
+-   Adott egy hálózat:
+    A------------1 Gbps---------B------------10 Gbps--------C
+
+    és adott 3 folyam:
+
+    1.  folyam: A-ból B-be küld adatot
+    2.  folyam: B-ból C-be küld adatot
+    3.  folyam: A-ból C-be küld adatot
+
+    Milyen rátát kap a 2. folyam Mbps-ben kifejezve, ha max-min fair allocation-t alkalmazunk a sávszélességek kiosztására (a fenti példában)?
+
+    -   9500.0 (megközelítőleg : 0.0)
+        9.5 (megközelítőleg: 0.0)
+
+-   Mi a folyam vezérlés (flow control) célja a megbízható adatátvitel során?
+
+    -   A lassú vevő túlterhelésének megakadályozása.
+
+-   Mely állítások igazak a végpont-végpont megbízhatóságra?
+
+    -   A végpont-végpont megbízhatóságot az L4 (Transport - Szállítói) réteg biztosítja.
+    -   A hálózat legyen a lehető legegyszerűbb, azaz nem biztosít végpont-végpont megbízhatóságot.
+    -   Az alkalmazásoknak nem kell a hálózati problémákkal foglalkozniuk, így a megbízhatóság biztosításával sem.
+
+-   Mik történhetnek egy csomaggal átvitel során, melyet egy megbízható végpont-végpont adattranszport protokollnak kezelnie kell?
+
+    -   csomagvesztés - loss
+    -   meghibásodás - being corrupted
+    -   duplikátumok - duplicates
+    -   várakoztatás - being delayed
+    -   csomagok sorrendjének megváltoztatása - reordering
+
+-   Melyik nyugtázási módszerre igaz az alábbi állítás?
+    A nyugta a legnagyobb sorszámot tartalmazza, amelyre igaz, hogy az összes kisebb (vagy egyenlő) sorszámú csomag már sikeresen megérkezett a vevőhöz.
+
+    -   Kumulatív nyugta - cummulative ACK
+
+-   Kumulatív nyugta (cummulative ACK) esetén miként tudjuk detektálni a csomagvesztést?
+
+    -   Az izolált csomagvesztéseket nyugta duplikátumok jelzik. Emellett timerekkel is dolgozik a módszer.
+
+-   A megbízható adatátvitel 4 fő célja körül melyik szól arról, hogy:
+    "az adat leszállítása biztosított, sorrend helyes és átvitel során nem módosul".
+
+    -   Helyesség/Correctness
+
+-   Jelölje be, hogy az állítások mely multiplexálási technikákra igazak!
+
+    -   A teljes frekvencia tartományt szűkebb sávokra bontja
+        > **Frekvencia multiplexálás**
+    -   Vezetékes kommunikáció esetén minden egyes csatornához külön pont-pont fizikai kapcsolat tartozik
+        > **Térbeli multiplexálás**
+    -   Vezeték nélküli kommunikáció esetén minden egyes csatornához külön antenna rendelődik
+        > **Térbeli multiplexálás**
+    -   Minden állomás saját frekvencia tartományt kap
+        > **Frekvencia multiplexálás**
+    -   Diszkrét időszeletek használata
+        > **Idő-osztásos multiplexálás (TDM)**
+    -   Minden állomás saját időszeletet kap
+        > **Idő-osztásos multiplexálás (TDM)**
+
+-   Mely állítások igazak az alapsávú átvitelre?
+
+    -   a digitális jel direkt árammá vagy feszültséggé alakul
+    -   a jel minden frekvencián átvitelre kerül
+
+-   Mit nevezünk elnyelődésnek?
+
+    -   A küldési és vételi energiák hányadosát.
+
+-   Egy s(t) függvényt a sin(t) vivőhullámra a következőképp kódolunk: s(t)\*sin(t)
+    Melyik modulációs technikát alkalmaztuk?
+
+    -   Amplitúdó moduláció
+
+-   Egy s(t) függvényt a sin(t) vivőhullámra a következőképp kódolunk: sin(t\*s(t))
+    Melyik modulációs technikát alkalmaztuk?
+
+    -   Frekvencia moduláció
+
+-   Mely modulációs technika használja a vivőhullám több jellemzőjét is a szimbólumok kifejezésére?
+
+    -   QAM-16 technika
+
+-   A 100 Mbps Ethernetnél alkalmazott 4/5 kódolással 20 %-ot veszítünk a hatékonyságból!
+
+-   Két szimbólum használata esetén a szimbólum ráta 4 Baud. Négy szombólum használata mellett mekkora lesz a szimbólum ráta, ha semmi mást nem változtatunk?
+
+    -   4 Baud
+
+-   Egy s(t) függvényt a sin(t) vivőhullámra a következőképp kódolunk: sin(t + s(t))
+    Melyik modulációs technikát alkalmaztuk?
+
+    -   Fázis moduláció
+
+-   Mely állítások igazak az szélessávú átvitelre?
+
+    -   egy széles frekcencia tartományban történik az átvitel, nem minden frekvencián kerül átvitelre a jel **NOT VERIFIED**
+    -   a jelet modulálással ülteti egy vivóhullámra **NOT VERIFIED**
+
+-   Négy szimbólum használata esetén hány bitet tudunk egy szombólumba kódolnu?
+
+    -   2
+
+-   Mi az összefüggés a frekvencia (f), a hullámhossz (L (LAMBDA)) és a fénysebesség (c) között? - f\*L = c
+
+-   Mely állítások igazak a fizikai rétegre? - Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
+
+-   Mekkora következő két bitsorozat Hamming-távolsága?
+
+    -   d( 11111, 11000 ) = 3
+
+-   Mekkora következő két bitsorozat Hamming-távolsága?
+
+    -   d( 1001, 1011 ) = 1
+
+-   Minek kell teljesülnie a chip vektorokra a CDMA módszer esetén?
+
+    -   Páronként ortogonális vektoroknak kell lenniük.
+
+-   Alkosson párokat a keretezési technikák jellemzőiből és neveiből!
+
+    -   A fogadó az adatban előforduló minden 11111 részsorozat után ellenőrzi a követező bitet, majd ez alapján lép tovább.
+        > **Bit beszúrás**
+    -   Nagyon érzékeny a bithibákra (pl. fejléc meghibásodása)
+        > **Karakterszámlálás**
+    -   Egy speciális ESC (Escape) bájtot szúr be az "adat" ESC bájtok elé
+        > **Bájt beszórás**
+    -   SONET hálózatoknál alkalmazzák
+        > **Óra alapú keretezés**
