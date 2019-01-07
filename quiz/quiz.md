@@ -458,3 +458,113 @@
 -   Legyen d(x,y) két kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming-távolságát?
 
     -   Az S-beli kódszó párok Hamming távolságainak a minimuma.
+
+-   Az előadáson látott naiv hibadetektáló megoldás minden keretet kétszer küld el. Ezt követően a két kópia egyezését a hibamentes átvitel eldöntésére. Mely állítások igazak erre a módszerre? (2 állítás igaz)
+
+    -   Túl nagy a költsége.
+    -   Gyenge hibavédelemmel rendelkezik.
+
+-   Mekkora a következő két bitsorozat Hamming-távolsága?
+
+    -   d( 11111,01011) = 2
+
+-   Mekkora a következő két bitsorozat Hamming-távolsága?
+
+    -   d( 1001,1011) = 1
+
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^4 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
+
+    -   ahol a hiba polinom E(x) = x^5 + x^2 + x
+
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor polinom fokszáma 10. Hány biten ábrázolható a CRC kontrollöszeg (a maradék polinom)?
+
+    -   10
+
+-   Melyik állítások igazak a távolságvektor (distance vector) alapú routing protokollra?
+
+    -   Aszinkron működés.
+    -   Lényegében elosztott Bellman-Ford algoritmus.
+    -   Midnen router csak a szomszédjával kommunikál.
+
+-   Melyik állítás igaz? - Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
+
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor polinom fokszáma 12. Hány biten ábrázolható a CRC kontrollöszeg (a maradék polinom)?
+
+    -   12
+
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^11 + x^9 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
+
+    -   ahol a hiba polinom E(x) = x^12 + x^10 + x^2 + x
+
+-   Melyik állítás igaz?
+
+    -   Switchek esetén nincs szükség CSMA/CD-re.
+
+    -   Switchek esetén full duplex linkek kötik be az állomásokat.
+
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^32 + x^31 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
+
+    -   ahol a hiba polinom E(x) = x^33 + x^32 + x^2 + x
+
+-   Melyik állítások igazak az alternáló bit protokollra (ABP)? - Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidpn belül. - Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
+
+-   Mely csatornára igaz az alábbi állítás? Mindkét irányba folyhat a kommunikáció szimultán módon.
+
+    -   Duplex csatorna
+
+-   Adott N állomás, melyek Alapvető bittérkép protokollt használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell egy állomásnak várnia a saját keretre átvitelének megkezsée előtt? [Azt az időrést már ne számoljuk, amiben a sajkár keret is átvitelre kerül. Továbbá tegyük fel, hogy kötvetlenül a versengési időrés előtt állunk!]
+
+    -   N
+
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 32. Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
+
+    -   32
+
+-   Mi igaz a bridge-eknél (hídaknál) látott MAC címek tanulása módszerre? - A beérkező keretben szereplú forrásállomás MAC címét és a beérkezési portot betesszük a továbbítási táblába.
+
+-   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
+
+    -   Soha nem kerül átvitelre az álomás kerete.
+
+-   Legyen d(x,y) kész kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming távolságát?
+
+    -   Az S-beli kódszó párok Hamming távolságának minimuma.
+
+-   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legjobb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
+
+    -   N
+
+-   Mit jelent az optimalitási elv útvonalkiválasztás esetén?
+
+    -   Legyen P az I-ből K állomásba vezető optimális útvonal. Ekkor bármely J állomást véve a P útvonal mentén, a J-ből K-ba vezető optimális útvonal P-re esik (annak része).
+
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 4. Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
+
+    -   4
+
+-   Mely állítások igazak a Hamming-kódra? (3 állítás igaz)
+
+    -   Paritást használó technika.
+    -   2 egészhatvány sorszámú pozíciói lesznek az ellenőrző bitek, azaz 1,2,4,8,16... a maradék helyeket az üzenet bitjeivel töltjük fel
+    -   Mindegyik ellenőrző bit a bitek valamilyen csoportjának a paritását állítja be párosra (vagy páratlanra)
+
+-   Egy távolságvektor routing protokollt használó hálózatban az A állomás routing táblája a következő:
+    host | költség | next hop
+    B | 7 | B
+    C | 10 | C
+    D | 1 | D
+    E | 14 | D
+
+    B szomszédtól a következő távolságvekort kapja:
+
+    C | 2
+    D | 3
+    E | 3
+
+    Mi lesz C költsége A állomás routing táblájában?
+
+    -   9
+
+-   Mely állíts igaz a bride-eknél (hidaknál) látott feszítőfa protokollra? (STP)?
+
+    -   Egy bridge a szomszéd bridge-eknek küldi el a konfigurációs üzenetét, mely alapján azok frissítik a gyökér csomópont és a hozzá vezető úthoz kapcsolódó információkat.
