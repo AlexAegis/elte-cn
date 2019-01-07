@@ -58,17 +58,9 @@
 
     -   Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntésének meghozatala igényel.
 
--   Mennyi az átviteli késleltetése egy 1500 bájtos cosmagnak egy olyan hálózaton, ahol az elérhető adatráta 12Gbps? A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
-
-    -   1.0
-
 -   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk sorban-állási késleltetésnek (queueing delay) egy csomag átvitele esetén?
 
     -   Azt az időt, amit a csomag a switch/router várakozási sorában várakozással tölt.
-
--   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének. Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
-
-    -   Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
 
 -   Adott két végpont, melyek között egy 120MB-os (megabájtos) fájl letöltése 2 percet vesz igénybe.
     Mekkora az átviteli ráta (throughput) a két oldal között? A választ Mpbs-ben (megabits/second) adja meg!
@@ -76,44 +68,43 @@
 
     -   8.0
 
--   Mennyi az átviteli késleltetése egy 1500 bájtos csomagnak egy olyan hálózaton, ahol az elérhető adatráta 12 Gbps?
-    A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
-
-    -   1.0
-
--   Egy optikai gerinchálózaton két routert 200km üvegszál köti össze. Az üvegszálban a jelterjedési sebesség 2x10^8 m/s. Mekkor propagációs késést tapasztalunk a fenti optikai linken ezredmásodpercben kifejezve (ms)? (segítség: 1ms = 10^3 s) - 1.0
-
 -   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk feldolgozási késleltetésnek (processing delay) egy csomag átvitele esetén?
 
     -   Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntések meghozatala igényel.
 
--   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének.
-    Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
+-   Mennyi az átviteli késleltetése egy 1500 bájtos cosmagnak egy olyan hálózaton, ahol az elérhető adatráta 12 Gbps? A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
+
+    -   1.0
+
+-   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének. Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
 
     -   Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
 
--   Melyik állítási igazak a csomagtovábbításra (forwarding)?
+-   Egy optikai gerinchálózaton két routert 200km üvegszál köti össze. Az üvegszálban a jelterjedési sebesség 2x10^8 m/s. Mekkor propagációs késést tapasztalunk a fenti optikai linken ezredmásodpercben kifejezve (ms)? (segítség: 1ms = 10^3 s) - 1.0
+
+-   Melyik állítások igazak a csomagtovábbításra (forwarding)?
 
     -   Időskála: nanosecundum
     -   Adat síkban (data plane) valósul meg
     -   A csomagot egy kimenő vonal felé irányítja
     -   Helyi folyamat
 
+-   Melyik állítások igazak az útvonal-meghatározásra (routing)?
+
+    -   A csomagok által követendő útvonalak kiszámítása
+    -   Időskála: kb. 10 ezredmásodperc
+    -   Vezérlési rétegben valósítják meg
+    -   Globális folyamat
+
 -   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
     Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
     dA(B) = 12, dA(C) = 3, dA(D) = 4,
     dB(A) = 3, dB(C) = 8, dB(D) = 2,
     dC(A) = 1, dC(B) = 2, dC(D) = 1
-    u vektorainak frissítése után adjuk meg dU(C) távolságot!
 
-    -   6.0
+    u vektorainak frissítése után adjuk meg dU(A) távolságot!
 
--   Melyik állítások igazak az útvonal-meghatározásra (routing)?
-
-    -   A csomagok által követendő útvonalak kiszámítása.
-    -   Időskála: kb. 10 ezredmásodperc.
-    -   Vezérlési rétegben valósítják meg.
-    -   Globális folyamat
+    -   3.0
 
 -   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
     Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
@@ -123,6 +114,15 @@
     u vektorainak frissítése után adjuk meg dU(D) távolságot!
 
     -   3.0
+
+-   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
+    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
+    dA(B) = 12, dA(C) = 3, dA(D) = 4,
+    dB(A) = 3, dB(C) = 8, dB(D) = 2,
+    dC(A) = 1, dC(B) = 2, dC(D) = 1
+    u vektorainak frissítése után adjuk meg dU(C) távolságot!
+
+    -   6.0
 
 -   Hogyan tanulják meg a switch-ek a forrás állomás címét?
 
@@ -167,13 +167,6 @@
 
     -   Igaz.
 
--   Melyik állítások igazak az útvonal-meghatározásra (routing)?
-
-    -   A csomagok által követendő útvonalak kiszámítása.
-    -   Időskála: kb. 10 ezredmásodperc.
-    -   Vezérlési rétegben valósítják meg.
-    -   Globális folyamat.
-
 -   Mikor érvényes egy globális továbbítási állapot (global forwarding state)?
 
     -   Ha a csomagokat mindig leszállítja a célállomásnak.
@@ -189,16 +182,6 @@
 -   Mikor használ egy switch elárasztást egy csomag továbbítása során?
 
     -   Ha a csomag célállomása nem szerepel a továbbítási táblában.
-
--   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
-    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
-    dA(B) = 12, dA(C) = 3, dA(D) = 4,
-    dB(A) = 3, dB(C) = 8, dB(D) = 2,
-    dC(A) = 1, dC(B) = 2, dC(D) = 1
-
-    u vektorainak frissítése után adjuk meg dU(C) távolságot!
-
-    -   6.0
 
 -   Hogyan tanulják meg a switch-ek a forrás állomás címét?
 
@@ -499,10 +482,6 @@
     -   Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidpn belül.
     -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
 
--   Melyik állítások igazak az alternáló bit protokollra (ABP)? - Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidőn belül.
-
-    -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
-
 -   Mely csatornára igaz az alábbi állítás?
     A kommunikáció pusztán az egyik irányba lehetséges
 
@@ -580,16 +559,6 @@
 -   Mely állítás igaz a bride-eknél (hidaknál) látott feszítőfa protokollra? (STP)?
 
     -   Egy bridge a szomszéd bridge-eknek küldi el a konfigurációs üzenetét, mely alapján azok frissítik a gyökér csomópont és a hozzá vezető úthoz kapcsolódó információkat.
-
--   Adott egy Distance Vector protokollt használó hálózat. Az u állomás szomszédai A, B és C állomások. Adottak az alábbi élköltségek: c(u,A) = 3, c(u,B) = 1, c(u,C) = 7.
-    Az u állomás egy adott időpillanatban megkapja mindhárom szomszéd távolság vektorait:
-    dA(B) = 12, dA(C) = 3, dA(D) = 4,
-    dB(A) = 3, dB(C) = 8, dB(D) = 2,
-    dC(A) = 1, dC(B) = 2, dC(D) = 1
-
-    u vektorainak frissítése után adjuk meg dU(A) távolságot!
-
-    -   3.0
 
 -   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 7. Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
 
