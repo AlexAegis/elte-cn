@@ -643,4 +643,6 @@
     -   Csomagvesztés esetén az időzítő lejárta után (timeout) újraköldi a keretet.
     -   Nyugta elvesztése esetén duplikátumok adódhatnak át a felsőbb rétegnek a fogadó oldalon.
 
--
+-   Melyik állítás igaz?
+
+    -   Minden switchg egyben bridge is.
