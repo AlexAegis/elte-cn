@@ -684,3 +684,7 @@
 
     -   Dijkstra algoritmust alkalmaz
     -   Megméri a szomszédokhoz vezető költséget, majd ezt elküldi minden routernek.
+
+-   Adott 8 állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. Az állomások sorszámai 1-8, melyek a fa levél szintjén helyezkednek el balról jobbra. A 3. és 4. állomások akarnak keretet átvinni a csatornán. A lent látható időrés sorozatok közül melyik tartozik a fenti ütközés feloldásához? [Az első ütközést okozó időrést ne vegyük figyelembe. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!]
+
+    -   ütközés (3 és 4 küld) | üres | ütközés (3 és 4 küld) | 3 küld | 4 küld | üres
