@@ -461,6 +461,16 @@
 
     -   Az S-beli kódszó párok Hamming távolságainak a minimuma.
 
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 4.
+    Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
+
+    -   4
+
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 7.
+    Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
+
+    -   7
+
 -   Egy protokoll CRC-t használ hiba felismeréshez. Az alkalmazott generátor polinom fokszáma 10.
     Hány biten ábrázolható a CRC kontrolösszeg (A maradék polinom)?
 
@@ -471,26 +481,35 @@
 
     -   12
 
+-   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 32.
+    Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
+
+    -   32
+
 -   Az előadáson látott naiv hibadetektáló megoldás minden keretet kétszer küld el. Ezt követően a két kópia egyezését a hibamentes átvitel eldöntésére. Mely állítások igazak erre a módszerre? (2 állítás igaz)
 
     -   Túl nagy a költsége.
     -   Gyenge hibavédelemmel rendelkezik.
 
--   Mekkora a következő két bitsorozat Hamming-távolsága?
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^3 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
 
-    -   d( 11111,01011) = 2
-
--   Mekkora a következő két bitsorozat Hamming-távolsága?
-
-    -   d( 1001,1011) = 1
+    -   ahol a hiba polinom E(x) = x^4 + x^2 + x
 
 -   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^4 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
 
     -   ahol a hiba polinom E(x) = x^5 + x^2 + x
 
--   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor polinom fokszáma 10. Hány biten ábrázolható a CRC kontrollöszeg (a maradék polinom)?
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^9 + x^2 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
 
-    -   10
+    -   ahol a hiba polinom E(x) = x^11 + x^4 + x^3 + x^2
+
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^11 + x^9 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
+
+    -   ahol a hiba polinom E(x) = x^12 + x^10 + x^2 + x
+
+-   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^32 + x^31 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
+
+    -   ahol a hiba polinom E(x) = x^33 + x^32 + x^2 + x
 
 -   Melyik állítások igazak a távolságvektor (distance vector) alapú routing protokollra?
 
@@ -508,7 +527,7 @@
 
 -   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^11 + x^9 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
 
-    -   ahol a hiba polinom E(x) = x^12 + x^10 + x^2 + x
+    -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
 
 -   Melyik állítás igaz?
 
@@ -516,15 +535,27 @@
 
     -   Switchek esetén full duplex linkek kötik be az állomásokat.
 
--   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^32 + x^31 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
+-   Melyik állítások igazak az alternáló bit protokollra (ABP)?
 
-    -   ahol a hiba polinom E(x) = x^33 + x^32 + x^2 + x
+    -   Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidpn belül.
+    -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
 
 -   Melyik állítások igazak az alternáló bit protokollra (ABP)? - Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidőn belül.
 
     -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
 
--   Mely csatornára igaz az alábbi állítás? Mindkét irányba folyhat a kommunikáció szimultán módon.
+-   Mely csatornára igaz az alábbi állítás?
+    A kommunikáció pusztán az egyik irányba lehetséges
+
+    -   Szimplex csatorna
+
+-   Mely csatornára igaz az alábbi állítás?
+    Mindkét irányba folyhat kommunikáció, de egyszerre csak egy irány lehet aktív.
+
+    -   Fél-duplex csatorna
+
+-   Mely csatornára igaz az alábbi állítás?
+    Mindkét irányba folyhat a kommunikáció szimultán módon.
 
     -   Duplex csatorna
 
@@ -532,31 +563,25 @@
 
     -   N
 
--   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 32. Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
-
-    -   32
-
--   Mi igaz a bridge-eknél (hídaknál) látott MAC címek tanulása módszerre? - A beérkező keretben szereplú forrásállomás MAC címét és a beérkezési portot betesszük a továbbítási táblába.
-
 -   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
 
     -   Soha nem kerül átvitelre az álomás kerete.
-
--   Legyen d(x,y) kész kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming távolságát?
-
-    -   Az S-beli kódszó párok Hamming távolságának minimuma.
 
 -   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legjobb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
 
     -   N
 
+-   Mi igaz a bridge-eknél (hídaknál) látott MAC címek tanulása módszerre?
+
+    -   A beérkező keretben szereplú forrásállomás MAC címét és a beérkezési portot betesszük a továbbítási táblába.
+
+-   Legyen d(x,y) kész kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming távolságát?
+
+    -   Az S-beli kódszó párok Hamming távolságának minimuma.
+
 -   Mit jelent az optimalitási elv útvonalkiválasztás esetén?
 
     -   Legyen P az I-ből K állomásba vezető optimális útvonal. Ekkor bármely J állomást véve a P útvonal mentén, a J-ből K-ba vezető optimális útvonal P-re esik (annak része).
-
--   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor ploniom fokszáma 4. Hány biten ábrázolható a CRC kontrollösszeg (a maradék polinom)?
-
-    -   4
 
 -   Mely állítások igazak a Hamming-kódra? (3 állítás igaz)
 
@@ -607,7 +632,20 @@
 
     -   A pipelineing technika nem segít a csatornakihasználtság javításában.
 
--           Mely csatornára igaz az alábbi állítás?
-            	A kommunikáció pusztán az egyik iránybe lehetséges
+-             Mely csatornára igaz az alábbi állítás?
+              	A kommunikáció pusztán az egyik iránybe lehetséges
 
-            	-	Szimplex csatorna
+              	-	Szimplex csatorna
+
+-   Mely állítások igazak a csúszóablak protokollra?
+
+    -   Csak duplex csatorna esetén alkalmazható. Adat és nyugta csomagok egyszherre utazhatnak.
+    -   A keret nyugtázója tartalmazza a következőnek várt keret sorozatszámát.
+    -   A nem megengedett sorozatszámmal érkező kereteket el kell dobni.
+
+-   Mely állítások igazak a szimplex megáll és vár protokollra (zajos csat.)?
+
+    -   Csomagvesztés esetén az időzítő lejárta után (timeout) újraköldi a keretet.
+    -   Nyugta elvesztése esetén duplikátumok adódhatnak át a felsőbb rétegnek a fogadó oldalon.
+
+-
