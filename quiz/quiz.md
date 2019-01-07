@@ -627,10 +627,6 @@
 
     > Minden switch egyben bridge is.
 
--   Melyik állítás igaz?
-
-    > Minden switch egyben bridge is.
-
 -   Adott 2^N (kettő az N-ediken) állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. 2 állomás áll készen keret küldésére, melyek ütközést okoznak. Egy adatkeret küldése egységesen 1 időegységig tart. Legrosszabb esetben hány időegység szükséges az ütközés feloldásához? (Az első ütközést okozó időrést nem számolva hány időegység alatt fut le az ütközés feoldás. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!)
 
     > 2N
