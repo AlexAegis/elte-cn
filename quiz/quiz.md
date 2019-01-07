@@ -384,12 +384,19 @@
 -   Mely állítások igazak a fizikai rétegre? - Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
 
 -   Mekkora következő két bitsorozat Hamming-távolsága?
+    d( 1001, 1011 )
 
-    -   d( 11111, 11000 ) = 3
+    -   1
 
 -   Mekkora következő két bitsorozat Hamming-távolsága?
+    d( 11111, 01011 )
 
-    -   d( 1001, 1011 ) = 1
+    -   2
+
+-   Mekkora következő két bitsorozat Hamming-távolsága?
+    d( 11111, 11000 )
+
+    -   3
 
 -   Minek kell teljesülnie a chip vektorokra a CDMA módszer esetén?
 
@@ -405,3 +412,49 @@
         > **Bájt beszórás**
     -   SONET hálózatoknál alkalmazzák
         > **Óra alapú keretezés**
+
+-   Egy kód Hamming-távolsága 2. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   1
+
+-   Egy kód Hamming-távolsága 5. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   2
+
+-   Egy kód Hamming-távolsága 8. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   7
+
+-   Egy kód Hamming-távolsága 13. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   6
+
+-   Egy kód Hamming-távolsága 15. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   14
+
+-   Mely állítások igazak a Hamming-kódra? (3 állítás igaz)
+
+    -   Mindegyik ellenőrző bit a bitek valamilyen csoportjának a paritását állítja be párosra (vagy páratlanra)
+    -   2 egészhatvány sorszámú pozíciói lesznek az ellenőrző bitek, azaz 1,2,4,8,16,..., a maradék helyeket az üzenet bitjeivel töltjük fel
+    -   Paritást használó technika
+
+-   Mely szolgáltatásokért felel az adatkapcsolati réteg? (4 állítás helyes)
+
+    -   Per-hop megbízhatóság
+    -   Per-hop hibakezelés
+    -   Adatok keretekre tördelése
+    -   Közeghozzáféré
+
+-   Az alábbi három kódolás közül melyiket érdemes használni, ha tudjuk, hogy a csatorna nem megbízható. R(S) jelöli a kód rátáját, q(S) pedig a kód távolságát!
+
+    -   R(S) = 0.7 és q(S) = 0.7
+
+-   Adott három állomás (A,B,C), melyek CDMA módszert használnak. Jelölje be, hogy mely chip vektorok lennének helyesek?
+
+    -   A: (1,0,0) ; B: (0,1,0) ; C: (0,0,1)
+    -   A: (1,1,0) ; B: (1,-1,0) ; C: (0,0,-1)
+
+-   Legyen d(x,y) két kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming-távolságát?
+
+    -   Az S-beli kódszó párok Hamming távolságainak a minimuma.
