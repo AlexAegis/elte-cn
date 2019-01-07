@@ -632,11 +632,6 @@
 
     -   A pipelineing technika nem segít a csatornakihasználtság javításában.
 
--             Mely csatornára igaz az alábbi állítás?
-              	A kommunikáció pusztán az egyik iránybe lehetséges
-
-              	-	Szimplex csatorna
-
 -   Mely állítások igazak a csúszóablak protokollra?
 
     -   Csak duplex csatorna esetén alkalmazható. Adat és nyugta csomagok egyszherre utazhatnak.
