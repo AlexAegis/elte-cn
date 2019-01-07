@@ -458,3 +458,13 @@
 -   Legyen d(x,y) két kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming-távolságát?
 
     -   Az S-beli kódszó párok Hamming távolságainak a minimuma.
+
+-   Egy protokoll CRC-t használ hiba felismeréshez. Az alkalmazott generátor polinom fokszáma 10.
+    Hány biten ábrázolható a CRC kontrolösszeg (A maradék polinom)?
+
+    -   10
+
+-   Egy protokoll CRC-t használ hiba felismeréshez. Az alkalmazott generátor polinom fokszáma 12.
+    Hány biten ábrázolható a CRC kontrolösszeg (A maradék polinom)?
+
+    -   12
