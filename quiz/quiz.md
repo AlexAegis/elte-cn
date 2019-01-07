@@ -246,7 +246,7 @@
 
 - Egy kód Hamming-távolsága 25. Hány egyszerű bithibát tudunk javíani ezzel a kóddal?
 
-	- 12.
+	- 12 .
 
 - Alkosson párokat a kretezési technikák jellemzőiből és neveiből!
 	
