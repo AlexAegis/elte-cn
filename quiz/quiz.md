@@ -659,7 +659,7 @@
 
     -   Minden switch egyben bridge is.
 
--   Adott 2^N (kettő az N-ediken) állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. 2 állomás áll készen keret küldésére, melyek ütközést okoznak. Egy adatkeret küldése egységesen 1 időegységig tart. Legrosszabb esetben hángy időegység szükséges az ütközés feloldásához? (Az első ütközést okozó időrést nem számolva hány időegység alatt fut le az ütközés feoldás. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!)
+-   Adott 2^N (kettő az N-ediken) állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. 2 állomás áll készen keret küldésére, melyek ütközést okoznak. Egy adatkeret küldése egységesen 1 időegységig tart. Legrosszabb esetben hány időegység szükséges az ütközés feloldásához? (Az első ütközést okozó időrést nem számolva hány időegység alatt fut le az ütközés feoldás. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!)
 
     -   2N
 
@@ -667,3 +667,28 @@
 
     -   Megméri a szomszédokhoz vezető költséget, majd ezt elküldi minden routernek.
     -   Dijkstra algoritmust alkalmaz
+
+-   Egy távolságvektor routing protokollt használó hálózatban az A állomás routing táblája a következő:
+
+    | host | költség | next hop |
+    | ---- | ------- | -------- |
+    | B    | 7       | B        |
+    | C    | 10      | C        |
+    | D    | 1       | D        |
+    | E    | 14      | D        |
+
+    B szomszédtól a következő távolságvekort kapja:
+
+    |     |     |
+    | --- | --- |
+    | C   | 2   |
+    | D   | 3   |
+    | E   | 3   |
+
+    Mi lesz D költsége A állomás routing táblájában?
+
+    -   10
+
+-   Adott 2^N (kettő az N-ediken) állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. 2 állomás áll készen keret küldésére, melyek ütközést okoznak. Egy adatkeret küldése egységesen 1 időegységig tart. Legjobb esetben hány időegység szükséges az ütközés feloldásához? (Az első ütközést okozó időrést nem számolva hány időegység alatt fut le az ütközés feoldás. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!)
+
+    -   2
