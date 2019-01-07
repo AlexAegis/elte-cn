@@ -37,5 +37,10 @@
 	"workbench.colorTheme": "Sublime Material Theme - Dark",
 	"git.confirmSync": false,
 	"git.autofetch": true,
-	"python.linting.pylintEnabled": true
+	"python.linting.pylintEnabled": true,
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#023606",
+		"titleBar.activeBackground": "#024C08",
+		"titleBar.activeForeground": "#F0FEF2"
+	}
 }
