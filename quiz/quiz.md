@@ -469,6 +469,11 @@
     -   Lényegében elosztott Bellman-Ford algoritmus.
     -   Midnen router csak a szomszédjával kommunikál.
 
+-   Melyik állítások igazak az alternáló bit protokollra (ABP)?
+
+    -   Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidpn belül.
+    -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
+
 -   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor polinom fokszáma 12. Hány biten ábrázolható a CRC kontrollöszeg (a maradék polinom)?
 
     -   12
@@ -476,11 +481,6 @@
 -   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^11 + x^9 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
 
     -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
-
--   Melyik állítások igazak az alternáló bit protokollra (ABP)?
-
-    -   Küldő egyesével küldi a sorszámmal ellátott kereteket (kezdetben 0-s szorszáámmal) és addig nem küld újat, még nem kap nyutát a vevőtőél egy megadott határidpn belül.
-    -   Vevő oldalon, ha nincs hiba az adatrészt továbbküldi a hálózati rétegnek, végül nyugtázza
 
 -   Mely csatornára igaz az alábbi állítás?
     A kommunikáció pusztán az egyik irányba lehetséges
@@ -630,11 +630,6 @@
 -   Adott 2^N (kettő az N-ediken) állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. 2 állomás áll készen keret küldésére, melyek ütközést okoznak. Egy adatkeret küldése egységesen 1 időegységig tart. Legjobb esetben hány időegység szükséges az ütközés feloldásához? [Az első ütközést okozó időrést nem számolva hány időegység alatt fut le az ütközés feloldás. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a rendszerbe!]
 
     -   2
-
--   Melyik állítások igazak a kapcsolatállapot (link state) alapú routing protokollra?
-
-    -   Dijkstra algoritmust alkalmaz
-    -   Megméri a szomszédokhoz vezető költséget, majd ezt elküldi minden routernek.
 
 -   Adott 8 állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. Az állomások sorszámai 1-8, melyek a fa levél szintjén helyezkednek el balról jobbra. A 3. és 4. állomások akarnak keretet átvinni a csatornán. A lent látható időrés sorozatok közül melyik tartozik a fenti ütközés feloldásához? [Az első ütközést okozó időrést ne vegyük figyelembe. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!]
 
