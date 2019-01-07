@@ -557,9 +557,17 @@
 
     -   Soha nem kerül átvitelre az álomás kerete.
 
--   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legjobb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
+-   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
 
-    -   N
+    -   1
+
+-   Adott N állomás, melyek bináris visszaszámlálás protokollt és Mok és Ward féle javítást használnak a közeghozzáféréshez. 4 állomás áll készen keret küldésére. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell egy állomásnak várnia a saját kerete átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret átvitelre kerül. Továbbá tegyik fel, hogy közvetlenül a versengési időrés előtt állunk! Nem érkeznek újabb kérések a rendszerbe!]
+
+    -   7
+
+-   Adott N állomás, melyek bináris visszaszámlálás protokollt és Mok és Ward féle javítást használnak a közeghozzáféréshez. 4 állomás áll készen keret küldésére. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell egy állomásnak várnia a saját kerete átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret átvitelre kerül. Továbbá tegyik fel, hogy közvetlenül a versengési időrés előtt állunk!]
+
+    -   1
 
 -   Mi igaz a bridge-eknél (hídaknál) látott MAC címek tanulása módszerre?
 
@@ -654,6 +662,11 @@
 -   Adott 2^N (kettő az N-ediken) állomás, melyek adaptív fabejárás protokollt használnak a közeghozzáféréshez. 2 állomás áll készen keret küldésére, melyek ütközést okoznak. Egy adatkeret küldése egységesen 1 időegységig tart. Legrosszabb esetben hány időegység szükséges az ütközés feloldásához? (Az első ütközést okozó időrést nem számolva hány időegység alatt fut le az ütközés feoldás. Továbbá tegyük fel, hogy nem érkeznek újabb kérések a renszerbe!)
 
     -   2N
+
+-   Melyik állítások igazak a kapcsolatállapot (link state) alapú routing protokollra?
+
+    -   Megméri a szomszédokhoz vezető költséget, majd ezt elküldi minden routernek.
+    -   Dijkstra algoritmust alkalmaz
 
 -   Egy távolságvektor routing protokollt használó hálózatban az A állomás routing táblája a következő:
 
