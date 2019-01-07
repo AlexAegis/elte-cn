@@ -515,9 +515,11 @@
     -   Lényegében elosztott Bellman-Ford algoritmus.
     -   Midnen router csak a szomszédjával kommunikál.
 
--   Melyik állítás igaz? - Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
+-   Melyik állítás igaz?
 
-*   Melyik állítás igaz?
+    -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
+
+-   Melyik állítás igaz?
 
     -   Switchek esetén nincs szükség CSMA/CD-re.
 
@@ -547,19 +549,21 @@
 
     -   N
 
--   Mi igaz a bridge-eknél (hídaknál) látott MAC címek tanulása módszerre? - A beérkező keretben szereplú forrásállomás MAC címét és a beérkezési portot betesszük a továbbítási táblába.
-
 -   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legrosszabb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
 
     -   Soha nem kerül átvitelre az álomás kerete.
 
--   Legyen d(x,y) kész kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming távolságát?
-
-    -   Az S-beli kódszó párok Hamming távolságának minimuma.
-
 -   Adott N állomás, melyet bináris visszaszámlálás protokollt (Mok és Ward féle javítás nélkül) használnak a közeghozzáféréshez. A versengési időrés 1 időegység. Egy adatkeret küldése szintén egységesen 1 időegységig tart. Legjobb esetben hány időegységet kell állomásnak várnia a saját kertre átvitelének megkezdése előtt? [Azt az időrést már ne számoljuk, amiben a saját keret is átvitelre kerül. Tovább tegyük fel, hogy közvetlenül a versengési időrés előtt állunk.]
 
     -   N
+
+-   Mi igaz a bridge-eknél (hídaknál) látott MAC címek tanulása módszerre?
+
+    -   A beérkező keretben szereplú forrásállomás MAC címét és a beérkezési portot betesszük a továbbítási táblába.
+
+-   Legyen d(x,y) kész kódszó Hamming-távolsága. Hogyan definiálja egy S kód Hamming távolságát?
+
+    -   Az S-beli kódszó párok Hamming távolságának minimuma.
 
 -   Mit jelent az optimalitási elv útvonalkiválasztás esetén?
 
