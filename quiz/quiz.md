@@ -126,7 +126,7 @@
 
 -   Hogyan tanulják meg a switch-ek a forrás állomás címét?
 
-    -   Ha egy A porton érkezik egy csomag B állomástól, és B nem szerepel a továbbítási táblában, akkor megtanulja, hogy B állomás az A port irányában érhető el.
+    -   Ha egy A porton érkezik egy csomag, melyet B állomásnak küldtek, és B nem szerepel a továbbítási táblában, akkor megtanulja, hogy B állomás az A port irányában érhető el.
 
 -   Egy globális továbbítási állapot (global forwarding state) akkor és csak akkor érvényes ha...
     (Több helyes válasz is lehet.)
@@ -141,6 +141,10 @@
 -   A adat sík (data plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
 
     -   Hamis.
+
+-   A vezérlési sík (control plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
+
+    -   Igaz.
 
 -   Mi a fő probléma a forrás-cél alapú csomagtovábbítással (source- and destination-based forwarding)?
 
@@ -153,39 +157,17 @@
     -   Minden router egy kimenő éllel rendelkezik.
     -   Minden routert tartalmaz.
 
--   A adat sík (data plane) a csomagok feldolgozásáért és továbbításáért felel.
-
-    -   Igaz.
-
--   Egy globális továbbítási állapot (global forwarding state) akkor és csak akkor érvényes ha...
-    (Több helyes válasz is lehet.)
-
-    -   Nincsenek hurkok/körök a hálózatban.
-    -   Nincsenek zsákutcák (dead ends) a hálózatban.
-
--   A vezérlési sík (control plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
-
-    -   Igaz.
-
 -   Mikor érvényes egy globális továbbítási állapot (global forwarding state)?
 
     -   Ha a csomagokat mindig leszállítja a célállomásnak.
-
--   Mi a fő probléma a forrás-cél alapú csomagtovábbítással (source- and destination-based forwarding)?
-
-    -   A továbbítási táblákban sokkal több (-n^2) bejegyzést kell nyilvántartani, mint a cél-alapú megoldásnál.
-
--   A adat sík (data plane) a router agya, ami pl. a konfigurálásért, az útvonalmeghatározásért és statisztikák vezetéséért felel.
-
-    -   Hamis.
 
 -   Mikor használ egy switch elárasztást egy csomag továbbítása során?
 
     -   Ha a csomag célállomása nem szerepel a továbbítási táblában.
 
--   Hogyan tanulják meg a switch-ek a forrás állomás címét?
+-   Mely állítások igazak a fizikai rétegre?
 
-    -   Ha egy A porton érkezik egy csomag, melyet B állomásnak küldtek, és B nem szerepel a továbbítási táblában, akkor megtanulja, hogy B állomás az A port irányában érhető el.
+    -   Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
 
 -   Mely állítások igazak a Link-State Routing-re?
 
@@ -193,9 +175,62 @@
     -   Lokálisan minden router egy Dijkstra algoritmust futtat.
     -   Elárasztással, minden routernek eljuttatja a lokális információkat.
 
+-   Mely állítások igazak a végpont-végpont megbízhatóságra?
+
+    -   A végpont-végpont megbízhatóságot az L4 (Transport - Szállítói) réteg biztosítja.
+    -   A hálózat legyen a lehető legegyszerűbb, azaz nem biztosít végpont-végpont megbízhatóságot.
+    -   Az alkalmazásoknak nem kell a hálózati problémákkal foglalkozniuk, így a megbízhatóság biztosításával sem.
+
+-   Mely állítások igazak az alapsávú átvitelre?
+
+    -   a digitális jel direkt árammá vagy feszültséggé alakul
+    -   a jel minden frekvencián átvitelre kerül
+
+-   Mely állítások igazak az szélessávú átvitelre?
+
+    -   egy széles frekcencia tartományban történik az átvitel, nem minden frekvencián kerül átvitelre a jel **NOT VERIFIED**
+    -   a jelet modulálással ülteti egy vivóhullámra **NOT VERIFIED**
+
+-   Mely állítások igazak a Hamming-kódra? (3 állítás igaz)
+
+    -   Mindegyik ellenőrző bit a bitek valamilyen csoportjának a paritását állítja be párosra (vagy páratlanra)
+    -   2 egészhatvány sorszámú pozíciói lesznek az ellenőrző bitek, azaz 1,2,4,8,16,..., a maradék helyeket az üzenet bitjeivel töltjük fel
+    -   Paritást használó technika
+
+-   Mely állítások igazak a csúszóablak protokollra?
+
+    -   Csak duplex csatorna esetén alkalmazható. Adat és nyugta csomagok egyszherre utazhatnak.
+    -   A keret nyugtázója tartalmazza a következőnek várt keret sorozatszámát.
+    -   A nem megengedett sorozatszámmal érkező kereteket el kell dobni.
+
+-   Mely állítások igazak a szimplex megáll és vár protokollra (zajos csat.)?
+
+    -   Csomagvesztés esetén az időzítő lejárta után (timeout) újraköldi a keretet.
+    -   Nyugta elvesztése esetén duplikátumok adódhatnak át a felsőbb rétegnek a fogadó oldalon.
+
+-   Egy kód Hamming-távolsága 2. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   1
+
+-   Egy kód Hamming-távolsága 5. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   2
+
+-   Egy kód Hamming-távolsága 8. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   7
+
+-   Egy kód Hamming-távolsága 13. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   6
+
 -   Egy kód Hamming-távolsága 25. Hány egyszerű bithibát tudunk javíani ezzel a kóddal?
 
     -   12
+
+-   Egy kód Hamming-távolsága 15. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+
+    -   14
 
 -   A megbízató adatátvitel 4 fő célja közül melyik szól az adat leszállítási idejének minimalizálásáról.
 
@@ -245,12 +280,6 @@
 
     -   A lassú vevő túlterhelésének megakadályozása.
 
--   Mely állítások igazak a végpont-végpont megbízhatóságra?
-
-    -   A végpont-végpont megbízhatóságot az L4 (Transport - Szállítói) réteg biztosítja.
-    -   A hálózat legyen a lehető legegyszerűbb, azaz nem biztosít végpont-végpont megbízhatóságot.
-    -   Az alkalmazásoknak nem kell a hálózati problémákkal foglalkozniuk, így a megbízhatóság biztosításával sem.
-
 -   Mik történhetnek egy csomaggal átvitel során, melyet egy megbízható végpont-végpont adattranszport protokollnak kezelnie kell?
 
     -   csomagvesztés - loss
@@ -288,11 +317,6 @@
     -   Minden állomás saját időszeletet kap
         > **Idő-osztásos multiplexálás (TDM)**
 
--   Mely állítások igazak az alapsávú átvitelre?
-
-    -   a digitális jel direkt árammá vagy feszültséggé alakul
-    -   a jel minden frekvencián átvitelre kerül
-
 -   Mit nevezünk elnyelődésnek?
 
     -   A küldési és vételi energiák hányadosát.
@@ -322,20 +346,11 @@
 
     -   Fázis moduláció
 
--   Mely állítások igazak az szélessávú átvitelre?
-
-    -   egy széles frekcencia tartományban történik az átvitel, nem minden frekvencián kerül átvitelre a jel **NOT VERIFIED**
-    -   a jelet modulálással ülteti egy vivóhullámra **NOT VERIFIED**
-
 -   Négy szimbólum használata esetén hány bitet tudunk egy szombólumba kódolnu?
 
     -   2
 
 -   Mi az összefüggés a frekvencia (f), a hullámhossz (L (LAMBDA)) és a fénysebesség (c) között? - f\*L = c
-
--   Mely állítások igazak a fizikai rétegre?
-
-    -   Szolgáltatása, hogy információt (biteket) visz át két fizikailag összegkötött eszköz között
 
 -   Mekkora következő két bitsorozat Hamming-távolsága?
     d( 1001, 1011 )
@@ -366,32 +381,6 @@
         > **Bájt beszórás**
     -   SONET hálózatoknál alkalmazzák
         > **Óra alapú keretezés**
-
--   Egy kód Hamming-távolsága 2. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
-
-    -   1
-
--   Egy kód Hamming-távolsága 5. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
-
-    -   2
-
--   Egy kód Hamming-távolsága 8. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
-
-    -   7
-
--   Egy kód Hamming-távolsága 13. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
-
-    -   6
-
--   Egy kód Hamming-távolsága 15. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
-
-    -   14
-
--   Mely állítások igazak a Hamming-kódra? (3 állítás igaz)
-
-    -   Mindegyik ellenőrző bit a bitek valamilyen csoportjának a paritását állítja be párosra (vagy páratlanra)
-    -   2 egészhatvány sorszámú pozíciói lesznek az ellenőrző bitek, azaz 1,2,4,8,16,..., a maradék helyeket az üzenet bitjeivel töltjük fel
-    -   Paritást használó technika
 
 -   Mely szolgáltatásokért felel az adatkapcsolati réteg? (4 állítás helyes)
 
@@ -438,7 +427,8 @@
 
     -   32
 
--   Az előadáson látott naiv hibadetektáló megoldás minden keretet kétszer küld el. Ezt követően a két kópia egyezését a hibamentes átvitel eldöntésére. Mely állítások igazak erre a módszerre? (2 állítás igaz)
+-   Az előadáson látott naiv hibadetektáló megoldás minden keretet kétszer küld el. Ezt követően a két kópia egyezését a hibamentes átvitel eldöntésére.
+    Mely állítások igazak erre a módszerre? (2 állítás igaz)
 
     -   Túl nagy a költsége.
     -   Gyenge hibavédelemmel rendelkezik.
@@ -529,12 +519,6 @@
 
     -   Legyen P az I-ből K állomásba vezető optimális útvonal. Ekkor bármely J állomást véve a P útvonal mentén, a J-ből K-ba vezető optimális útvonal P-re esik (annak része).
 
--   Mely állítások igazak a Hamming-kódra? (3 állítás igaz)
-
-    -   Paritást használó technika.
-    -   2 egészhatvány sorszámú pozíciói lesznek az ellenőrző bitek, azaz 1,2,4,8,16... a maradék helyeket az üzenet bitjeivel töltjük fel
-    -   Mindegyik ellenőrző bit a bitek valamilyen csoportjának a paritását állítja be párosra (vagy páratlanra)
-
 -   Egy távolságvektor routing protokollt használó hálózatban az A állomás routing táblája a következő:
 
     | host | költség | next hop |
@@ -581,17 +565,6 @@
 -   Melyik állítás igaz?
 
     -   Minden switch egyben bridge is.
-
--   Mely állítások igazak a csúszóablak protokollra?
-
-    -   Csak duplex csatorna esetén alkalmazható. Adat és nyugta csomagok egyszherre utazhatnak.
-    -   A keret nyugtázója tartalmazza a következőnek várt keret sorozatszámát.
-    -   A nem megengedett sorozatszámmal érkező kereteket el kell dobni.
-
--   Mely állítások igazak a szimplex megáll és vár protokollra (zajos csat.)?
-
-    -   Csomagvesztés esetén az időzítő lejárta után (timeout) újraköldi a keretet.
-    -   Nyugta elvesztése esetén duplikátumok adódhatnak át a felsőbb rétegnek a fogadó oldalon.
 
 -   Melyik állítás igaz?
 
