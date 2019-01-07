@@ -517,10 +517,6 @@
     -   Lényegében elosztott Bellman-Ford algoritmus.
     -   Midnen router csak a szomszédjával kommunikál.
 
--   Melyik állítás igaz?
-
-    -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
-
 -   Egy protokoll CRC-t használ hiba felismeréséhez. Az alkalmazott generátor polinom fokszáma 12. Hány biten ábrázolható a CRC kontrollöszeg (a maradék polinom)?
 
     -   12
@@ -528,12 +524,6 @@
 -   Mely bithibát nem képes felismerni a CRC módszer, ha a generátor polinom x^11 + x^9 + x + 1, ahol x^4 jelöli az "x a negyediken" hatványt?
 
     -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
-
--   Melyik állítás igaz?
-
-    -   Switchek esetén nincs szükség CSMA/CD-re.
-
-    -   Switchek esetén full duplex linkek kötik be az állomásokat.
 
 -   Melyik állítások igazak az alternáló bit protokollra (ABP)?
 
@@ -610,7 +600,7 @@
 
     -   9
 
--   Mely állíts igaz a bride-eknél (hidaknál) látott feszítőfa protokollra? (STP)?
+-   Mely állítás igaz a bride-eknél (hidaknál) látott feszítőfa protokollra? (STP)?
 
     -   Egy bridge a szomszéd bridge-eknek küldi el a konfigurációs üzenetét, mely alapján azok frissítik a gyökér csomópont és a hozzá vezető úthoz kapcsolódó információkat.
 
@@ -630,7 +620,21 @@
 
 -   Melyik állítás igaz?
 
+    -   Az Alternáló Bit Protokoll csatorna kihasználtsága azonos a szimplex megáll és vár protokoll esetén látottal.
+
+-   Melyik állítás igaz?
+
+    -   Switchek esetén nincs szükség CSMA/CD-re.
+
+    -   Switchek esetén full duplex linkek kötik be az állomásokat.
+
+-   Melyik állítás igaz?
+
     -   A pipelineing technika nem segít a csatornakihasználtság javításában.
+
+-   Melyik állítás igaz?
+
+    -   Minden switch egyben bridge is.
 
 -   Mely állítások igazak a csúszóablak protokollra?
 
