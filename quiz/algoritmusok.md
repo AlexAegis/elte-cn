@@ -84,7 +84,7 @@ Hogyan működik a CSMA/CD protokoll? (CD → Collision Detection: ütközés é
 
 -   Ethernet a CSMA/CD-t használja
 
--Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
+-   Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
 
 Algoritmus
 
