@@ -130,24 +130,48 @@ A táblázatokat a szomszédoktól származó információk alapján frissítik.
 Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 KÖRNYEZET ÉS MŰKÖDÉS:
 
-    - Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
-    - Aszinkron működés.
-    - Minden állomásnak van saját távolság vektora. Ezt periodikusan elküldi a direkt szomszédoknak.
-    - A kapott távolság vektorok alapján minden csomópont új táblázatot állít elő.
+    -	Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
 
-Végtelenig számolás problémája: - A „jó hír” gyorsan terjed. - A „rossz hír” lassan terjed. - Azaz ciklusok keletkezhetnek. - Lehetséges megoldás: - „split horizon with poisoned reverse”: negatív
-információt küld vissza arról a szomszédjának, amit
-tőle „tanult”. (RFC 1058)
+    -	Aszinkron működés.
+
+    -	Minden állomásnak van saját távolság vektora. Ezt periodikusan elküldi a direkt szomszédoknak.
+
+    -	A kapott távolság vektorok alapján minden csomópont új táblázatot állít elő.
+
+Végtelenig számolás problémája:
+
+    -   A „jó hír” gyorsan terjed.
+    -   A „rossz hír” lassan terjed.
+    -   Azaz ciklusok keletkezhetnek.
+    -   Lehetséges megoldás:
+    	-   „split horizon with poisoned reverse”: negatív
+    		információt küld vissza arról a szomszédjának, amit
+    		tőle „tanult”. (RFC 1058)
 
 ## Link-state: Mik a link-state (kapcsolatállapot) alapú forgalomirányítás megvalósításának lépései?
 
-Link-state routing: 1. Szomszédok felkutatása, és hálózati címeik meghatározása 2. Megmérni a késleltetést vagy költséget minden szomszédhoz 3. Egy csomag összeállítása a megismert információkból 4. Csomag elküldése az összes többi router-nek 5. Kiszámítani a legrövidebb utat az összes többi router-hez (Dijkstra algoritmusát használják).
+Link-state routing:
+
+1. Szomszédok felkutatása, és hálózati címeik meghatározása
+2. Megmérni a késleltetést vagy költséget minden szomszédhoz
+3. Egy csomag összeállítása a megismert információkból
+4. Csomag elküldése az összes többi router-nek
+5. Kiszámítani a legrövidebb utat az összes többi router-hez (Dijkstra algoritmusát használják).
 
 ## Address Resolution Protocol (ARP)
 
-FELADATA - Az IP cím megfeleltetése egy fizikai címnek.
-HOZZÁRENDELÉS: - Adatszóró csomag kiküldése az Ethernetre „Ki-é a 192.60.34.12-es IP-cím?” kérdéssel az alhálózaton, és mindenegyes hoszt ellenőrzi,
-hogy övé-e a kérdéses IP-cím. Ha egyezik az IP a hoszt saját IP-jével, akkor a saját Ethernet címével válaszol. Erre szolgál az ARP. - Opcionális javítási lehetőségek: - a fizikai cím IP hozzárendelések tárolása (cache használata); - Leképezések megváltoztathatósága (időhatály bevezetése); - Mi történik távoli hálózaton lévő hoszt esetén? - A router is válaszoljon az ARP-re a hoszt alhálózatán. (proxy ARP) - Alapértelmezett Ethernet-cím használata az összes távoli forgalomhoz
+FELADATA
+
+-   Az IP cím megfeleltetése egy fizikai címnek.
+    HOZZÁRENDELÉS:
+    -   Adatszóró csomag kiküldése az Ethernetre „Ki-é a 192.60.34.12-es IP-cím?” kérdéssel az alhálózaton, és mindenegyes hoszt ellenőrzi,
+        hogy övé-e a kérdéses IP-cím. Ha egyezik az IP a hoszt saját IP-jével, akkor a saját Ethernet címével válaszol. Erre szolgál az ARP.
+    -   Opcionális javítási lehetőségek:
+        -   a fizikai cím IP hozzárendelések tárolása (cache használata);
+        -   Leképezések megváltoztathatósága (időhatály bevezetése);
+    -   Mi történik távoli hálózaton lévő hoszt esetén?
+        -   A router is válaszoljon az ARP-re a hoszt alhálózatán. (proxy ARP)
+        -   Alapértelmezett Ethernet-cím használata az összes távoli forgalomhoz
 
 ## Bitbeszúrás
 
@@ -167,7 +191,27 @@ hogy övé-e a kérdéses IP-cím. Ha egyezik az IP a hoszt saját IP-jével, ak
 
 (felépítése bontása)?
 
-Lassú indulás - Slow Start - Cél, hogy gyorsan elérjük a könyök pontot - Egy kapcsolat kezdetén (vagy újraindításakor) - cwnd = 1 - ssthresh = adv_wnd - Minden nyugtázott szegmensre: cwnd++ - Egészen addig amíg - El nem érjük az ssthresh értéket - Vagy csomagvesztés nem történik - A Slow Start valójában nem lassú - cwnd exponenciálisan nő
+Lassú indulás - Slow Start
+
+-   Cél, hogy gyorsan elérjük a könyök pontot
+
+-   Egy kapcsolat kezdetén (vagy újraindításakor)
+
+        	-	cwnd = 1
+
+        	-	ssthresh = adv_wnd
+
+        	-	Minden nyugtázott szegmensre: cwnd++
+
+-   Egészen addig amíg
+
+    -   El nem érjük az ssthresh értéket
+
+    -   Vagy csomagvesztés nem történik
+
+-   A Slow Start valójában nem lassú
+
+    -   cwnd exponenciálisan nő
 
 ## Rekurzív és iteratív domainnév keresése
 
@@ -179,9 +223,13 @@ Lassú indulás - Slow Start - Cél, hogy gyorsan elérjük a könyök pontot - 
     -Könnyű magas terhelésű szervert építeni.
 
 Rekurzív DNS lekérdezés:
--A lokális szerver terhet rak a kérdezett névszerverre (pl.root)
--Honnan tudja a kérdezett, hogy kinek továbbítsa a választ?
--Random ID a DNS lekérdezésben
 
-Iteratív DNS lekérdezés: - A szerver mindig a következő kérdezendő névszerver adataival tér vissza
--“I don’t know this name, but this other server might” - Napjainkban iteratív módon működik a DNS!!!
+    -	A lokális szerver terhet rak a kérdezett névszerverre (pl.root)
+    -	Honnan tudja a kérdezett, hogy kinek továbbítsa a választ?
+    	-	Random ID a DNS lekérdezésben
+
+Iteratív DNS lekérdezés:
+
+-   A szerver mindig a következő kérdezendő névszerver adataival tér vissza
+    -   “I don’t know this name, but this other server might”
+-   Napjainkban iteratív módon működik a DNS!!!
