@@ -25,15 +25,16 @@ Algoritmus:
 
 Hogyan működik az 1-perzisztens CSMA protokoll?
 
-    - Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
+-   Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
 
-    - Folytonos időmodellt használ a protokoll.
+-   Folytonos időmodellt használ a protokoll.
 
-    - Keret leadása előtt belehallgat a csatornába:
-    	1. Ha foglalt, akkor addig vár, amíg fel nem szabadul. Szabad csatorna esetén azonnal küld. (perzisztens)
-    	2. Ha szabad, akkor küld.
+-   Keret leadása előtt belehallgat a csatornába:
 
-    -Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
+    1.  Ha foglalt, akkor addig vár, amíg fel nem szabadul. Szabad csatorna esetén azonnal küld. (perzisztens)
+    2.  Ha szabad, akkor küld.
+
+-   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
 Tulajdonságok:
 
@@ -48,8 +49,8 @@ Hogyan működik a nem-perzisztens CSMA protokoll?
 -   Mohóság kerülése.
 -   Keret leadása előtt belehallgat a csatornába:
 
-        	1. Ha foglalt, akkor véletlen ideig vár (nem ﬁgyeli a forgalmat), majd kezdi előröl a küldési algoritmust. (nem-perzisztens)
-        	2. Ha szabad, akkor küld.
+    1.  Ha foglalt, akkor véletlen ideig vár (nem ﬁgyeli a forgalmat), majd kezdi előröl a küldési algoritmust. (nem-perzisztens)
+    2.  Ha szabad, akkor küld.
 
 -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
     Tulajdonságok:
@@ -61,8 +62,8 @@ Hogyan működik a p-perzisztens CSMA protokoll?
 -   Diszkrét időmodellt használ a protokoll.
 -   Adás kész állapotban az állomás belehallgat a csatornába:
 
-        1. Ha foglalt, akkor vár a következő időrésig, majd megismétli az algoritmust.
-        2. Ha szabad, akkor p valószínűséggel küld, illetve 1-p valószínűséggel visszalép a szándékától a következő időrésig. Várakozás esetén a következő időrésben megismétli az algoritmust.
+    1.  Ha foglalt, akkor vár a következő időrésig, majd megismétli az algoritmust.
+    2.  Ha szabad, akkor p valószínűséggel küld, illetve 1-p valószínűséggel visszalép a szándékától a következő időrésig. Várakozás esetén a következő időrésben megismétli az algoritmust.
 
     Ez addig folytatódik, amíg el nem küldi a keretet, vagy amíg egy másik állomás el nem kezd küldeni, mert ilyenkor úgy viselkedik, mintha ütközés történt volna.
 
@@ -71,17 +72,17 @@ Hogyan működik a p-perzisztens CSMA protokoll?
 Hogyan működik a CSMA/CD protokoll? (CD → Collision Detection: ütközés érzékelés)
 Ütközés érzékelés esetén meg lehessen szakítani az adást.(„Collision Detection”):
 
-    -	Minden állomás küldés közben is ﬁgyeli a csatornát,
+-   Minden állomás küldés közben is ﬁgyeli a csatornát,
 
-    -	ha ütközést tapasztal, azonnal megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár,majd újra elkezdi leadni a keretét.
+-   ha ütközést tapasztal, azonnal megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár,majd újra elkezdi leadni a keretét.
 
-    -	Az ütközés detektálás minimális ideje az az idő, ami egy jelnek a két legtávolabbi állomás közötti átviteléhez szükséges.
+-   Az ütközés detektálás minimális ideje az az idő, ami egy jelnek a két legtávolabbi állomás közötti átviteléhez szükséges.
 
-    -	Egy állomás megszerezte a csatornát, ha minden más állomás érzékeli az átvitelét.
+-   Egy állomás megszerezte a csatornát, ha minden más állomás érzékeli az átvitelét.
 
-    -	Az ütközés detektálás működéséhez szükséges a keretek hosszára egy alsó korlátot adnunk
+-   Az ütközés detektálás működéséhez szükséges a keretek hosszára egy alsó korlátot adnunk
 
-    -	Ethernet a CSMA/CD-t használja
+-   Ethernet a CSMA/CD-t használja
 
 -Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
 
@@ -130,23 +131,25 @@ A táblázatokat a szomszédoktól származó információk alapján frissítik.
 Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 KÖRNYEZET ÉS MŰKÖDÉS:
 
-    -	Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
+-   Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
 
-    -	Aszinkron működés.
+-   Aszinkron működés.
 
-    -	Minden állomásnak van saját távolság vektora. Ezt periodikusan elküldi a direkt szomszédoknak.
+-   Minden állomásnak van saját távolság vektora. Ezt periodikusan elküldi a direkt szomszédoknak.
 
-    -	A kapott távolság vektorok alapján minden csomópont új táblázatot állít elő.
+-   A kapott távolság vektorok alapján minden csomópont új táblázatot állít elő.
 
 Végtelenig számolás problémája:
 
-    -   A „jó hír” gyorsan terjed.
-    -   A „rossz hír” lassan terjed.
-    -   Azaz ciklusok keletkezhetnek.
-    -   Lehetséges megoldás:
-    	-   „split horizon with poisoned reverse”: negatív
-    		információt küld vissza arról a szomszédjának, amit
-    		tőle „tanult”. (RFC 1058)
+-   A „jó hír” gyorsan terjed.
+
+-   A „rossz hír” lassan terjed.
+
+-   Azaz ciklusok keletkezhetnek.
+
+-   Lehetséges megoldás:
+
+    -   „split horizon with poisoned reverse”: negatív információt küld vissza arról a szomszédjának, amit tőle „tanult”. (RFC 1058)
 
 ## Link-state: Mik a link-state (kapcsolatállapot) alapú forgalomirányítás megvalósításának lépései?
 
@@ -175,19 +178,29 @@ FELADATA
 
 ## Bitbeszúrás
 
-    - Minden keret speciális bitmintával kezdődik és végződik (hasonlóan a bájt	beszúráshoz)
-    	- A kezdő és záró bitsorozat ugyanaz
-     	- Például: 01111110 a High-level Data Link Protocol (HDLC) esetén
-    - A Küldő az adatban előforduló minden 11111 részsorozat elé 0 bitet szúr be
-    	- Ezt nevezzük bit beszúrásnak
-    - A Fogadó miután az 11111 részsorozattal találkozik a fogadott adatban:
-    	- 111110 -> eltávolítja a 0-t (mivel ez a beszúrás eredménye volt)
-    	- 111111 -> ekkor még egy bitet olvas
-    		- 1111110 -> keret vége
-    		- 1111111 -> ez hiba, hisz ilyen nem állhat elő a küldő oldalon. Eldobjuk a keretet!
-    - Hátránya: legrosszabb esetben 20% teljesítmény csökkenés
+-   Minden keret speciális bitmintával kezdődik és végződik (hasonlóan a bájt beszúráshoz)
 
-## TCP
+    -   A kezdő és záró bitsorozat ugyanaz
+
+    -   Például: 01111110 a High-level Data Link Protocol (HDLC) esetén
+
+-   A Küldő az adatban előforduló minden 11111 részsorozat elé 0 bitet szúr be
+
+    -   Ezt nevezzük bit beszúrásnak
+
+-   A Fogadó miután az 11111 részsorozattal találkozik a fogadott adatban:
+
+    -   111110 -> eltávolítja a 0-t (mivel ez a beszúrás eredménye volt)
+
+    -   111111 -> ekkor még egy bitet olvas
+
+        -   1111110 -> keret vége
+
+        -   1111111 -> ez hiba, hisz ilyen nem állhat elő a küldő oldalon. Eldobjuk a keretet!
+
+-   Hátránya: legrosszabb esetben 20% teljesítmény csökkenés
+
+# TCP
 
 (felépítése bontása)?
 
@@ -196,11 +209,9 @@ Lassú indulás - Slow Start
 -   Cél, hogy gyorsan elérjük a könyök pontot
 -   Egy kapcsolat kezdetén (vagy újraindításakor)
 
-        	-	cwnd = 1
-
-        	-	ssthresh = adv_wnd
-
-        	-	Minden nyugtázott szegmensre: cwnd++
+    -   cwnd = 1
+    -   ssthresh = adv_wnd
+    -   Minden nyugtázott szegmensre: cwnd++
 
 -   Egészen addig amíg
 
@@ -227,9 +238,9 @@ Lassú indulás - Slow Start
 
 Rekurzív DNS lekérdezés:
 
-    -	A lokális szerver terhet rak a kérdezett névszerverre (pl.root)
-    -	Honnan tudja a kérdezett, hogy kinek továbbítsa a választ?
-    	-	Random ID a DNS lekérdezésben
+-   A lokális szerver terhet rak a kérdezett névszerverre (pl.root)
+-   Honnan tudja a kérdezett, hogy kinek továbbítsa a választ?
+    -   Random ID a DNS lekérdezésben
 
 Iteratív DNS lekérdezés:
 
