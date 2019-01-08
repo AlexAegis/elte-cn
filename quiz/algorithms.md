@@ -25,68 +25,77 @@ Algoritmus:
 
 ## CSMA:
 
-Hogyan működik az 1-perzisztens CSMA protokoll?
+Az 1-perzisztens CSMA protokoll:
 
--   Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
+-   Működése:
 
--   Folytonos időmodellt használ a protokoll.
-
--   Keret leadása előtt belehallgat a csatornába:
+    -   Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
+    -   Folytonos időmodellt használ a protokoll.
+    -   Keret leadása előtt belehallgat a csatornába:
 
     1.  Ha foglalt, akkor addig vár, amíg fel nem szabadul. Szabad csatorna esetén azonnal küld. (perzisztens)
     2.  Ha szabad, akkor küld.
 
--   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
+    -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
-Tulajdonságok:
+-   Tulajdonságok:
 
--   A terjedési késleltetés nagymértékben befolyásolhatja a teljesítményét.
+    -   A terjedési késleltetés nagymértékben befolyásolhatja a teljesítményét.
 
--   Jobb teljesítményt mutat, mint az ALOHA protokollok.
+    -   Jobb teljesítményt mutat, mint az ALOHA protokollok.
 
-Hogyan működik a nem-perzisztens CSMA protokoll?
+A nem-perzisztens CSMA protokoll:
 
--   Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
--   Folytonos időmodellt használ a protokoll.
--   Mohóság kerülése.
--   Keret leadása előtt belehallgat a csatornába:
+-   Működése:
 
-    1.  Ha foglalt, akkor véletlen ideig vár (nem ﬁgyeli a forgalmat), majd kezdi előröl a küldési algoritmust. (nem-perzisztens)
-    2.  Ha szabad, akkor küld.
+    -   Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
+    -   Folytonos időmodellt használ a protokoll.
+    -   Mohóság kerülése.
+    -   Keret leadása előtt belehallgat a csatornába:
 
--   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
-    Tulajdonságok:
+        1.  Ha foglalt, akkor véletlen ideig vár (nem ﬁgyeli a forgalmat), majd kezdi előröl a küldési algoritmust. (nem-perzisztens)
+        2.  Ha szabad, akkor küld.
+
+    -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
+
+-   Tulajdonságok:
     -   Jobb teljesítményt mutat, mint az 1-perzisztens CSMA protokoll. (intuitív)
 
-Hogyan működik a p-perzisztens CSMA protokoll?
+A p-perzisztens CSMA protokoll:
 
--   Vivőjel érzékelés van, azaz minden állomás belehallgathat a csatornába.
--   Diszkrét időmodellt használ a protokoll.
--   Adás kész állapotban az állomás belehallgat a csatornába:
+-   Működése:
 
-    1.  Ha foglalt, akkor vár a következő időrésig, majd megismétli az algoritmust.
-    2.  Ha szabad, akkor p valószínűséggel küld, illetve 1-p valószínűséggel visszalép a szándékától a következő időrésig. Várakozás esetén a következő időrésben megismétli az algoritmust.
+    -   Vivőjel érzékelés van, azaz minden állomás belehallgathat a csatornába.
 
-    Ez addig folytatódik, amíg el nem küldi a keretet, vagy amíg egy másik állomás el nem kezd küldeni, mert ilyenkor úgy viselkedik, mintha ütközés történt volna.
+    -   Diszkrét időmodellt használ a protokoll.
+    -   Adás kész állapotban az állomás belehallgat a csatornába:
 
--   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
+        1.  Ha foglalt, akkor vár a következő időrésig, majd megismétli az algoritmust.
+        2.  Ha szabad, akkor p valószínűséggel küld, illetve 1-p valószínűséggel visszalép a szándékától a következő időrésig. Várakozás esetén a következő időrésben megismétli az algoritmust.Ez addig folytatódik, amíg el nem küldi a keretet, vagy amíg egy másik állomás el nem kezd küldeni, mert ilyenkor úgy viselkedik, mintha ütközés történt volna.
 
-Hogyan működik a CSMA/CD protokoll? (CD → Collision Detection: ütközés érzékelés)
-Ütközés érzékelés esetén meg lehessen szakítani az adást.(„Collision Detection”):
+    -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
--   Minden állomás küldés közben is ﬁgyeli a csatornát,
+A CSMA/CD protokoll:
 
--   ha ütközést tapasztal, azonnal megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár,majd újra elkezdi leadni a keretét.
+-   (CD → Collision Detection: ütközés érzékelés) Ütközés érzékelés esetén meg lehessen szakítani az adást.(„Collision Detection”):
 
--   Az ütközés detektálás minimális ideje az az idő, ami egy jelnek a két legtávolabbi állomás közötti átviteléhez szükséges.
+-   Működése:
 
--   Egy állomás megszerezte a csatornát, ha minden más állomás érzékeli az átvitelét.
+    -   Minden állomás küldés közben is ﬁgyeli a csatornát,
 
--   Az ütközés detektálás működéséhez szükséges a keretek hosszára egy alsó korlátot adnunk
+    -   Ha ütközést tapasztal, azonnal megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár,majd újra elkezdi leadni a keretét.
 
--   Ethernet a CSMA/CD-t használja
+    -   Az ütközés detektálás minimális ideje az az idő, ami egy jelnek a két legtávolabbi állomás közötti átviteléhez szükséges.
 
--   Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
+    -   Egy állomás megszerezte a csatornát, ha minden más állomás érzékeli az átvitelét.
+
+    -   Az ütközés detektálás működéséhez szükséges a keretek hosszára egy alsó korlátot adnunk
+
+    -   Ethernet a CSMA/CD-t használja
+
+    -   Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
+
+    -   Gyér forgalom esetén a közeghozzáférés nagyon gyors, mivel kevés állomás kíván a csatornán adni. Nagy hálózati forgalom esetén az átvitel lelassul, mivel a nagy csatorna terhelés miatt gyakoriak lesznek az ütközések. (A széles körben elterjedt Ethernet hálózat ezt a módszert használja.)
 
 Algoritmus
 
