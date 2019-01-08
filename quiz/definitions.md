@@ -605,95 +605,163 @@
 
 ## 4. lecture
 
-Mi a CRC? Mire használható?
-Cyclic Redundancy Check, hibajelző kód, bitsorozatokat Z2 feletti polinomok reprezentációjának tekinti
+-   Mi a **CRC**? Mire használható?
 
-Ismertesse a CRC-t használó algoritmus 4 lépését! 1. legyen G(x) foka r. r darab 0 hozzáfűzése M(x)-hez, így az x^rM(x) lesz 2. az ehhez tartozó bitsorozatot elosztjuk a G(x) sorozatával mod 2 3. x^rM(x) -ből vonjuk ki a MARADÉKOT, ez lesz T(x), az ellenörző összeggel ellátott, továbbítandó keret. 4. a vevő T(x) + E(x)-et kapja, ezt elosztja G(x)-szel. ha a maradék, R(x), nem 0, akkor hiba történt
+    > **C**yclic **R**edundancy **C**heck, hibajelző kód, bitsorozatokat **Z**<sub>2</sub> feletti polinomok reprezentációjának tekinti
 
-Mikor nem ismeri fel a hibát a vevő oldal?
-a G(x) többszöröseinek megfelelő bithibákat nem ismeri fel
+-   Ismertesse a **CRC**-t használó algoritmus 4 lépését!
 
-CRC esetén mit lehet mondani hibajelző képességéről, ha a generátor polinom x+1 többszöröse?
-ezesetben minden páratlan számú hiba felismerhető
+    1. Legyen G(x) foka r. r darab 0 hozzáfűzése M(x)-hez, így az x<sup>r \* M(x)</sup> lesz
+    2. Az ehhez tartozó bitsorozatot elosztjuk a G(x) sorozatával mod 2
+    3. x<sup>r \* M(x)</sup>-ből vonjuk ki a **maradékot**, ez lesz T(x), az ellenörző összeggel ellátott, továbbítandó keret.
+    4. a vevő T(x) + E(x)-et kapja, ezt elosztja G(x)-szel. ha a maradék, R(x), nem 0, akkor hiba történt
 
-Mutassa be röviden a korlátozás nélküli szimplex protokollt!
-Környezet:
-adó és vevő hálózati rétegei mindig készen állnak
-feldolgozási idő 0
-végtelen puffer
-a csatorna hibátlanul továbbít
-Protokoll:
-nincs sorszám, nyugta
-küldő végtelen ciklusban folyamatosan küld
-vevő a keret érkezésekor az adatrészt továbbítja a hálózati rétegnek
+-   Mikor **nem ismeri fel** a hibát a vevő oldal?
 
-Mutassa be röviden a szimplex megáll-és-vár protokollt!
-Környezet:
-adó-vevő mindig kész
-!! van feldolgozási idő
-végtelen puffer
-hibátlan csatorna
-Protokoll:
-küldő egyesével küld, és addig nem küld újat, amíg nem kap nyugtát
-A vevő várakozik a keretre, ha megjött, adatrészt továbbküldi a hálózati rétegnek, végül nyugtáz
-Következmény: fél-duplex csatorna kell (nyugta miatt)
+    > A G(x) többszöröseinek megfelelő bithibákat nem ismeri fel
 
-Mutassa be röviden a szimplex protokollt zajos csatorna esetén
-Környezet:
-adó-vevő mindig kész
-van feldolgozási idő
-végtelen puffer
-!! a csatorna hibázhat
-Protokoll:
-a vevő egyesével küld, amíg nem kap nyugtát a határidőn belül; ha ez lejár, újraküld
-a vevő várakozik, ha megjön, akkor csekkolja az ellenőrző összeget; ha ok, küldi fel, ha nem, eldobja és nem nyugtáz
-Ha a nyugta elveszik, duplikátum! Megoldás: alternáló bit protokoll (keretek sorszámozása)
+-   **CRC** esetén mit lehet mondani **hibajelző képesség**éről, ha a generátor polinom x+1 többszöröse?
 
-Mutassa be röviden a csúszóablak protokollt!
-Egyszerre több keret is küldési állapotban lehet.
-A fogadó n keretnyi puffert foglal, a küldőnek max ennyi keretet küldhet ki nyugtázatlanul.
-A keret sorozatbeli pozíciója adja a címkéjét.
-A fogadó nyugtája tartalmazza a következő várt keret sorszámát (kumulatív nyugta...) A hibás és a nem jó számú kereteket eldobja
-A küldő nyilvántartja a küldhető sorozatszámokat (adási ablak)
-A fogadó a fogadható sorszámokat (vételi ablak)
-Az adási ablak minden küldéssel szűkül, nyugtával nő
+    > ezesetben minden páratlan számú hiba felismerhető
 
-Mi a visszalépés N-nel stratégia lényege?
-A hibás keret utáni kereteket a fogadó eldobja, és nem is nyugtázza. Az adó a timeout lejárta után újraküldi az összes nyugtázatlan keretet. (1 méretű ablakot tételez fel a fogadó részéről) - nagy sávszél pazarlás, ha sok a hiba
+-   Mutassa be röviden a **korlátozás nélküli szimplex protokoll**t!
 
-Mi a szelektív ismétléses stratégia lényege?
-A hibás keretet a fogadó eldobja, de az utána érkező jókat puffereli. A küldő a timeout után a legrégebbi nyugtázatlan keretet küldi újra.
-NAK javíthat a hatékonyságon, egynél nagyobb vételi ablak kell
+    -   Környezet:
 
-Mely 3 dolgot biztosítja a PPP protokoll? - keretezési módszert egyértelmű határokkal - kapcsolatvezérlő protokollt a vonalak felélesztésére, tesztelésére, az opciók egyeztetésére, és a vonalak elengedésére. - olyan módot a háózati réteg opcióinak megbeszélésre, amely független az alkalmazott hálózati réteg protokolltól.
+        > Adó és vevő hálózati rétegei mindig készen állnak
 
-A csatorna kiosztásra mik a legelterjedtebb módszerek? - statikus (FDM, TDM) - dinamikus - verseny vagy ütközés alapú (ALOHA, CSMA, CSMA/CD) - verseny-mentes (bittérkép alapú, bináris visszaszámlálás) - korlátozott verseny (adaptív fabejárás)
+        > Feldolgozási idő nincs
 
-Röviden mutassa be a frekvenciaosztásos nyalábolás módszerét! - N db userhez a sávszélt N egyenlő méretű sávra osztja - fix számú usernél, nagy forgalomigénynél jó - löketszerű forgalom esetén problémás
+        > Végtelen puffer
 
-Röviden mutassa be az időosztásos nyalábolás módszerét! - N db userhez az időegységet N egyenlő méretű időrésre osztja - löketszerűnél nem jó
+        > A csatorna hibátlanul továbbít
 
-A csatorna modellben mit nevezünk ütközésnek?
-Ha két keret egyidőben kerül átvitelre, akkor átlapolódnak, és értelmezhetetlenné válnak
+    -   Protokoll:
 
-Írja le a folytonos és a diszkrét időmodell lényegét!
-Folytonos: mindegyik állomás tetszőleges időpontban megkezdheti a kész keretének sugárzását
-Diszkrét: az időt diszkrét résekre osztjuk, sugárzás csak az időrések elején lehetséges. Egy időrés lehet üres, sikeres vagy ütközéses.
+        > Nincs sorszám, nyugta
+        > Küldő végtelen ciklusban folyamatosan küld
+        > Vevő a keret érkezésekor az adatrészt továbbítja a hálózati rétegnek
 
-Mit jelent a vivőjel érzékelési (Carrier Sensing) képesség?
-Az állomások meg tudják vizsgálni a közös csatorna állapotát küldés előtt, hogy foglalt-e vagy szabad. Ha foglalt, addig nem próbálják meg használni. Ha nem rendelkeznek ezzel a képességgel, akkor küldenek, ahogy megvan rá a lehetőségük.
+-   Mutassa be röviden a **szimplex megáll-és-vár protokoll**t!
 
-Hogyan működik az egyszerű ALOHA protokoll?
-Ha van küldendő adat, akkor a hoszt elküldi.
+    -   Környezet:
 
-Mit jelent a keretidő az ALOHA protokoll esetén?
-keretfeldolgozási idő + átviteli késés + propagációs késés (T_f)
+        > Adó-vevő mindig kész
 
-Mennyi az Aloha protokoll esetén az áteresztőképesség (átvitel) a terhelés függvényében?
-S(G) = G _ a jó átvitel valószínűsége, azaz 2T_f idő alatt 0 keretet küldenek = G _ P0(2T_f) = G \* e^-2G
+        > van feldolgozási idő
 
-Mit nevezünk sebezhetőségi időnek?
-Az az időtartam, amely alatt ha másik keret is elküldésre kerül, akkor az aktuális keret sérül.
+        > Végtelen puffer
+
+        > Hibátlan csatorna
+
+    -   Protokoll:
+
+        > Küldő egyesével küld, és addig nem küld újat, amíg nem kap nyugtát
+
+        > A vevő várakozik a keretre, ha megjött, adatrészt továbbküldi a hálózati rétegnek, végül nyugtáz
+
+    -   Következmény:
+
+        > fél-duplex csatorna kell (nyugta miatt)
+
+-   Mutassa be röviden a **szimplex protokollt zajos csatorna** esetén!
+
+    -   Környezet:
+
+        > Adó-vevő mindig kész
+
+        > Van feldolgozási idő
+
+        > Végtelen puffer
+
+        > A csatorna hibázhat
+
+    -   Protokoll:
+
+        > A vevő egyesével küld, amíg nem kap nyugtát a határidőn belül; ha ez lejár, újraküld
+
+        > A vevő várakozik, ha megjön, akkor csekkolja az ellenőrző összeget; ha ok, küldi fel, ha nem, eldobja és nem nyugtáz
+
+        > Ha a nyugta elveszik, duplikátum! Megoldás: alternáló bit protokoll (keretek sorszámozása)
+
+-   Mutassa be röviden a **csúszóablak protokoll**t!
+
+    > Egyszerre több keret is küldési állapotban lehet.
+
+    > A fogadó n keretnyi puffert foglal, a küldőnek max ennyi keretet küldhet ki nyugtázatlanul.
+
+    > A keret sorozatbeli pozíciója adja a címkéjét.
+
+    > A fogadó nyugtája tartalmazza a következő várt keret sorszámát (kumulatív nyugta...) A hibás és a nem jó számú kereteket eldobja
+
+    > A küldő nyilvántartja a küldhető sorozatszámokat (adási ablak)
+    > A fogadó a fogadható sorszámokat (vételi ablak)
+
+    > Az adási ablak minden küldéssel szűkül, nyugtával nő
+
+-   Mi a **visszalépés N-nel stratégia** lényege?
+
+    > A hibás keret utáni kereteket a fogadó eldobja, és nem is nyugtázza. Az adó a timeout lejárta után újraküldi az összes nyugtázatlan keretet. (1 méretű ablakot tételez fel a fogadó részéről) - nagy sávszél pazarlás, ha sok a hiba
+
+-   Mi a **szelektív ismétléses stratégia** lényege?
+
+    > A hibás keretet a fogadó eldobja, de az utána érkező jókat puffereli. A küldő a timeout után a legrégebbi nyugtázatlan keretet küldi újra.
+    > NAK javíthat a hatékonyságon, egynél nagyobb vételi ablak kell
+
+-   Mely 3 dolgot biztosítja a **PPP protokoll**?
+
+    -   Keretezési módszert egyértelmű határokkal
+    -   Kapcsolatvezérlő protokollt a vonalak felélesztésére, tesztelésére, az opciók egyeztetésére, és a vonalak elengedésére.
+    -   Olyan módot a háózati réteg opcióinak megbeszélésre, amely független az alkalmazott hálózati réteg protokolltól.
+
+-   A **csatorna kiosztás**ra mik a legelterjedtebb módszerek?
+
+    -   Statikus (FDM, TDM)
+    -   Dinamikus
+    -   Verseny vagy ütközés alapú (ALOHA, CSMA, CSMA/CD)
+    -   Verseny-mentes (bittérkép alapú, bináris visszaszámlálás)
+    -   Korlátozott verseny (adaptív fabejárás)
+
+-   Röviden mutassa be a **frekvenciaosztásos nyalábolás** módszerét!
+
+    -   N db userhez a sávszélt N egyenlő méretű sávra osztja
+    -   Fix számú usernél, nagy forgalomigénynél jó
+    -   Löketszerű forgalom esetén problémás
+
+-   Röviden mutassa be az **időosztásos nyalábolás** módszerét!
+
+    -   N db userhez az időegységet N egyenlő méretű időrésre osztja
+    -   Löketszerűnél nem jó
+
+-   A csatorna modellben mit nevezünk **ütközés**nek?
+
+    > Ha két keret egyidőben kerül átvitelre, akkor átlapolódnak, és értelmezhetetlenné válnak
+
+-   Írja le a folytonos és a diszkrét időmodell lényegét!
+
+    > **Folytonos**: mindegyik állomás tetszőleges időpontban megkezdheti a kész keretének sugárzását
+
+    > **Diszkrét**: az időt diszkrét résekre osztjuk, sugárzás csak az időrések elején lehetséges. Egy időrés lehet üres, sikeres vagy ütközéses.
+
+-   Mit jelent a **vivőjel érzékelési (Carrier Sensing)** képesség?
+
+    > Az állomások meg tudják vizsgálni a közös csatorna állapotát küldés előtt, hogy foglalt-e vagy szabad. Ha foglalt, addig nem próbálják meg használni. Ha nem rendelkeznek ezzel a képességgel, akkor küldenek, ahogy megvan rá a lehetőségük.
+
+-   Hogyan működik az egyszerű **ALOHA** protokoll?
+
+    > Ha van küldendő adat, akkor a hoszt elküldi.
+
+-   Mit jelent a **keretidő az ALOHA** protokoll esetén?
+
+    > Keretfeldolgozási idő + átviteli késés + propagációs késés (T<sub>f</sub>)
+
+-   Mennyi az Aloha protokoll esetén az **áteresztőképesség** (átvitel) a terhelés függvényében?
+
+    > S(G) = G<sub>a</sub> jó átvitel valószínűsége, azaz 2T<sub>f</sub> idő alatt 0 keretet küldenek = G<sub>P<sub>0</sub>(2T<sub>f</sub>)</sub> = G \* e<sup>-2G</sup>
+
+-   Mit nevezünk **sebezhetőségi idő**nek?
+
+    > Az az időtartam, amely alatt ha másik keret is elküldésre kerül, akkor az aktuális keret sérül.
 
 5. előadás
 
