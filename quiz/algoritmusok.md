@@ -194,7 +194,6 @@ FELADATA
 Lassú indulás - Slow Start
 
 -   Cél, hogy gyorsan elérjük a könyök pontot
-
 -   Egy kapcsolat kezdetén (vagy újraindításakor)
 
         	-	cwnd = 1
@@ -215,12 +214,16 @@ Lassú indulás - Slow Start
 
 ## Rekurzív és iteratív domainnév keresése
 
--   A lekérdezésnek két fajtája van: - Rekurzív lekérdezés – Ha a névszerver végzi el a névfeloldást, és tér vissza a válasszal. - Iteratív lekérdezés – Ha a névszerver adja vissza a választ vagy legalább azt, hogy
-    kitől kapható meg a következő válasz.
--   Melyik a jobb? - Rekurzív jellemzői - Lehetővé teszi a szervernek a kliens terhelés kihelyezését a kezelhetőségért. - Lehetővé teszi a szervernek, hogy a kliensek egy csoportja felett végezzen cachelést, a jobb teljesítményért.
-    -Iteratív jellemzői
-    -Válasz után nem kell semmit tenni a kéréssel a névszervernek.
-    -Könnyű magas terhelésű szervert építeni.
+-   A lekérdezésnek két fajtája van:
+    -   Rekurzív lekérdezés –> Ha a névszerver végzi el a névfeloldást, és tér vissza a válasszal.
+    -   Iteratív lekérdezés –> Ha a névszerver adja vissza a választ vagy legalább azt, hogy kitől kapható meg a következő válasz.
+-   Melyik a jobb?
+    -   Rekurzív jellemzői
+        -   Lehetővé teszi a szervernek a kliens terhelés kihelyezését a kezelhetőségért.
+        -   Lehetővé teszi a szervernek, hogy a kliensek egy csoportja felett végezzen cachelést, a jobb teljesítményért.
+    -   Iteratív jellemzői
+        -   Válasz után nem kell semmit tenni a kéréssel a névszervernek.
+        -   Könnyű magas terhelésű szervert építeni.
 
 Rekurzív DNS lekérdezés:
 
