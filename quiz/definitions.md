@@ -339,57 +339,129 @@
     >  **Kritikus időpontok**: adott időkor sync, pl szimbólum v blokk kezdetén ezen kívül az órák szabadon futnak, remélhetőleg szinkronban\
     >  **Önütemező jel**: külön órajel sync nélkül dekódolható jel, a szignál tartalmazza a szinkronizáláshoz szükséges infót
 
-Ismertesse az NRZ-L (Non-Return to zero) kódolás szabályait!
-1-es: magas jel, 0-ás: alacsony, semmi, semmi
-deszinkronizáció!
+-   Ismertesse az **NRZ-L** (Non-Return to zero) kódolás szabályait!
 
-Ismertesse a Manchester kódolás szabályait!
-csak középen: 1esnél magasról alacsonyra, 0-s: fordítva
-10 Mbps Ethernetnél
-Nincs óraelcsúszás, de az átvitel felét használja csak ki (két óraidő ciklus kell egy bithez)
+    | Bit   | Jel      |
+    | ----- | -------- |
+    | **1** | Magas    |
+    | **0** | Alacsony |
 
-Ismertesse az NRZI (Non-return to zero inverted)? Mi a fő probléma ezzel a kódolással?
-1esnél középen átmenet van, 0nál nincs
-a csupa nulla sorozat gondját még mindig nem oldja meg
+    > **Deszinkronizáció**ra hajlamos
 
-Ismertesse a 4-bit/5-bit módszert? Miért van erre szükség? Hol használjuk?
-minden 4 bitet 5 bitbe kódolunk úgy, h elején max 1, végén max 2 nulla lehet - elkerüli a csupa 0 sorozatokat, ahol az NRZI elcsúszhat. 20%-os hatékonyságvesztés
-100 Mbps Ethernetnél (Gigabit Ethernetnél 8/10)
+-   Ismertesse a **Manchester** kódolás szabályait!
 
-Mik a főbb tulajdonságai az alapsávú átvitelnek?
-baseband
-a digitális jel direkt árammá vagy fesszé alakul
-a jel minden frekvencián átvitelre kerül
-átviteli korlátok
+    | Bit   | Jel                 |
+    | ----- | ------------------- |
+    | **1** | Magasról alacsonyra |
+    | **0** | Alacsonyról magasra |
 
-Ismertesse a digitális alapsávú átvitel struktúráját!
-forrás
--> forrás kódolás (forrás bitek)
--> csatorna kódolás (csatorna szimbólumok)
--> fizikai átvitel -> médium ... vissza
+    > **Nincs óraelcsúszás**, de az átvitel felét használja csak ki (két óraidő ciklus kell egy bithez)
 
-Mik a főbb tulajdonságai a szélessávú átvitelnek?
-broadband
-széles frekitartományban történik az átvitel
-jelmodulációs lehetőségek:
-vivőhulláram ültetés - amplitúdó mod
-vivőhullám megváltoztatása - freki v fázis mod
-különböző vivőhullámok felhasználása egyidejűleg
+    > Példa:
 
-Ismertesse a digitális szélessávú átvitel struktúráját!
-csatorna kódolás után modulációs lépés, ami hullámformák véges halmazát eredményezi
+    ```bash
+    Bit   │ 0 ┊ 0 ┊ 1 ┊ 1 ┊ 0 │
+          │   ┊   ┊   ┊   ┊   │
+    Man   │_/¯┊_/¯┊¯\_┊¯\_┊_/¯│
+          │   ┊   ┊   ┊   ┊   │
+    Clock │_¯_┊_¯_┊_¯_┊_¯_┊_¯_│
+    ```
 
-Mi az amplitúdó moduláció?
-A küldendő s(t) szignált a szinuszgörbe amplitúdójaként kódoljuk: f(t) = s(t) * sin(2pi*f\*t+eltolás)
-digitálisnál a szignál erőssége egy diszkrét halmaz értékeinek megfelelően változik (pl 0-1)
+-   Ismertesse az **NRZI** (Non-return to zero inverted)? Mi a fő probléma ezzel a kódolással?
 
-Mi a frekvencia moduláció?
-A küldendő s(t) szignált a szinuszgörbe frekvenciájaként kódoljuk: f(t) = A _ sin(2pi _ s(t) \* t + eltolás)
+    | Bit   | Jel              |
+    | ----- | ---------------- |
+    | **1** | Vált             |
+    | **0** | Tartja a szintet |
 
-Mi a fázis moduláció?
-Az s(t) szigálnt a szinuszgörbe fázisában kódoljuk:
-f(t) = A _ sin(2pi _ f \* t + s(t))
-digitálisnál: különböző fázisok a szimbólumokhoz
+    > A csupa egyes sorozat problémáját megoldja ugyan, de a csupa nulla sorozatot ez sem kezeli
+
+    > Példa:
+
+    ```bash
+    Bit   │0┊0┊1┊0┊1┊0┊1┊1┊0┊0│
+          │ ┊ ┊ ┊ ┊ ┊ ┊ ┊ ┊ ┊ │
+    NRZI  │_┊_┊/┊¯┊\┊_┊/┊\┊_┊_│
+          │ ┊ ┊ ┊ ┊ ┊ ┊ ┊ ┊ ┊ │
+    Clock │_┊_┊_┊_┊_┊_┊_┊_┊_┊_│
+    ```
+
+-   Ismertesse a **4-bit/5-bit módszer**t. Miért van erre szükség? Hol használjuk?
+
+    > Minden 4 bitet 5 bitbe kódolunk úgy, hogy elején max 1, végén max 2 nulla lehet
+
+    > elkerüli a csupa 0 sorozatokat, ahol az NRZI elcsúszhat.
+
+    > Hátrányok: 20%-os hatékonyságvesztés
+
+-   Mik a főbb tulajdonságai az **alapsávú** (baseband) átvitelnek?
+
+    > a digitális jel direkt árammá vagy fesszé alakul
+
+    > a jel minden frekvencián átvitelre kerül
+
+    > átviteli korlátok
+
+-   Ismertesse a digitális **alapsávú átvitel** struktúráját!
+
+    1. Forrás
+    2. Forrás kódolás (forrás bitek)
+    3. Csatorna kódolás (csatorna szimbólumok)
+    4. Fizikai átvitel
+    5. Médium
+
+    -   vissza 4->3->2->1, minden lépés dekódolása
+
+-   Mik a főbb tulajdonságai a **szélessávú** (broadband) átvitelnek?
+
+    > Széles frekitartományban történik az átvitel
+
+    > Jelmodulációs lehetőségek:
+
+    -   **Vivőhullámra ültetés** - amplitúdó moduláció
+    -   **Vivőhullám megváltoztatása** - frekvencia vagy fázis moduláció
+    -   **Különböző vivőhullámok felhasználása egyidejűleg**
+
+-   Ismertesse a digitális **szélessávú átvitel** struktúráját!
+
+    1. Forrás
+    2. Forrás kódolás (forrás bitek)
+    3. Csatorna kódolás (csatorna szimbólumok)
+    4. Moduláció (Hullámformák véges halmaza)
+    5. Fizikai átvitel
+       6 . Médium
+
+    -   vissza 5->4->3->2->1, minden lépés dekódolása
+
+-   Mi az **amplitúdó moduláció**?
+
+    > A küldendő **s(t)** szignált a szinuszgörbe amplitúdójaként kódoljuk:
+
+    > **f<sub>A</sub>(t)** = **s(t)** _ sin(2π _ **f** \* **t** + **𝜑**)\
+    > **t**: periódus idő\
+    > **f**: frekvencia\
+    > **A**: amplitúdó\
+    > **𝜑**: eltolás
+
+    > Digitális jelnél a szignál erőssége egy diszkrét halmaz értékeinek megfelelően változik (pl.: 0-1)
+
+-   Mi a **frekvencia moduláció**?
+
+    > A küldendő **s(t)** szignált a szinuszgörbe frekvenciájaként kódoljuk:
+
+    > **f<sub>F</sub>(t)** = **a** _ sin(2π _ **s(t)** \* **t** + **𝜑**)\
+    > **t**: periódus idő\
+    > **f**: frekvencia\
+    > **𝜑**: eltolás
+
+-   Mi a **fázis moduláció**?
+
+    > Az **s(t)** szignált a szinuszgörbe fázisában kódoljuk:
+
+    > **f<sub>P</sub>(t)** = **a** _ sin(2π _ **f** \* **t** + **s(t)**)\
+    > **t**: periódus idő\
+    > **f**: frekvencia\
+    > **𝜑**: eltolás
 
 ## 3.előadás
 
