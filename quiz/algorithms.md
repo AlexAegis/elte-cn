@@ -32,16 +32,12 @@ Az 1-perzisztens CSMA protokoll:
     -   Vivőjelérzékelés van, azaz minden állomás belehallgathat a csatornába.
     -   Folytonos időmodellt használ a protokoll.
     -   Keret leadása előtt belehallgat a csatornába:
-
-    1.  Ha foglalt, akkor addig vár, amíg fel nem szabadul. Szabad csatorna esetén azonnal küld. (perzisztens)
-    2.  Ha szabad, akkor küld.
-
+        1.  Ha foglalt, akkor addig vár, amíg fel nem szabadul. Szabad csatorna esetén azonnal küld. (perzisztens)
+        2.  Ha szabad, akkor küld.
     -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
 -   Tulajdonságok:
-
     -   A terjedési késleltetés nagymértékben befolyásolhatja a teljesítményét.
-
     -   Jobb teljesítményt mutat, mint az ALOHA protokollok.
 
 A nem-perzisztens CSMA protokoll:
@@ -52,10 +48,8 @@ A nem-perzisztens CSMA protokoll:
     -   Folytonos időmodellt használ a protokoll.
     -   Mohóság kerülése.
     -   Keret leadása előtt belehallgat a csatornába:
-
         1.  Ha foglalt, akkor véletlen ideig vár (nem ﬁgyeli a forgalmat), majd kezdi előröl a küldési algoritmust. (nem-perzisztens)
         2.  Ha szabad, akkor küld.
-
     -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
 -   Tulajdonságok:
@@ -66,13 +60,10 @@ A p-perzisztens CSMA protokoll:
 -   Működése:
 
     -   Vivőjel érzékelés van, azaz minden állomás belehallgathat a csatornába.
-
     -   Diszkrét időmodellt használ a protokoll.
     -   Adás kész állapotban az állomás belehallgat a csatornába:
-
         1.  Ha foglalt, akkor vár a következő időrésig, majd megismétli az algoritmust.
         2.  Ha szabad, akkor p valószínűséggel küld, illetve 1-p valószínűséggel visszalép a szándékától a következő időrésig. Várakozás esetén a következő időrésben megismétli az algoritmust.Ez addig folytatódik, amíg el nem küldi a keretet, vagy amíg egy másik állomás el nem kezd küldeni, mert ilyenkor úgy viselkedik, mintha ütközés történt volna.
-
     -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
 A CSMA/CD protokoll:
@@ -82,19 +73,12 @@ A CSMA/CD protokoll:
 -   Működése:
 
     -   Minden állomás küldés közben is ﬁgyeli a csatornát,
-
     -   Ha ütközést tapasztal, azonnal megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár,majd újra elkezdi leadni a keretét.
-
     -   Az ütközés detektálás minimális ideje az az idő, ami egy jelnek a két legtávolabbi állomás közötti átviteléhez szükséges.
-
     -   Egy állomás megszerezte a csatornát, ha minden más állomás érzékeli az átvitelét.
-
     -   Az ütközés detektálás működéséhez szükséges a keretek hosszára egy alsó korlátot adnunk
-
     -   Ethernet a CSMA/CD-t használja
-
     -   Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
-
     -   Gyér forgalom esetén a közeghozzáférés nagyon gyors, mivel kevés állomás kíván a csatornán adni. Nagy hálózati forgalom esetén az átvitel lelassul, mivel a nagy csatorna terhelés miatt gyakoriak lesznek az ütközések. (A széles körben elterjedt Ethernet hálózat ezt a módszert használja.)
 
 Algoritmus
@@ -144,23 +128,16 @@ Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 Környezet és Működés:
 
 -   Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
-
 -   Aszinkron működés.
-
 -   Minden állomásnak van saját távolság vektora. Ezt periodikusan elküldi a direkt szomszédoknak.
-
 -   A kapott távolság vektorok alapján minden csomópont új táblázatot állít elő.
 
 Végtelenig számolás problémája:
 
 -   A „jó hír” gyorsan terjed.
-
 -   A „rossz hír” lassan terjed.
-
 -   Azaz ciklusok keletkezhetnek.
-
 -   Lehetséges megoldás:
-
     -   „split horizon with poisoned reverse”: negatív információt küld vissza arról a szomszédjának, amit tőle „tanult”. (RFC 1058)
 
 ## Link-state: Mik a link-state (kapcsolatállapot) alapú forgalomirányítás megvalósításának lépései?
@@ -191,28 +168,18 @@ Feladata:
 ## Bitbeszúrás
 
 -   Minden keret speciális bitmintával kezdődik és végződik (hasonlóan a bájt beszúráshoz)
-
     -   A kezdő és záró bitsorozat ugyanaz
-
     -   Például: 01111110 a High-level Data Link Protocol (HDLC) esetén
-
 -   A Küldő az adatban előforduló minden 11111 részsorozat elé 0 bitet szúr be
-
     -   Ezt nevezzük bit beszúrásnak
-
 -   A Fogadó miután az 11111 részsorozattal találkozik a fogadott adatban:
-
     -   111110 -> eltávolítja a 0-t (mivel ez a beszúrás eredménye volt)
-
     -   111111 -> ekkor még egy bitet olvas
-
         -   1111110 -> keret vége
-
         -   1111111 -> ez hiba, hisz ilyen nem állhat elő a küldő oldalon. Eldobjuk a keretet!
-
 -   Hátránya: legrosszabb esetben 20% teljesítmény csökkenés
 
-# TCP
+## TCP
 
 (felépítése bontása)?
 
@@ -220,19 +187,13 @@ Lassú indulás - Slow Start
 
 -   Cél, hogy gyorsan elérjük a könyök pontot
 -   Egy kapcsolat kezdetén (vagy újraindításakor)
-
     -   cwnd = 1
     -   ssthresh = adv_wnd
     -   Minden nyugtázott szegmensre: cwnd++
-
 -   Egészen addig amíg
-
     -   El nem érjük az ssthresh értéket
-
     -   Vagy csomagvesztés nem történik
-
 -   A Slow Start valójában nem lassú
-
     -   cwnd exponenciálisan nő
 
 ## Rekurzív és iteratív domainnév keresése
@@ -259,3 +220,19 @@ Iteratív DNS lekérdezés:
 -   A szerver mindig a következő kérdezendő névszerver adataival tér vissza
     -   “I don’t know this name, but this other server might”
 -   Napjainkban iteratív módon működik a DNS!!!
+
+## A feszítőfa algoritmusa
+
+1. Az egyik bride-et megválasztjuk a fa gyökerének
+2. Minden bridge megkeresi a legrövidebb utat a gyökérhez
+3. Ezen utak unióját véve megkapjuk a feszítőfát
+
+-   A fa építése során a bridge-ek egymás között konfigurációs üzeneteket (Configuration Bridge Protocol Data Units [BPDUs]) cserélnek - A gyökér elem megválasztásához - A legrövidebb utak meghatározásához - A gyökérhez legközelebbi szomszéd (next hop) állomás és a
+    hozzá tartozó port azonosításához - A feszítőfához tartozó portok kiválasztása
+-   Kezdetben minden állomás feltételezi magáról, hogy
+    gyökér - Bridge-ek minden irányba szétküldik a BPDU üzeneteiket:
+    -   | Bridge ID | Gyökér ID | Út költség a gyökérhez |
+-   A fogadott BPDU üzenet alapján, minden switch választ:
+    -   Egy új gyökér elemet (legkisebb ismert Gyökér ID alapján)
+    -   Egy új gyökér portot (melyik interfész megy a gyökér irányába)
+    -   Egy új kijelölt bridge-et (a következő állomás a gyökérhez vezető úton)
