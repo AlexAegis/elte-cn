@@ -140,7 +140,8 @@ Minden router-nek egy táblázatot kell karbantartania,amelyben minden célhoz s
 A táblázatokat a szomszédoktól származó információk alapján frissítik. - Elosztott Bellman-Ford forgalomirányítási algoritmusként is nevezik. - ARPANET eredeti forgalomirányító algoritmusa ez volt. RIP (Routing Information Protocol) néven is ezt használták.
 
 Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
-KÖRNYEZET ÉS MŰKÖDÉS:
+
+Környezet és Működés:
 
 -   Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
 
@@ -174,10 +175,10 @@ Link-state routing:
 
 ## Address Resolution Protocol (ARP)
 
-FELADATA
+Feladata:
 
 -   Az IP cím megfeleltetése egy fizikai címnek.
-    HOZZÁRENDELÉS:
+    Hozzárendelés:
     -   Adatszóró csomag kiküldése az Ethernetre „Ki-é a 192.60.34.12-es IP-cím?” kérdéssel az alhálózaton, és mindenegyes hoszt ellenőrzi,
         hogy övé-e a kérdéses IP-cím. Ha egyezik az IP a hoszt saját IP-jével, akkor a saját Ethernet címével válaszol. Erre szolgál az ARP.
     -   Opcionális javítási lehetőségek:
