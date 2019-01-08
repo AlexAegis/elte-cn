@@ -179,23 +179,6 @@ Feladata:
         -   1111111 -> ez hiba, hisz ilyen nem állhat elő a küldő oldalon. Eldobjuk a keretet!
 -   Hátránya: legrosszabb esetben 20% teljesítmény csökkenés
 
-## TCP
-
-(felépítése bontása)?
-
-Lassú indulás - Slow Start
-
--   Cél, hogy gyorsan elérjük a könyök pontot
--   Egy kapcsolat kezdetén (vagy újraindításakor)
-    -   cwnd = 1
-    -   ssthresh = adv_wnd
-    -   Minden nyugtázott szegmensre: cwnd++
--   Egészen addig amíg
-    -   El nem érjük az ssthresh értéket
-    -   Vagy csomagvesztés nem történik
--   A Slow Start valójában nem lassú
-    -   cwnd exponenciálisan nő
-
 ## Rekurzív és iteratív domainnév keresése
 
 -   A lekérdezésnek két fajtája van:
@@ -236,3 +219,20 @@ Iteratív DNS lekérdezés:
     -   Egy új gyökér elemet (legkisebb ismert Gyökér ID alapján)
     -   Egy új gyökér portot (melyik interfész megy a gyökér irányába)
     -   Egy új kijelölt bridge-et (a következő állomás a gyökérhez vezető úton)
+
+## TCP
+
+//TODO
+
+Lassú indulás - Slow Start
+
+-   Cél, hogy gyorsan elérjük a könyök pontot
+-   Egy kapcsolat kezdetén (vagy újraindításakor)
+    -   cwnd = 1
+    -   ssthresh = adv_wnd
+    -   Minden nyugtázott szegmensre: cwnd++
+-   Egészen addig amíg
+    -   El nem érjük az ssthresh értéket
+    -   Vagy csomagvesztés nem történik
+-   A Slow Start valójában nem lassú
+    -   cwnd exponenciálisan nő
