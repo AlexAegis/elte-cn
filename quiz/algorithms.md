@@ -1,3 +1,5 @@
+# Algorithms
+
 ## CRC:
 
 G(x) egy generátor polinom, aminek a foka r, ezt a polinomot a küldő és a vevő egyaránt ismeri.
