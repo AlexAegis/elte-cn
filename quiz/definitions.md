@@ -227,7 +227,7 @@
 
         -   kapcsold be a mobilod és nézd meg milyen appok vannak rajta…
 
-## 2.előadás
+## 2. lecture
 
 -   Mit jelent a hálózatok esetén az **adatok burkolása**?
 
@@ -251,7 +251,7 @@
 
     > **Data plane (adat sík)**: hogyan továbbítjuk az adatot egy útvonal mentén?
 
--   Jellemezze egy mondatban a **tûzfalakat**, **proxy**kat és **NAT doboz**okat!
+-   Jellemezze egy mondatban a **tűzfalakat**, **proxy**kat és **NAT doboz**okat!
 
     > **Tűzfal**: védelmi rendszer, az alkalmazási réteg fejléceit is vizsgálnia kell
 
@@ -287,7 +287,7 @@
     > **Sodort érpár** _(távbeszélőrendszerek)_\
     > **Koaxális kábel** _(nagyobb sebesség és távolság)_\
     > **Fénykábel** _(fényforrás, közeg, detektor)_\
-    > **Rádiófrekis** _(egyszerű, nagy táv, frekifüggő terjedés)_\
+    > **Rádiófrekvenciás** _(egyszerű, nagy táv, frekvenciafüggő terjedés)_\
     > **Mikrohullámú** _(egyenes vonal mentén terjed, elhalkulás problémája, olcsó)_\
     > **Infra** _(kis táv, szilárd tárgyakon nem hatol át)_\
     > **Látható fény** _(lézerforrás + érzékelő, nagy sávszél, olcsó, nem > engedélyköteles, időjárásfüggő)_\
@@ -437,7 +437,7 @@
 
     > A küldendő **s(t)** szignált a szinuszgörbe amplitúdójaként kódoljuk:
 
-    > **f<sub>A</sub>(t)** = **s(t)** _ sin(2π _ **f** \* **t** + **𝜑**)\
+    > **f<sub>A</sub>(t)** = **s(t)** \* sin(2π \* **f** \* **t** + **𝜑**)\
     > **t**: periódus idő\
     > **f**: frekvencia\
     > **A**: amplitúdó\
@@ -449,7 +449,7 @@
 
     > A küldendő **s(t)** szignált a szinuszgörbe frekvenciájaként kódoljuk:
 
-    > **f<sub>F</sub>(t)** = **a** _ sin(2π _ **s(t)** \* **t** + **𝜑**)\
+    > **f<sub>F</sub>(t)** = **a** \* sin(2π \* **s(t)** \* **t** + **𝜑**)\
     > **t**: periódus idő\
     > **f**: frekvencia\
     > **𝜑**: eltolás
@@ -458,93 +458,152 @@
 
     > Az **s(t)** szignált a szinuszgörbe fázisában kódoljuk:
 
-    > **f<sub>P</sub>(t)** = **a** _ sin(2π _ **f** \* **t** + **s(t)**)\
+    > **f<sub>P</sub>(t)** = **a** \* sin(2π \* **f** \* **t** + **s(t)**)\
     > **t**: periódus idő\
     > **f**: frekvencia\
     > **𝜑**: eltolás
 
-## 3.előadás
+## 3. lecture
 
-Ismertesse a médium többszörös használatának 5 módszerét! - térbeli multiplexálás - külön vezeték vagy antenna - freki multiplexálás - több szignál kombinációja adja az átvitelt, minden szignálhoz más freki tartozik - hullámhossz multiplexálás - időbeli - jelsorozat idpintervallumokra szegmentálása, minden állomás saját időszeletet kap - CDMA - Code Divison Multiple Access - állomások egyfoltáyban sugározhatnak, a többszörös jelek lineárisan összeadódnak, a kulcs a hasznos jel kiszűrése
+-   Ismertesse a **médium többszörös használatának 5 módszerét**!
 
-Mi a CDMA? Ismertesse a mûködési algoritmusát.
-Minden bitidőt m darab intervallumra osztunk (chip)
-Minden állomásnak van egy m bites kódja (chip sequence) - páronként ortogonálisak
-1-es bit: chipkód, 0-ás bit: chipkód 1-es komplemense
+    -   **Térbeli** multiplexálás (**S**pace-**D**ivision **M**ultiplexing)
 
-Mi az a Walsh mátrix? Mire használható?
-oszlopai vagy sorai meghatároznak egy kölcsönösen ortogonális chipkód halmazt, CDMA multiplexálásra
+        > Külön vezeték vagy antenna
 
-Hogyan áll elő a H(2^k)-nal jelölt Walsh mátrix?
-H(2^k-1) H(2^k-1)
-H(2^k-1) -H(2^k-1)
-és a H(2^1) = [[1, 1], [1, -1]]
+    -   **Frekvencia** multiplexálás (**F**requency-**D**ivision **M**ultiplexing)
 
-Melyek az adatkapcsolati réteg legfontosabb feladatai?
-jól definiált szolgálati interfész a hálózati rétegnek - nyugtázatlan összeköttetés alapú háló - nyugtázott öszeköttetés nélküli - nyugtázott összeköttetés alapú
-átviteli hibák kezelése
-adatforgalom szabályozása, elárasztás elkerülése
-keretezés...
+        > Több szignál kombinációja adja az átvitelt, minden szignálhoz más frekvencia tartozik
 
-Milyen módszereket ismer a keretezésre az adatkapcsolati rétegben?
-bájt alapú: karakterszámlálás, bájtbeszúrás
-bit alapú: bitbeszúrás
-óra alapú keretezés (SONET - Synchronous Optical Network)kódolás
+    -   **Hullámhossz** multiplexálás (**W**avelength-**D**ivision **M**ultiplexing)
 
-Hogyan mûködik a karakterszámlálás?
-keret fejlécében megadjuk a keretben lévő karakterek számát
-érzékeny a hibára
+        > Optikai kábeleknél használt
 
-Hogyan mûködik a karakterbeszúrás (bájt beszúrás)?
-keret elején végén FLAG byte, + ESC byte
+    -   **Időbeli** multiplexálás (**T**ime-**D**ivision **M**ultiplexing)
 
-Hogyan mûködik a bitbeszúrás?
-minden keret speckó bitmintával kezdődik és végződik: 01111110
-a küldő az 11111-ek után berak egy 0-t, a fogadó tudja mi a helyzet
+        > Jelsorozat időintervallumokra szegmentálása, minden állomás saját időszeletet kap
 
-Hogyan mûködik az óra alapú keretezés (pl. SONET)?
-STS-1 keretei fix méretűek, 9\*90 bájt bájtonként keret-kezdő mintázat keresése
+    -   Kód multiplexálás **CDMA** (**C**ode **D**ivison **M**ultiple **A**ccess)
 
-Mit tud mondani a bájt beszúrás és a bit beszúrás hatékonyságáról legrosszabb esetben?
-bájtbeszúrás: 50%, ha minden bájt flagbájt
-bitbeszúrás: 20% csökk, ha csak 1-esek
+        > Állomások egyfolytában sugározhatnak a teljes frekvenciasávon
 
-Definiálja a csoportos bithibát adott védelmi övezet (m) mellett!
-a fogadott bitek egy olyan folytonos sorozata, amelynek az első és utolsó bitje hibás, és nem létezik ezek közt olyan m hosszú részsorozat, amelyet helyesen fogadtunk volna (m = védelmi övezet)
+        > Feltételezi, hogy a többszörös jelek lineárisan összeadódnak
 
-Mi az egyszerû bithiba definiciója?
-az adat 1 bitje 1 helyett 0 lesz v fordítva
+        > **Kulcs**: a hasznos jel kiszűrése
 
-Definiálja egy tetszőleges S kódkönyv Hamming távolságát?
-S kódkönyvben szerepeljenek egyenlő hosszú bitszavak, ekkor S Hamming-távolsága: d(S) = min { d(x,y) | x!=y eleme S }
+-   Mi a **CDMA**? Ismertesse a működési algoritmusát.
 
-Mi az a Hamming korlát?
-C: kód (n hosszú szavakból)
-|C| \* szum[i=0...(d(C)-1)/2] (n alatt i) <= 2^n
+    > Minden bitidőt _m_ darab intervallumra osztunk (chip)
 
-Mi a kódráta és a kód távolság? Milyen a rátája és távolsága egy jó kódkönyvnek?
-kódráta: log2|S| / n (hatékonyságot adja meg)
-kódtávolság: d(S) / n (hibakezelési lehetőségeket adja meg)
+    > Minden állomásnak van egy _m_ bites kódja (chip sequence - páronként ortogonálisak)
 
-Milyen összefüggés ismeretes egy tetszőleges kódkönyv, a Hamming távolsága és hibajavitási képessége között?
-d bithiba javításához a kódkönyv H-távolsága minimum 2d+1 legyen
+    > **1**-es bitet akar továbbítani egy állomás: saját töredéksorozatát küldi tovább\
+    > **0**-ás bitet akar továbbítani egy állomás: saját töredéksorozatát 1-es komplemensét küldi tovább
 
-Milyen összefüggés ismeretes egy tetszőleges kódkönyv, a Hamming távolsága és hibafelismerő képessége között?
-d+1 legyen
+-   Mi az a **Walsh mátrix**? Mire használható?
 
-Mikor érdemes hibajelző kódot és mikor hibajavító kódot használni?
-hibajelző: megbízható hálózat (ARQ) - olcsóbb
-hibajavító: megbízhatatlan hálózat, gyakori hibákkal (FEC) - sok ismétlés elkerülésére
+    > Oszlopai vagy sorai meghatároznak egy kölcsönösen ortogonális chipkód halmazt, CDMA multiplexálásra
 
-Hogyan mûködik a Hamming kód (több paritásos módszer)?
-... 3/45
+-   Hogyan áll elő a **H(2<sup>k</sup>)**-nal jelölt Walsh mátrix?
 
-Mi a redundancia szerepe a hibafelügyeletben?
-...
+    ```bash
+    ┌                     ┐
+    │ H(2^k-1),  H(2^k-1) │
+    │ H(2^k-1), -H(2^k-1) │
+    └                     ┘
+    ```
 
-4. előadás
+    > Ahol **H(2^1)** = [[1, 1], [1, -1]]
 
----
+-   Melyek az **adatkapcsolati réteg** legfontosabb feladatai?
+
+    -   Jól definiált szolgálati interfész a hálózati rétegnek
+        -   Nyugtázatlan összeköttetés alapú
+        -   Nyugtázott öszeköttetés nélküli
+        -   Nyugtázott összeköttetés alapú
+    -   Átviteli hibák kezelése
+    -   Adatforgalom szabályozása (elárasztás elkerülése)
+
+-   Milyen módszereket ismer a **keretezés**re az adatkapcsolati rétegben?
+
+    > **Bájt alapú**: karakterszámlálás, bájtbeszúrás
+
+    > **Bit alapú**: bitbeszúrás
+
+    > **Óra alapú**: SONET - (**S**ynchronous **O**ptical **Net**work) kódolás
+
+-   Hogyan működik a **karakterszámlálás**?
+
+    > Keret fejlécében megadjuk a keretben lévő karakterek számát
+
+    > Érzékeny a hibára
+
+-   Hogyan működik a **karakterbeszúrás** (bájt beszúrás)?
+
+    > Keret elején végén _FLAG_ byte, + _ESC_ byte
+
+-   Hogyan működik a **bitbeszúrás**?
+
+    > Minden keret speciális bitmintával kezdődik és végződik: _01111110_
+
+    > A küldő az adatban előforduló minden _11111_ részsorozat után berak egy _0_-t, a fogadó majd eltávolítja
+
+-   Hogyan működik az **óra alapú** keretezés (pl. SONET)?
+
+    > STS-1 keretei fix méretűek, 9\*90 bájt, a fogadása után újabb keret kezdő mintázatot kezd keresni
+
+-   Mit tud mondani a bájt beszúrás és a bit beszúrás hatékonyságáról legrosszabb esetben?
+
+    > **Bájtbeszúrás**: 50%, ha minden bájt flagbájt
+
+    > **Bitbeszúrás**: 20% csökk, ha csak 1-esek
+
+-   Mi az egyszerű bithiba definiciója?
+
+    > Az adat **1** bitje **1** helyett **0** lesz vagy fordítva
+
+-   Definiálja a **csoportos bithibát** adott védelmi övezet (_m_) mellett!
+
+    > A fogadott bitek egy olyan folytonos sorozata, amelynek az első és utolsó bitje hibás, és nem létezik ezek közt olyan _m_ hosszú részsorozat, amelyet helyesen fogadtunk volna (_m_ = védelmi övezet)
+
+-   Definiálja egy tetszőleges _S_ kódkönyv **Hamming távolság**át?
+
+    > _S_ kódkönyvben szerepeljenek egyenlő hosszú bitszavak, ekkor S Hamming-távolsága: \
+    > d(S) = min { d(x,y) | x!=y eleme S }
+
+-   Mi az a **Hamming korlát**?
+
+    > **C**: kód (_n_ hosszú szavakból)\
+    > |**C**| \* szum[i = 0 tól (d(**C**) - 1) / 2] (_n_ alatt i) <= 2<sup>n</sup>
+
+-   Mi a **kódráta** és a **kód távolság**? Milyen a rátája és távolsága egy jó kódkönyvnek?
+
+    > **kódráta**: log<sub>2</sub>|S| / n (hatékonyságot adja meg)
+    > **kódtávolság**: d(S) / n (hibakezelési lehetőségeket adja meg)
+
+-   Milyen összefüggés ismeretes egy tetszőleges kódkönyv, a Hamming távolsága és **hibajavitási** képessége között?
+
+    > _d_ bithiba javításához a kódkönyv H-távolsága minimum _2d+1_ legyen
+
+-   Milyen összefüggés ismeretes egy tetszőleges kódkönyv, a Hamming távolsága és **hibafelismerő** képessége között?
+
+    > _d_ bithiba felismeréséhez a kódkönyv H-távolsága minimum _d+1_ legyen
+
+-   Mikor érdemes hibajelző kódot és mikor hibajavító kódot használni?
+
+    > **Hibajelző**: megbízható hálózat (ARQ) - olcsóbb
+
+    > **Hibajavító**: megbízhatatlan hálózat, gyakori hibákkal (FEC) - sok ismétlés elkerülésére
+
+-   Hogyan működik a **Hamming kód** (több paritásos módszer)?
+
+    > TODO 3/45
+
+-   Mi a **redundancia** szerepe a hibafelügyeletben?
+
+    > TODO
+
+## 4. lecture
 
 Mi a CRC? Mire használható?
 Cyclic Redundancy Check, hibajelző kód, bitsorozatokat Z2 feletti polinomok reprezentációjának tekinti
@@ -624,7 +683,7 @@ Diszkrét: az időt diszkrét résekre osztjuk, sugárzás csak az időrések el
 Mit jelent a vivőjel érzékelési (Carrier Sensing) képesség?
 Az állomások meg tudják vizsgálni a közös csatorna állapotát küldés előtt, hogy foglalt-e vagy szabad. Ha foglalt, addig nem próbálják meg használni. Ha nem rendelkeznek ezzel a képességgel, akkor küldenek, ahogy megvan rá a lehetőségük.
 
-Hogyan mûködik az egyszerû ALOHA protokoll?
+Hogyan működik az egyszerű ALOHA protokoll?
 Ha van küldendő adat, akkor a hoszt elküldi.
 
 Mit jelent a keretidő az ALOHA protokoll esetén?
@@ -640,7 +699,7 @@ Az az időtartam, amely alatt ha másik keret is elküldésre kerül, akkor az a
 
 ---
 
-Hogyan mûködik a réselt ALOHA protokoll?
+Hogyan működik a réselt ALOHA protokoll?
 A csatornát azonos időrésekre bontjuk, egy időrés = T_f. Átvitel csak az időrések határán lehetséges
 Algo: Amikor egy keret küldésre kész, akkor kiküldi a következő időrés határon
 
@@ -648,28 +707,28 @@ Mennyi a réselt Aloha protokoll esetén az áteresztőképesség a terhelés f�
 S(G) = G _ a jó átvitel valószínűsége, azaz T_f idő alatt 0 keretet küldenek = G _ P0(T_f) = G \* e^-G
 
 Carrier Sense Multiple Access
-Hogyan mûködik az 1-perzisztens CSMA protokoll?
+Hogyan működik az 1-perzisztens CSMA protokoll?
 Folytonos időmodell
 Küldés előtt belehallgat:
 Ha foglalt, akkor vár, amíg fel nem szabadul.
 Ha szabad, küld
 Ütközéskor véletlen ideig vár, majd újrakezdi a procedúrát
 
-Hogyan mûködik a nem-perzisztens CSMA protokoll?
+Hogyan működik a nem-perzisztens CSMA protokoll?
 Folytonos időmodell
 Küldés előtt belehallgat:
 Ha foglalt, akkor véletlen ideig vár, majd újrakezd
 Ha szabad, küld
 Ütközéskor véletlen ideig vár, majd újrakezdi a procedúrát
 
-Hogyan mûködik a p-perzisztens CSMA protokoll?
+Hogyan működik a p-perzisztens CSMA protokoll?
 Diszkrét időmodell
 Küldés előtt belehallgat:
 Ha foglalt, akkor a következő időrésig vár, majd újra
 Ha szabad, akkor p valszegséggel küld. Ha mégse küld, akkor a következő időrésben megint p-vel küld. Ez addig megy, amíg el nem küldi, vagy más nem kezd el küldeni. Ekkor úgy viselkedik, mintha ütközés történt volna.
 Ütközéskor véletlen ideig vár, majd újra
 
-Hogyan mûködik a CSMA/CD protokoll? (CD -> Collision Detection: ütközés érzékelés)
+Hogyan működik a CSMA/CD protokoll? (CD -> Collision Detection: ütközés érzékelés)
 Egy CSMA protokoll kiegészítése így:
 Minden állomás küldés közben is figyeli a csatornát, ha ütközést tapasztal azonnal
 megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár, majd újraküld. Újraküldés során a binary expontential backoff módszer alkalmazása
@@ -680,11 +739,11 @@ válasszunk [0, 2^n-1] -ből egyet, ahol n az ütközések száma
 ennyi keretidőt várjunk az újraküldésig
 n felső határa 10, 16 sikertelen próba után eldobjuk
 
-Hogyan mûködik az alapvető bittérkép eljárás?
+Hogyan működik az alapvető bittérkép eljárás?
 Versengési periódus N időrés, az i-edik hoszt ha küldeni akar, akkor az i-edik időrésben szór egy 1-est
 A versengési periódus végére mindenki ismeri a küldőket, így sorban küldenek
 
-Hogyan mûködik a bináris visszaszámlálás protokoll?
+Hogyan működik a bináris visszaszámlálás protokoll?
 Minden állomásnak van azonos hosszú bitsorozat azonosítója, a versengési időben elkezdik bitenként küldeni az azonosítót, ha vki 0-t küld de 1-et hall vissza a vagyolódás miatt, akkor lemond a küldési szándékáról
 Mok-Ward módosítása: sikeres átvitel után ciklikusan permutáljuk az állomások címét
 
@@ -692,7 +751,7 @@ Mi a korlátozott versenyes protokollok célja?
 Ötvözni a versenyhelyzetes és a versenymentes protokollok jó tulajdonságait
 Kis terhelés esetén versenyhelyzetes technikát használ a kis késleltetés érdekében, nagy terhelés esetén mellett ütközésmentes technika a csatorna jó kihasználása miatt
 
-Hogyan mûködik az adaptív fabejárási protokoll?
+Hogyan működik az adaptív fabejárási protokoll?
 Állomások bináris fában reprezentálva 0. időrésben mindenki küld
 Ha ütközés, akkor mélységi bejárás, minden rés egy csomóponthoz van rendelve
 Ütközés esetén megnézzük a bal és a jobb csomópontot
@@ -814,7 +873,7 @@ Mi az alhálózati maszk és mire szolgál?
 
 Mi az a NAT doboz és mire szolgál?
 Mi az az MTU és mire szolgál?
-Hogyan mûködik az MTU felderítés?
+Hogyan működik az MTU felderítés?
 Hogyan ÉS hol történik az fragmentált/darabolt IP csomagok helyreállítása?
 Mi az IPv6 cím és hogyan ábrázoljuk?
 Mi a localhost IPv6 esetén?
@@ -823,23 +882,23 @@ Mi gátolja az IPv6-ra való átállást?
 Hogyan oldható meg az IPv6 csomagok átvitele IPv4 hálózat felett?
 Mire szolgál az ICMP protokoll?
 Mi lehet a hatása egy ICMP forráslefojtás csomagnak?
-Mire szolgál az ARP és hogyan mûködik?
-Mire szolgál a RARP és hogyan mûködik?
-Mi az a DHCP és hogyan mûködik?
+Mire szolgál az ARP és hogyan működik?
+Mire szolgál a RARP és hogyan működik?
+Mi az a DHCP és hogyan működik?
 Milyen lehetőségeket támogat a DHCP?
 Mi DHCP esetén a cím bérlés?
 Mi az AS (Autonóm rendszer)?
 Miért van szükségünk AS-ekre?
 Mi azonosít egy AS-t?
 Milyen routing megoldást/protokollt alakalmaz a BGP?
-Hogyan mûködik az útvonalvektor protokoll?
+Hogyan működik az útvonalvektor protokoll?
 Mit értünk az alatt, hogy minden AS saját útválasztási politikát alkalmazhat?
 Sorolja fel az IGP, iBGP és eBGP szerepét?
 Mikor mondjuk két AS-ről, hogy azok össze vannak kötve?
 Adjon meg 3 példát forgalomirányítási korlátozásra AS-ek közötti routing esetén.
 Mit nevez a BGP csonka hálózatnak?
 Mit nevez a BGP többszörösen bekötött hálózatnak?Mit nevez a BGP tranzit hálózatnak?
-Mire szolgál és hogyan mûködik a VPN (virtuális magánhálózat)?
+Mire szolgál és hogyan működik a VPN (virtuális magánhálózat)?
 
 ## 8.előadás:
 
@@ -855,7 +914,7 @@ Mi a fogadó által felajánlott ablakméret (wnd)?
 Mit jelent, ha a fogadó wnd=0-át küld?
 Mit nevezünk folyamvezérlésnek?
 Mit nevezünk torlódásnak TCP esetén?
-Mi a TCP Nagle algoritmus mûködési alapelve?
+Mi a TCP Nagle algoritmus működési alapelve?
 Mi a TCP Karn algoritmusa? A kapcsolódó problémát is ismertesse!
 Vázolja a TCP Incast problémát!
 
@@ -870,8 +929,8 @@ Mi a gyors visszaállítás TCP Reno esetén?
 Mivel több a TCP NewReno? Mi a problémája az alkalmazott megoldásnak?
 Mi a probléma nagy késleltetés-sávszélesség szorzatú hálózatok esetén?
 Mely TCP variánsok használatosak napjainkban?
-Hogyan mûködik a Compound TCP?
-Hogyan mûködik a CUBIC TCP?
+Hogyan működik a Compound TCP?
+Hogyan működik a CUBIC TCP?
 Mik a TCP problémái kis folyamok esetén?
 Mik a TCP problémái vezetéknélküli hálózatok esetén?
 Mi a DoS támadás? Miért probléma ez TCP esetén?
@@ -892,8 +951,8 @@ Mit nevezünk statikus weboldalnak?
 Mit nevezünk dinamikus weboldalnak?
 Mi az a PLT? Mit mérünk vele?
 Mik azok a párhuzamos és perzisztens kapcsolatok?
-Hogyan mûködik a cache "HTTP esetén"?
-Mire jó egy HTTP proxy? Hogyan mûködik?
+Hogyan működik a cache "HTTP esetén"?
+Mire jó egy HTTP proxy? Hogyan működik?
 Mi a CDN? Milyen problémát old meg? Hogyan valsítja ezt meg?
 Mik a p2p hálózatok legfontosabb jellemzői?
 Mi a szerepe egy peer-nek egy p2p hálózatban?
