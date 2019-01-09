@@ -222,8 +222,11 @@ Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 2. Minden bridge megkeresi a legrövidebb utat a gyökérhez
 3. Ezen utak unióját véve megkapjuk a feszítőfát
 
--   A fa építése során a bridge-ek egymás között konfigurációs üzeneteket (Configuration Bridge Protocol Data Units [BPDUs]) cserélnek - A gyökér elem megválasztásához - A legrövidebb utak meghatározásához - A gyökérhez legközelebbi szomszéd (next hop) állomás és a
-    hozzá tartozó port azonosításához - A feszítőfához tartozó portok kiválasztása
+-   A fa építése során a bridge-ek egymás között konfigurációs üzeneteket (Configuration Bridge Protocol Data Units [BPDUs]) cserélnek
+    -   A gyökér elem megválasztásához
+    -   A legrövidebb utak meghatározásához
+    -   A gyökérhez legközelebbi szomszéd (next hop) állomás és a hozzá tartozó port azonosításához
+    -   A feszítőfához tartozó portok kiválasztása
 -   Kezdetben minden állomás feltételezi magáról, hogy
     gyökér - Bridge-ek minden irányba szétküldik a BPDU üzeneteiket:
     -   | Bridge ID | Gyökér ID | Út költség a gyökérhez |
