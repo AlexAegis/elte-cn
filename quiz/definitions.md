@@ -1048,91 +1048,328 @@
 
 ## 7.előadás:
 
-Mi az a NAT doboz és mire szolgál?
-Mi az az MTU és mire szolgál?
-Hogyan működik az MTU felderítés?
-Hogyan ÉS hol történik az fragmentált/darabolt IP csomagok helyreállítása?
-Mi az IPv6 cím és hogyan ábrázoljuk?
-Mi a localhost IPv6 esetén?
-Soroljon fel két olyan lehetőséget (az EA-on látott 4-ből), melyet az IPv6 támogat, de az IPv4 esetén nem találkoztunk vele?
-Mi gátolja az IPv6-ra való átállást?
-Hogyan oldható meg az IPv6 csomagok átvitele IPv4 hálózat felett?
-Mire szolgál az ICMP protokoll?
-Mi lehet a hatása egy ICMP forráslefojtás csomagnak?
-Mire szolgál az ARP és hogyan működik?
-Mire szolgál a RARP és hogyan működik?
-Mi az a DHCP és hogyan működik?
-Milyen lehetőségeket támogat a DHCP?
-Mi DHCP esetén a cím bérlés?
-Mi az AS (Autonóm rendszer)?
-Miért van szükségünk AS-ekre?
-Mi azonosít egy AS-t?
-Milyen routing megoldást/protokollt alakalmaz a BGP?
-Hogyan működik az útvonalvektor protokoll?
-Mit értünk az alatt, hogy minden AS saját útválasztási politikát alkalmazhat?
-Sorolja fel az IGP, iBGP és eBGP szerepét?
-Mikor mondjuk két AS-ről, hogy azok össze vannak kötve?
-Adjon meg 3 példát forgalomirányítási korlátozásra AS-ek közötti routing esetén.
-Mit nevez a BGP csonka hálózatnak?
-Mit nevez a BGP többszörösen bekötött hálózatnak?Mit nevez a BGP tranzit hálózatnak?
-Mire szolgál és hogyan működik a VPN (virtuális magánhálózat)?
+-   Mi az a **NAT doboz** és mire szolgál?
+
+    > **TODO**
+
+-   Mi az az **MTU** és mire szolgál?
+
+    > **TODO**
+
+-   Hogyan működik az **MTU felderítés**?
+
+    > **TODO**
+
+-   Hogyan ÉS hol történik az **fragmentált/darabolt IP csomagok** helyreállítása?
+
+    > **TODO**
+
+-   Mi az **IPv6** cím és hogyan ábrázoljuk?
+
+    > **TODO**
+
+-   Mi a **localhost IPv6** esetén?
+
+    > **TODO**
+
+-   Soroljon fel két olyan lehetőséget (az EA-on látott 4-ből), melyet **az IPv6 támogat, de az IPv4 esetén nem** találkoztunk vele?
+
+    > **TODO**
+
+-   Mi gátolja az **IPv6-ra való átállás**t?
+
+    > **TODO**
+
+-   Hogyan oldható meg az **IPv6 csomagok átvitele IPv4 hálózat felett**?
+
+    > **TODO**
+
+-   Mire szolgál az **ICMP** protokoll?
+
+    > **TODO**
+
+-   Mi lehet a hatása egy **ICMP forráslefojtás** csomagnak?
+
+    > **TODO**
+
+-   Mire szolgál az **ARP** és hogyan működik?
+
+    > **TODO**
+
+-   Mire szolgál a **RARP** és hogyan működik?
+
+    > **TODO**
+
+-   Mi az a **DHCP** és hogyan működik?
+
+    > **TODO**
+
+-   Milyen lehetőségeket támogat a **DHCP**?
+
+    > **TODO**
+
+-   Mi DHCP esetén a **cím bérlés**?
+
+    > **TODO**
+
+-   Mi az **AS** (Autonóm rendszer)?
+
+    > **TODO**
+
+-   Miért van szükségünk **AS**-ekre?
+
+    > **TODO**
+
+-   Mi azonosít egy **AS**-t?
+
+    > **TODO**
+
+-   Milyen routing megoldást/protokollt alakalmaz a **BGP**?
+
+    > **TODO**
+
+-   Hogyan működik az **útvonalvektor protokoll**?
+
+    > **TODO**
+
+-   Mit értünk az alatt, hogy minden AS **saját útválasztási politiká**t alkalmazhat?
+
+    > **TODO**
+
+-   Sorolja fel az **IGP**, **iBGP** és **eBGP** szerepét?
+
+    > **TODO**
+
+-   Mikor mondjuk két AS-ről, hogy azok össze vannak kötve?
+
+    > **TODO**
+
+-   Adjon meg 3 példát **forgalomirányítási korlátozás**ra AS-ek közötti routing esetén.
+
+    > **TODO**
+
+-   Mit nevez a **BGP csonka hálózat**nak?
+
+    > **TODO**
+
+-   Mit nevez a **BGP többszörösen bekötött** hálózatnak?
+
+    > **TODO**
+
+-   Mit nevez a **BGP tranzit hálózat**nak?
+
+    > **TODO**
+
+-   Mire szolgál és hogyan működik a **VPN** (virtuális magánhálózat)?
+
+    > **TODO**
 
 ## 8.előadás:
 
-Mire szolgál a TCP protokoll? Mik a főbb jellemzői?
-Mire szolgál az UDP protokoll? Mik a főbb jellemzői?
-Hogyan történik egy TCP kapcsolat felépítése? Mik a lépései?
-Hogyan történik egy TCP kapcsolat lezárása?
-Mit mondhatunk a TCP átviteléről az ablak és az RTT függvényében?
-Mit jelent az RTO, és hol használják?
-Hogyan történik az RTT becslés az eredeti TCP esetén?
-Mit mondhatunk TCP esetén a hibadetektálásról?
-Mi a fogadó által felajánlott ablakméret (wnd)?
-Mit jelent, ha a fogadó wnd=0-át küld?
-Mit nevezünk folyamvezérlésnek?
-Mit nevezünk torlódásnak TCP esetén?
-Mi a TCP Nagle algoritmus működési alapelve?
-Mi a TCP Karn algoritmusa? A kapcsolódó problémát is ismertesse!
-Vázolja a TCP Incast problémát!
+-   Mire szolgál a **TCP** protokoll? Mik a főbb jellemzői?
+
+    > **TODO**
+
+-   Mire szolgál az **UDP** protokoll? Mik a főbb jellemzői?
+
+    > **TODO**
+
+-   Hogyan történik egy **TCP kapcsolat** felépítése? Mik a lépései?
+
+    > **TODO**
+
+-   Hogyan történik egy **TCP kapcsolat lezárása**?
+
+    > **TODO**
+
+-   Mit mondhatunk a **TCP átvitel**éről az ablak és az **RTT** függvényében?
+
+    > **TODO**
+
+-   Mit jelent az **RTO**, és hol használják?
+
+    > **TODO**
+
+-   Hogyan történik az **RTT becslés** az eredeti TCP esetén?
+
+    > **TODO**
+
+-   Mit mondhatunk **TCP esetén a hibadetektálás**ról?
+
+    > **TODO**
+
+-   Mi a fogadó által felajánlott **ablakméret** (wnd)?
+
+    > **TODO**
+
+-   Mit jelent, ha a **fogadó wnd=0-át küld**?
+
+    > **TODO**
+
+-   Mit nevezünk **folyamvezérlés**nek?
+
+    > **TODO**
+
+-   Mit nevezünk **torlódásnak TCP esetén**?
+
+    > **TODO**
+
+-   Mi a **TCP Nagle** algoritmus működési alapelve?
+
+    > **TODO**
+
+-   Mi a **TCP Karn** algoritmusa? A kapcsolódó problémát is ismertesse!
+
+    > **TODO**
+
+-   Vázolja a **TCP Incast problémá**t!
+
+    > **TODO**
 
 ## 9.előadás: (TCP folyt.)
 
-Mi az a torlódási ablak? Mire szolgál?
-Mi az a "slow start" TCP esetén?
-Mi az AIMD TCP Tahoe esetén?
-Mi a gyors újraküldéss TCP RENO esetén?
-Mit jelenthet az ha három nyugta-duplikátum érkezik egymás után?
-Mi a gyors visszaállítás TCP Reno esetén?
-Mivel több a TCP NewReno? Mi a problémája az alkalmazott megoldásnak?
-Mi a probléma nagy késleltetés-sávszélesség szorzatú hálózatok esetén?
-Mely TCP variánsok használatosak napjainkban?
-Hogyan működik a Compound TCP?
-Hogyan működik a CUBIC TCP?
-Mik a TCP problémái kis folyamok esetén?
-Mik a TCP problémái vezetéknélküli hálózatok esetén?
-Mi a DoS támadás? Miért probléma ez TCP esetén?
+-   Mi az a **torlódási ablak**? Mire szolgál?
+
+    > **TODO**
+
+-   Mi az a **slow start** TCP esetén?
+
+    > **TODO**
+
+-   Mi az **AIMD TCP Tahoe** esetén?
+
+    > **TODO**
+
+-   Mi a gyors újraküldéss **TCP RENO** esetén?
+
+    > **TODO**
+
+-   Mit jelenthet az ha **három nyugta-duplikátum érkezik egymás után**?
+
+    > **TODO**
+
+-   Mi a gyors visszaállítás **TCP Reno** esetén?
+
+    > **TODO**
+
+-   Mivel több a **TCP NewReno**? Mi a problémája az alkalmazott megoldásnak?
+
+    > **TODO**
+
+-   Mi a probléma **nagy késleltetés-sávszélesség szorzatú hálózatok** esetén?
+
+    > **TODO**
+
+-   Mely **TCP variánsok használatosak napjainkban**?
+
+    > **TODO**
+
+-   Hogyan működik a **Compound TCP**?
+
+    > **TODO**
+
+-   Hogyan működik a **CUBIC TCP**?
+
+    > **TODO**
+
+-   Mik a TCP problémái kis folyamok esetén?
+
+    > **TODO**
+
+-   Mik a **TCP problémái vezetéknélküli hálózatok esetén**?
+
+    > **TODO**
+
+-   Mi a **DoS** támadás? Miért probléma ez TCP esetén?
+
+    > **TODO**
 
 ## 10.előadás:
 
-Mit nevezünk munkamenetnek az ISO/OSI referencia modellben?
-Mit tud a DNS tartománynevek (körzetnevek) rendszeréről?
-Mik azok a TLD-k? Adjon meg 4 példát.
-Mik azok a DNS erőforrás rekordok? Mit tárolnak (1-2 példa)?
-Mit tud a (DNS) zónákról?
-A névfeloldásnál mit neveznek iteratív lekérdezésnek? Mik a jellemzői?
-A névfeloldásnál mit neveznek rekurzív lekérdezésnek? Mik a jellemzői?
-Írja le a lokális névszerverek legfőbb jellemzőit!
-Mit jelent DNS esetén a cache? Mire jó?
-Ismertesse egy HTML oldal lekérésének 5 lépését!
-Mit nevezünk statikus weboldalnak?
-Mit nevezünk dinamikus weboldalnak?
-Mi az a PLT? Mit mérünk vele?
-Mik azok a párhuzamos és perzisztens kapcsolatok?
-Hogyan működik a cache "HTTP esetén"?
-Mire jó egy HTTP proxy? Hogyan működik?
-Mi a CDN? Milyen problémát old meg? Hogyan valsítja ezt meg?
-Mik a p2p hálózatok legfontosabb jellemzői?
-Mi a szerepe egy peer-nek egy p2p hálózatban?
-Mik egy torrent letöltésének lépései (4 lépés)?
-Mit nevezünk choke peer-nek?
-Mi az a seed peer?
+-   Mit nevezünk **munkamenet**nek az ISO/OSI referencia modellben?
+
+    > **TODO**
+
+-   Mit tud a **DNS** tartománynevek (körzetnevek) rendszeréről?
+
+    > **TODO**
+
+-   Mik azok a **TLD**-k? Adjon meg 4 példát.
+
+    > **TODO**
+
+-   Mik azok a **DNS erőforrás rekord**ok? Mit tárolnak (1-2 példa)?
+
+    > **TODO**
+
+-   Mit tud a (DNS) **zónák**ról?
+
+    > **TODO**
+
+-   A névfeloldásnál mit neveznek **iteratív lekérdezés**nek? Mik a jellemzői?
+
+    > **TODO**
+
+-   A névfeloldásnál mit neveznek **rekurzív lekérdezés**nek? Mik a jellemzői?
+
+    > **TODO**
+
+-   Írja le a **lokális névszerver**ek legfőbb jellemzőit!
+
+    > **TODO**
+
+-   Mit jelent **DNS esetén a cache**? Mire jó?
+
+    > **TODO**
+
+-   Ismertesse egy **HTML** oldal lekérésének 5 lépését!
+
+    > **TODO**
+
+-   Mit nevezünk **statikus weboldal**nak?
+
+    > **TODO**
+
+-   Mit nevezünk **dinamikus weboldal**nak?
+
+    > **TODO**
+
+-   Mi az a **PLT**? Mit mérünk vele?
+
+    > **TODO**
+
+-   Mik azok a **párhuzamos és perzisztens kapcsolat**ok?
+
+    > **TODO**
+
+-   Hogyan működik a **cache HTTP esetén**?
+
+    > **TODO**
+
+-   Mire jó egy **HTTP proxy**? Hogyan működik?
+
+    > **TODO**
+
+-   Mi a **CDN**? Milyen problémát old meg? Hogyan valsítja ezt meg?
+
+    > **TODO**
+
+-   Mik a **p2p** hálózatok legfontosabb jellemzői?
+
+    > **TODO**
+
+-   Mi a szerepe egy **peer**-nek egy p2p hálózatban?
+
+    > **TODO**
+
+-   Mik egy **torrent** letöltésének lépései (4 lépés)?
+
+    > **TODO**
+
+-   Mit nevezünk **choke peer**-nek?
+
+    > **TODO**
+
+-   Mi az a **seed peer**?
+
+    > **TODO**
