@@ -1,30 +1,33 @@
 # Algorithms
 
-## CRC:
+## CRC
 
 G(x) egy generátor polinom, aminek a foka r, ezt a polinomot a küldő és a vevő egyaránt ismeri.
 
-1. Fűzzünk r darab 0 bitet a keret alacsony helyiértékű végéhez, tehát az m + r bitet fog tartalmazni és reprezentálja a x^r\*M(x) polinomot
-2. x^r\*M(x) elosztása G(x)-szel modulo 2 (bitsorozatok)
-3. Az előző osztás maradékának kivonása x^r\*M(x)-ből modulo 2 (bitsorozatok), az eredmény az ellenőrző összeggel ellátott, továbbítandó keret. Jelölése: T(x)
+### Algoritmus
+
+1. Fűzzünk r darab 0 bitet a keret alacsony helyiértékű végéhez, tehát az m + r bitet fog tartalmazni és reprezentálja a x<sup>r\*M(x)</sup> polinomot
+2. x<sup>r\*M(x)</sup> elosztása G(x)-szel modulo 2 (bitsorozatok)
+3. Az előző osztás maradékának kivonása x<sup>r\*M(x)</sup>-ből modulo 2 (bitsorozatok), az eredmény az ellenőrző összeggel ellátott, továbbítandó keret. Jelölése: T(x)
 4. A vevő a T(x) + E(x) polinomnak megfelelő sorozatot kapja, ahol E(x) a hibapolinom. Ezt elosztja a G(x) generátor polinommal, ha van maradéka ennek az osztásnak, akkor hiba történt.
 
-## CDMA:
+## CDMA
 
 A kódosztásos többszörös hozzáférés (angolul Code Division Multiple Access, röviden CDMA) a multiplexálás egy formája és a többszörös hozzáférés egy lehetséges megvalósítása, amely az adatokhoz csatornánként speciális kódokat rendel, és kihasználja a konstruktív interferencia tulajdonságot a multiplexáláshoz.
 
-Algoritmus:
+### Algoritmus
 
 1. Minden bitidőt m darab rövid intervallumra osztunk, ezek a töredékek (angolul chip)
 2. Minden állomáshoz egy m bites kód tartozik, úgynevezett töredéksorozat (angolul chip sequence)
 3. Ha 1-es bitet akar továbbítani egy állomás, akkor elküldi a saját töredéksorozatát
 4. Ha 0-es bitet akar továbbítani egy állomás, akkor elküldi a saját töredéksorozatának egyes komplemensét
 5. m-szeres sávszélesség válik szükségessé, azaz szórt spektrumú kommunikációt valósít meg
-6. Szemléltetésre bipoláris kódolást használunk:
-   bináris 0 esetén -1, bináris 1 esetén +1
-   az állomásokhoz rendelt töredék sorozatok páronként ortogonálisak
+6. Szemléltetésre bipoláris kódolást használunk
 
-## CSMA:
+    > Bináris 0 esetén -1, bináris 1 esetén +1\
+    > az állomásokhoz rendelt töredék sorozatok páronként ortogonálisak
+
+## CSMA
 
 ### Az 1-perzisztens CSMA protokoll:
 
@@ -82,7 +85,9 @@ Algoritmus:
     -   Alapvetés: a közeg lehetőséget ad a csatornába hallgatásra
     -   Gyér forgalom esetén a közeghozzáférés nagyon gyors, mivel kevés állomás kíván a csatornán adni. Nagy hálózati forgalom esetén az átvitel lelassul, mivel a nagy csatorna terhelés miatt gyakoriak lesznek az ütközések. (A széles körben elterjedt Ethernet hálózat ezt a módszert használja.)
 
-Algoritmus
+---
+
+### Algoritmus
 
 1. Használjuk valamely CSMA variánst
 2. A keret kiküldése után, figyeljük a közeget, hogy történik-e
@@ -92,7 +97,7 @@ Algoritmus
 5. Alkalmazzuk az bináris exponenciális hátralék módszert az
    újraküldés során (binary exponential backoff)
 
--   Ütközések történhetnek, az ütközéseket gyorsan észleljük és felfüggesztjük az átvitelt.
+> Ütközések történhetnek, az ütközéseket gyorsan észleljük és felfüggesztjük az átvitelt.
 
 ## ALOHA:
 
@@ -112,13 +117,13 @@ hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg t
 -   ugyancsak Poisson-eloszlású, és keretidőnkénti középértéke G, ha
     -   G=N, akkor a terhelés kicsi.
     -   G>N, akkor a terhelés nagy.
-    -   Áteresztő képesség: S = 𝐺𝑃_0, ahol P_0 keret sérülésmentes átvitelének valószínűsége.
+    -   Áteresztő képesség: S = 𝐺𝑃<sub>0</sub>, ahol P<sub>0</sub> keret sérülésmentes átvitelének valószínűsége.
 
 ### Réselt ALOHA protokoll
 
 Az idő diszkrét, keretidőhöz igazodó időszeletekre osztásával az ALOHA rendszer kapacitása megduplázható. (1972, Roberts)
-Következmény: a kritikus szakasz hossza a felére csökken, azaz 𝑃_0 = 𝑒^(−𝐺)
-Azaz az áteresztő képesség: S = 𝐺𝑃_0 = 𝐺𝑒^(−𝐺)
+Következmény: a kritikus szakasz hossza a felére csökken, azaz 𝑃<sub>0</sub> = 𝑒<sup>(−𝐺)</sup>
+Azaz az áteresztő képesség: S = 𝐺𝑃<sub>0</sub> = 𝐺𝑒<sup>(−𝐺)</sup>
 A csatorna terhelésének kis növekedése is drasztikusan csökkentheti a médium teljesítményét
 
 ## Távolságvektor alapú forgalomirányítás:
@@ -143,9 +148,9 @@ Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 -   Lehetséges megoldás:
     -   „split horizon with poisoned reverse”: negatív információt küld vissza arról a szomszédjának, amit tőle „tanult”. (RFC 1058)
 
-## Link-state: Mik a link-state (kapcsolatállapot) alapú forgalomirányítás megvalósításának lépései?
+## Link-state
 
-### Link-state routing:
+### Algoritmus
 
 1. Szomszédok felkutatása, és hálózati címeik meghatározása
 2. Megmérni a késleltetést vagy költséget minden szomszédhoz
@@ -207,7 +212,9 @@ Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
     -   “I don’t know this name, but this other server might”
 -   Napjainkban iteratív módon működik a DNS!!!
 
-## A feszítőfa algoritmusa
+## Feszítőfa
+
+### Algoritmus
 
 1. Az egyik bride-et megválasztjuk a fa gyökerének
 2. Minden bridge megkeresi a legrövidebb utat a gyökérhez
