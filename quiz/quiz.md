@@ -258,7 +258,7 @@
 
     > 2
 
--   Egy kód Hamming-távolsága 8. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+-   Egy kód Hamming-távolsága 8. Hány egyszerű bithibát tudunk felismerni ezzel a kóddal?
 
     > 7
 
@@ -270,13 +270,19 @@
 
     > 12
 
--   Egy kód Hamming-távolsága 15. Hány egyszerű bithibát tudunk javítani ezzel a kóddal?
+-   Egy kód Hamming-távolsága 15. Hány egyszerű bithibát tudunk felismerni ezzel a kóddal?
 
     > 14
 
 -   A megbízató adatátvitel 4 fő célja közül melyik szól az adat leszállítási idejének minimalizálásáról.
 
     > Időbeliség/Timeliness
+
+-   A megbízható adatátvitel 4 fő célja körül melyik szól arról, hogy:
+
+    "az adat leszállítása biztosított, sorrend helyes és átvitel során nem módosul".
+
+    > Helyesség/Correctness
 
 -   Egy csúszóablak (sliding window) protokoll esetén a sorszámok tere 0,1,2,3,4,5,6,7, a négy hosszú küldési ablakban az 1,2,3,4 sorszámok vannak. Az 1-es sorszámú nyugta beérkezése után, milyen sorszámmal lehetnek elküldött de nem nyugtázott csomagok.
 
@@ -306,6 +312,7 @@
     > Minden elvesztett vagy hibás csomagot újraküld.
 
 -   Adott egy hálózat:
+
     A------------1 Gbps---------B------------10 Gbps--------C
 
     és adott 3 folyam:
@@ -323,11 +330,6 @@
 -   Mi a folyam vezérlés (flow control) célja a megbízható adatátvitel során?
 
     > A lassú vevő túlterhelésének megakadályozása.
-
--   A megbízható adatátvitel 4 fő célja körül melyik szól arról, hogy:
-    "az adat leszállítása biztosított, sorrend helyes és átvitel során nem módosul".
-
-    > Helyesség/Correctness
 
 -   Mik történhetnek egy csomaggal átvitel során, melyet egy megbízható végpont-végpont adattranszport protokollnak kezelnie kell?
 
