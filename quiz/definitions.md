@@ -1046,7 +1046,7 @@
 
     > **TODO**
 
-## 7.előadás:
+## 7. lecture
 
 -   Mi az a **NAT doboz** és mire szolgál?
 
@@ -1114,7 +1114,7 @@
 
 -   Mi az **AS** (Autonóm rendszer)?
 
-    > **TODO**
+    > Az interneten autonóm rendszer (Autonomous System, AS), önálló rendszer vagy útválasztási tartomány (routing domain) IP-hálózatok (IP routing-prefixek) olyan csoportja, melyen belül egyetlen, jól meghatározott útválasztási irányelv (routing policy) érvényesül.
 
 -   Miért van szükségünk **AS**-ekre?
 
@@ -1150,21 +1150,21 @@
 
 -   Mit nevez a **BGP csonka hálózat**nak?
 
-    > **TODO**
+    > Olyan hálózatok, amelyeknek csak egyetlen összeköttetésük van a BGP gráffal.
 
 -   Mit nevez a **BGP többszörösen bekötött** hálózatnak?
 
-    > **TODO**
+    > Olyan hálózatok, amelyeket használhatna az átmenő forgalom, de ezek ezt megtagadják.
 
 -   Mit nevez a **BGP tranzit hálózat**nak?
 
-    > **TODO**
+    > Olyan hálózatok, amelyek némi megkötéssel, illetve általában fizetség ellenében, készek kezelni harmadik fél csomagjait.
 
 -   Mire szolgál és hogyan működik a **VPN** (virtuális magánhálózat)?
 
     > **TODO**
 
-## 8.előadás:
+## 8. lecture
 
 -   Mire szolgál a **TCP** protokoll? Mik a főbb jellemzői?
 
@@ -1176,11 +1176,16 @@
 
 -   Hogyan történik egy **TCP kapcsolat** felépítése? Mik a lépései?
 
-    > **TODO**
+    > A felépítés 3 TCP csomaggal történik.
 
--   Hogyan történik egy **TCP kapcsolat lezárása**?
+    > H1 -> SYN -> H2\
+    > H1 <- SYN <- H2\
+    > H1 <- ACK <- H2\
+    > H1 -> ACK -> H2
 
-    > **TODO**
+-   Hogyan történik egy **TCP kapcsolat lezárása**? Hogyan bomlik le?
+
+    > A küldő jelzi a kapcsolat befejezését egy FIN szegmensben, és vár a szegmens nyugtájára. Az ellenkező irányban továbbra is lehet küldeni. Két félig lezárás zárja le a kapcsolatot.
 
 -   Mit mondhatunk a **TCP átvitel**éről az ablak és az **RTT** függvényében?
 
@@ -1212,7 +1217,7 @@
 
 -   Mit nevezünk **torlódásnak TCP esetén**?
 
-    > **TODO**
+    > Ha a terhelés túl nagy, túlcsordulnak a pufferek, csomagok vesznek el, újra kell küldeni, drasztikusan nő a válaszidő. Ezt a torlódásnak nevezzük.
 
 -   Mi a **TCP Nagle** algoritmus működési alapelve?
 
@@ -1226,15 +1231,15 @@
 
     > **TODO**
 
-## 9.előadás: (TCP folyt.)
+## 9. lecture
 
 -   Mi az a **torlódási ablak**? Mire szolgál?
 
-    > **TODO**
+    > Congestion window, cwnd slow startnál használt második ablak. kezdetben MSS méretű
 
 -   Mi az a **slow start** TCP esetén?
 
-    > **TODO**
+    > Exponenciális növekedés (hisztórikus elnevezés: korábban még aggresszívebb sémák)
 
 -   Mi az **AIMD TCP Tahoe** esetén?
 
@@ -1284,11 +1289,11 @@
 
     > **TODO**
 
-## 10.előadás:
+## 10. lecture
 
 -   Mit nevezünk **munkamenet**nek az ISO/OSI referencia modellben?
 
-    > **TODO**
+    > Egy munkamenet a egymással összefüggő hálózati interakciók sorozata egy alkalmazási feladat elvégzése során.
 
 -   Mit tud a **DNS** tartománynevek (körzetnevek) rendszeréről?
 
@@ -1296,7 +1301,12 @@
 
 -   Mik azok a **TLD**-k? Adjon meg 4 példát.
 
-    > **TODO**
+    > _Top Level Domain_
+
+    > .com\
+    > .edu\
+    > .net\
+    > .org\
 
 -   Mik azok a **DNS erőforrás rekord**ok? Mit tárolnak (1-2 példa)?
 
@@ -1308,11 +1318,11 @@
 
 -   A névfeloldásnál mit neveznek **iteratív lekérdezés**nek? Mik a jellemzői?
 
-    > **TODO**
+    > Ha a névszerver adja vissza a választ vagy legalább azt, hogy kitől kapható meg a következő válasz.
 
 -   A névfeloldásnál mit neveznek **rekurzív lekérdezés**nek? Mik a jellemzői?
 
-    > **TODO**
+    > Ha a névszerver végzi el a névfeloldást, és tér vissza a válasszal.
 
 -   Írja le a **lokális névszerver**ek legfőbb jellemzőit!
 
@@ -1328,11 +1338,11 @@
 
 -   Mit nevezünk **statikus weboldal**nak?
 
-    > **TODO**
+    > A statikus weboldal tartalma nem változik csak manuális átszerkesztéssel.
 
 -   Mit nevezünk **dinamikus weboldal**nak?
 
-    > **TODO**
+    > A dinamikus weboldal valamilyen kód végrehajtásaként keletkezik, mint például: javascript, PHP, vagy mindkettő egyszerre.
 
 -   Mi az a **PLT**? Mit mérünk vele?
 
