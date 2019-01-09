@@ -32,7 +32,7 @@
 
     > Az adat átviteléhez elérhető vagy felhasznált kommunikációs erőforrás mérésére szolgáló mennyiség, amelyet bit per másodpercben szoktak kifejezni.
 
--   Mi a fő különbség a **csomagkapcsolt** és az **áramkörkapcsolt** hálózatok között?
+-   Mi a fő különbség a **áramkörkapcsolt** és az **csomagkapcsolt** hálózatok között?
 
     > **Áramkörkapcsolt**: pl a telefon, egy hoszt dedikált erőforrást használ, az erőforrást le kell foglalni.
 
@@ -40,13 +40,13 @@
 
 -   Sorolja fel a **hálózati kiterjedések**et.
 
-    > PAN: Personal Area Network (1 m<sup>2</sup>)
+    > **PAN**: Personal Area Network (1 m<sup>2</sup>)
 
-    > LAN: Personal Area Network (10-1000 m<sup>2</sup>)
+    > **LAN**: Personal Area Network (10-1000 m<sup>2</sup>)
 
-    > MAN: Metropolitan Area Network (10 km<sup>2</sup>)
+    > **MAN**: Metropolitan Area Network (10 km<sup>2</sup>)
 
-    > WAN: Wide Area Network (100-1000 km<sup>2</sup>, de az internet is)
+    > **WAN**: Wide Area Network (100-1000 km<sup>2</sup>, de az internet is)
 
 -   Mit jelent a **legjobb szándék (best effort)** elv a hálózati kommunikációban?
 
@@ -197,7 +197,7 @@
 
         -   Adatkonverzió különböző reprezentációk között
         -   Pl. big endian to little endian
-        -   Pl. Ascí to Unicode
+        -   Pl. ASCI to Unicode
 
     -   Interfész
 
@@ -280,7 +280,7 @@
 -   Mit mond ki a **Shannon tétel**?
 
     > _Zajos csatornán_\
-    > Max adatseb = **H** \* log<sub>2</sub>(1 + **S/N**) bps\
+    > Max adatsebesség = **H** \* log<sub>2</sub>(1 + **S/N**) bps\
     > **H**: sávszél\
     > **S/N**: jel-zaj teljesítményének hányadosa
 
@@ -307,7 +307,7 @@
 
     > Két egymást követő hullámcsúcs (vagy hullámvölgy) közti távolság
 
-    > Jelölése: **λ**\
+    > Jelölése: **λ**
 
 -   Mi a **fénysebesség**?
 
@@ -409,7 +409,7 @@
 
 -   Mik a főbb tulajdonságai a **baseband** (alapsávú) átvitelnek?
 
-    > a digitális jel direkt árammá vagy fesszé alakul
+    > a digitális jel direkt árammá vagy feszültséggé alakul
 
     > a jel minden frekvencián átvitelre kerül
 
@@ -427,7 +427,7 @@
 
 -   Mik a főbb tulajdonságai a **broadband** (szélessávú) átvitelnek?
 
-    > Széles frekitartományban történik az átvitel
+    > Széles frekvenciatartományban történik az átvitel
 
     > Jelmodulációs lehetőségek:
 
@@ -442,7 +442,7 @@
     3. Csatorna kódolás (csatorna szimbólumok)
     4. Moduláció (Hullámformák véges halmaza)
     5. Fizikai átvitel
-       6 . Médium
+    6. Médium
 
     -   vissza 5->4->3->2->1, minden lépés dekódolása
 
@@ -454,7 +454,7 @@
 
     > **t**: periódus idő\
     > **f**: frekvencia\
-    > **A**: amplitúdó\
+    > **s(t)**: amplitúdó\
     > **𝜑**: eltolás
 
     > Digitális jelnél a szignál erőssége egy diszkrét halmaz értékeinek megfelelően változik (pl.: 0-1)
@@ -466,7 +466,8 @@
     > **f<sub>F</sub>(t)** = **a** \* sin(2π \* **s(t)** \* **t** + **𝜑**)
 
     > **t**: periódus idő\
-    > **f**: frekvencia\
+    > **s(t)**: frekvencia\
+    > **a**: amplitúdó\
     > **𝜑**: eltolás
 
 -   Mi a **fázis moduláció**?
@@ -477,29 +478,30 @@
 
     > **t**: periódus idő\
     > **f**: frekvencia\
-    > **𝜑**: eltolás
+    > **a**: amplitúdó\
+    > **s(t)**: eltolás
 
 ## 3. lecture
 
 -   Ismertesse a **médium többszörös használatának 5 módszerét**!
 
-    -   **Térbeli** multiplexálás (**S**pace-**D**ivision **M**ultiplexing)
+    -   **SDM** - **Térbeli** multiplexálás (**S**pace-**D**ivision **M**ultiplexing)
 
         > Külön vezeték vagy antenna
 
-    -   **Frekvencia** multiplexálás (**F**requency-**D**ivision **M**ultiplexing)
+    -   **FDM** - **Frekvencia** multiplexálás (**F**requency-**D**ivision **M**ultiplexing)
 
         > Több szignál kombinációja adja az átvitelt, minden szignálhoz más frekvencia tartozik
 
-    -   **Hullámhossz** multiplexálás (**W**avelength-**D**ivision **M**ultiplexing)
+    -   **WDM** - **Hullámhossz** multiplexálás (**W**avelength-**D**ivision **M**ultiplexing)
 
         > Optikai kábeleknél használt
 
-    -   **Időbeli** multiplexálás (**T**ime-**D**ivision **M**ultiplexing)
+    -   **TDM** - **Időbeli** multiplexálás (**T**ime-**D**ivision **M**ultiplexing)
 
         > Jelsorozat időintervallumokra szegmentálása, minden állomás saját időszeletet kap
 
-    -   Kód multiplexálás **CDMA** (**C**ode **D**ivison **M**ultiple **A**ccess)
+    -   **CDMA** - **Kód** multiplexálás (**C**ode **D**ivison **M**ultiple **A**ccess)
 
         > Állomások egyfolytában sugározhatnak a teljes frekvenciasávon
 
@@ -537,7 +539,9 @@
     └                     ┘
     ```
 
-    > Ahol **H(2<sup>1</sup>)** = [[1, 1], [1, -1]]
+    > Ahol\
+    > **H(2<sup>1</sup>)** = [[1, 1], [1, -1]]\
+    > **H(2<sup>2</sup>)** = [[[1, 1], [1, -1]], [[1, 1], [1, -1]], [[1, 1], [1, -1]], [[-1, -1], [-1, 1]]]
 
 -   Melyek az **adatkapcsolati réteg** legfontosabb feladatai?
 
@@ -564,7 +568,8 @@
 
 -   Hogyan működik a **karakterbeszúrás** (bájt beszúrás)?
 
-    > Keret elején végén _FLAG_ byte, + _ESC_ byte
+    > Keret elején végén _FLAG_ byte, + _ESC_ byte\
+    > A beszúrás előtt már szereplő _FLAG_ és _ESC_ bájtok elé _ESC_ bájtokat teszünk
 
 -   Hogyan működik a **bit beszúrás**?
 
