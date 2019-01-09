@@ -763,92 +763,143 @@
 
     > Az az időtartam, amely alatt ha másik keret is elküldésre kerül, akkor az aktuális keret sérül.
 
-5. előadás
+## 5. lecture
 
----
+-   Hogyan működik a **réselt ALOHA protokoll**?
 
-Hogyan működik a réselt ALOHA protokoll?
-A csatornát azonos időrésekre bontjuk, egy időrés = T_f. Átvitel csak az időrések határán lehetséges
-Algo: Amikor egy keret küldésre kész, akkor kiküldi a következő időrés határon
+    > A csatornát azonos időrésekre bontjuk, egy időrés = T<sub>f</sub>. Átvitel csak az időrések határán lehetséges
 
-Mennyi a réselt Aloha protokoll esetén az áteresztőképesség a terhelés függvényében?
-S(G) = G _ a jó átvitel valószínűsége, azaz T_f idő alatt 0 keretet küldenek = G _ P0(T_f) = G \* e^-G
+    > Algoritmus:\
+    > Amikor egy keret küldésre kész, akkor kiküldi a következő időrés határon
 
-Carrier Sense Multiple Access
-Hogyan működik az 1-perzisztens CSMA protokoll?
-Folytonos időmodell
-Küldés előtt belehallgat:
-Ha foglalt, akkor vár, amíg fel nem szabadul.
-Ha szabad, küld
-Ütközéskor véletlen ideig vár, majd újrakezdi a procedúrát
+-   Mennyi a réselt Aloha protokoll esetén az **áteresztőképesség** a terhelés függvényében?
 
-Hogyan működik a nem-perzisztens CSMA protokoll?
-Folytonos időmodell
-Küldés előtt belehallgat:
-Ha foglalt, akkor véletlen ideig vár, majd újrakezd
-Ha szabad, küld
-Ütközéskor véletlen ideig vár, majd újrakezdi a procedúrát
+    > S(G) = G<sub>a</sub> jó átvitel valószínűsége, azaz T<sub>f</sub> idő alatt 0 keretet küldenek \
+    > G<sub>P<sub>0</sub>(T<sub>f</sub>)</sub> = G \* e<sup>-G</sup>
 
-Hogyan működik a p-perzisztens CSMA protokoll?
-Diszkrét időmodell
-Küldés előtt belehallgat:
-Ha foglalt, akkor a következő időrésig vár, majd újra
-Ha szabad, akkor p valszegséggel küld. Ha mégse küld, akkor a következő időrésben megint p-vel küld. Ez addig megy, amíg el nem küldi, vagy más nem kezd el küldeni. Ekkor úgy viselkedik, mintha ütközés történt volna.
-Ütközéskor véletlen ideig vár, majd újra
+-   Hogyan működik az 1-perzisztens **CSMA** protokoll?
 
-Hogyan működik a CSMA/CD protokoll? (CD -> Collision Detection: ütközés érzékelés)
-Egy CSMA protokoll kiegészítése így:
-Minden állomás küldés közben is figyeli a csatornát, ha ütközést tapasztal azonnal
-megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár, majd újraküld. Újraküldés során a binary expontential backoff módszer alkalmazása
-Nincs szükség nyugtára, mert az állomások észlelik az ütközést.
+    > Folytonos időmodell
 
-Binary exponential backoff?
-válasszunk [0, 2^n-1] -ből egyet, ahol n az ütközések száma
-ennyi keretidőt várjunk az újraküldésig
-n felső határa 10, 16 sikertelen próba után eldobjuk
+    > Küldés előtt belehallgat:
 
-Hogyan működik az alapvető bittérkép eljárás?
-Versengési periódus N időrés, az i-edik hoszt ha küldeni akar, akkor az i-edik időrésben szór egy 1-est
-A versengési periódus végére mindenki ismeri a küldőket, így sorban küldenek
+    > Ha foglalt, akkor vár, amíg fel nem szabadul.
 
-Hogyan működik a bináris visszaszámlálás protokoll?
-Minden állomásnak van azonos hosszú bitsorozat azonosítója, a versengési időben elkezdik bitenként küldeni az azonosítót, ha vki 0-t küld de 1-et hall vissza a vagyolódás miatt, akkor lemond a küldési szándékáról
-Mok-Ward módosítása: sikeres átvitel után ciklikusan permutáljuk az állomások címét
+    > Ha szabad, küld
 
-Mi a korlátozott versenyes protokollok célja?
-Ötvözni a versenyhelyzetes és a versenymentes protokollok jó tulajdonságait
-Kis terhelés esetén versenyhelyzetes technikát használ a kis késleltetés érdekében, nagy terhelés esetén mellett ütközésmentes technika a csatorna jó kihasználása miatt
+    > Ütközéskor véletlen ideig vár, majd újrakezdi a procedúrát
 
-Hogyan működik az adaptív fabejárási protokoll?
-Állomások bináris fában reprezentálva 0. időrésben mindenki küld
-Ha ütközés, akkor mélységi bejárás, minden rés egy csomóponthoz van rendelve
-Ütközés esetén megnézzük a bal és a jobb csomópontot
-Ha nincs ütközés, akkor a csomópont keresése befejeződik
+-   Hogyan működik a **nem-perzisztens CSMA** protokoll?
 
-Mi a repeater, és mire használják?
-Analóg eszköz, mely két kábelszegmenshez csatlakozik. Felerősíti a jelet és továbbítja. (fizikai réteg)
+    > Folytonos időmodell
 
-Mi az elosztó (Hub) és mire használják?
-több bemenettel rendelkezik; a beérkező keretet minden vonalon továbbítja; ha két keret egyszerre érkezik, ütközni fognak; általában nem erősíti a jelet (fizikai réteg)
-olcsó, egyszerű de buta
+    > Küldés előtt belehallgat:
 
-Mi a bridge (híd), és mire használják?
-Az adatkapcsolati rétegben működő eszköz, amely LAN-ok összekapcsolását végzi - lekorlátozzák az ütközési tartományok méretet
-A bejövő keretet csak a megfelelő LAN-hoz továbbítja (forgalomirányítás az adatkapcsolati rétegben).
-A portok külön ütközési tartományt képeznek és különböző sebességű hálózatokhoz csatlakozhatnak.
-Pufferelést, csomagfeldolgozást végez, továbbító táblázatot (forwarding table) tart karban. Képest megtanulni a csatlakozó eszközök címét.
+    > Ha foglalt, akkor véletlen ideig vár, majd újrakezd
 
-Mi a "backward learning" (Címek tanulása) lényege?
-A hidak használják ezt a módszert a keretek továbbításához használt táblázatuk feltöltésére.
-Ha egy keret érkezik hozzájuk, megnézik a forráscímet (feladót) és "megtanulják", hogy az melyik
-porton érhető el (ahonnan a keret jött), és ezt bejegyzik a táblázatukba.
+    > Ha szabad, küld
 
-Ismertesse a feszítőfa protokoll (STP) lépéseit? 1. az egyik bridge a gyökér 2. minden birdge megkeresi a legrövidebb utat hozzá 3. ezen utak uniója a feszfa
-a faépítés során a bridgek BPDU-kat (Configuration Bridge Protocol Data Unit-okat) cserélnek
-Bridge ID, Gyökér ID, költség a gyökérhez
-A fogadása után a bridge választ egy új gyökeret, megjegyzi a felé vezető portot és a következő bridge-t felé
+    > Ütközéskor véletlen ideig vár, majd újrakezdi a procedúrát
 
-6. előadás
+-   Hogyan működik a **p-perzisztens CSMA** protokoll?
+
+    > Diszkrét időmodell
+
+    > Küldés előtt belehallgat:
+
+    > Ha foglalt, akkor a következő időrésig vár, majd újra
+
+    > Ha szabad, akkor p valszegséggel küld. Ha mégse küld, akkor a következő időrésben megint p-vel küld. Ez addig megy, amíg el nem küldi, vagy más nem kezd el küldeni. Ekkor úgy viselkedik, mintha ütközés történt volna.
+
+    > Ütközéskor véletlen ideig vár, majd újra
+
+-   Hogyan működik a **CSMA/CD protokoll**? (CD -> Collision Detection: ütközés érzékelés)
+
+    > Egy CSMA protokoll kiegészítése így:\
+    > Minden állomás küldés közben is figyeli a csatornát, ha ütközést tapasztal azonnal
+    > megszakítja az adást (nem adja le a teljes keretet), véletlen ideig vár, majd újraküld. Újraküldés során a **binary expontential backoff** módszer alkalmazása
+
+    > Nincs szükség nyugtára, mert az állomások észlelik az ütközést.
+
+-   Mi a **Binary exponential backoff** módszer?
+
+    > Válasszunk [0, 2<sup>n-1</sup>] -ből egyet, ahol n az ütközések száma
+
+    > Ennyi keretidőt várjunk az újraküldésig\
+    > n felső határa 10, 16 sikertelen próba után eldobjuk
+
+-   Hogyan működik az **alapvető bittérkép eljárás**?
+
+    > Versengési periódus N időrés, az i-edik hoszt ha küldeni akar, akkor az i-edik időrésben szór egy 1-est
+    > A versengési periódus végére mindenki ismeri a küldőket, így sorban küldenek
+
+-   Hogyan működik a **bináris visszaszámlálás protokoll**?
+
+    > Minden állomásnak van azonos hosszú bitsorozat azonosítója, a versengési időben elkezdik bitenként küldeni az azonosítót, ha valaki 0-t küld de 1-et hall vissza a vagyolódás miatt, akkor lemond a küldési szándékáról
+
+    > Mok-Ward módosítása: sikeres átvitel után ciklikusan permutáljuk az állomások címét
+
+-   Mi a **korlátozott versenyes protokollok** célja?
+
+    > Ötvözni a versenyhelyzetes és a versenymentes protokollok jó tulajdonságait
+
+    > Kis terhelés esetén versenyhelyzetes technikát használ a kis késleltetés érdekében, nagy terhelés esetén mellett ütközésmentes technika a csatorna jó kihasználása miatt
+
+-   Hogyan működik az **adaptív fabejárási protokoll**?
+
+    > Állomások bináris fában reprezentálva 0. időrésben mindenki küld
+
+    > Ha ütközés, akkor mélységi bejárás, minden rés egy csomóponthoz van rendelve
+
+    > Ütközés esetén megnézzük a bal és a jobb csomópontot
+
+    > Ha nincs ütközés, akkor a csomópont keresése befejeződik
+
+-   Mi a **repeater** (ismétlő), és mire használják?
+
+    > Analóg eszköz, mely két kábelszegmenshez csatlakozik. Felerősíti a jelet és továbbítja. (fizikai réteg)
+
+-   Mi az **hub** (elosztó) és mire használják?
+
+    > Több bemenettel rendelkezik
+
+    > A beérkező keretet minden vonalon továbbítja
+
+    > Ha két keret egyszerre érkezik, ütközni fognak
+
+    > Általában nem erősíti a jelet (fizikai réteg)
+
+    > Olcsó, egyszerű, kevés tudással rendelkezik
+
+-   Mi a **bridge** (híd), és mire használják?
+
+    > Az adatkapcsolati rétegben működő eszköz, amely LAN-ok összekapcsolását végzi - lekorlátozzák az ütközési tartományok méretet
+
+    > A bejövő keretet csak a megfelelő LAN-hoz továbbítja (forgalomirányítás az adatkapcsolati rétegben).
+
+    > A portok külön ütközési tartományt képeznek és különböző sebességű hálózatokhoz csatlakozhatnak.
+
+    > Pufferelést, csomagfeldolgozást végez, továbbító táblázatot (forwarding table) tart karban. Képest megtanulni a csatlakozó eszközök címét.
+
+-   Mi a **backward learning** (Címek tanulása) lényege?
+
+    > A hidak használják ezt a módszert a keretek továbbításához használt táblázatuk feltöltésére.
+
+    > Ha egy keret érkezik hozzájuk, megnézik a forráscímet (feladót) és "megtanulják", hogy az melyik porton érhető el (ahonnan a keret jött), és ezt bejegyzik a táblázatukba.
+
+-   Ismertesse a **feszítőfa protokoll** (STP) lépéseit?
+
+    1. Az egyik bridge a gyökér
+    2. Minden birdge megkeresi a legrövidebb utat hozzá
+    3. Ezen utak uniója a feszítőfa
+
+    > A faépítés során a bridgek BPDU-kat (Configuration Bridge Protocol Data Unit-okat) cserélnek
+
+    > Bridge ID, Gyökér ID, költség rendelődik a gyökérhez
+
+    > A fogadása után a bridge választ egy új gyökeret, megjegyzi a felé vezető portot és a következő bridge-t felé
+
+## 6. lecture
 
 ---
 
