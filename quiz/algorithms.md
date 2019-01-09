@@ -12,6 +12,7 @@ G(x) egy generátor polinom, aminek a foka r, ezt a polinomot a küldő és a ve
 ## CDMA:
 
 A kódosztásos többszörös hozzáférés (angolul Code Division Multiple Access, röviden CDMA) a multiplexálás egy formája és a többszörös hozzáférés egy lehetséges megvalósítása, amely az adatokhoz csatornánként speciális kódokat rendel, és kihasználja a konstruktív interferencia tulajdonságot a multiplexáláshoz.
+
 Algoritmus:
 
 1. Minden bitidőt m darab rövid intervallumra osztunk, ezek a töredékek (angolul chip)
@@ -25,7 +26,7 @@ Algoritmus:
 
 ## CSMA:
 
-Az 1-perzisztens CSMA protokoll:
+### Az 1-perzisztens CSMA protokoll:
 
 -   Működése:
 
@@ -40,7 +41,7 @@ Az 1-perzisztens CSMA protokoll:
     -   A terjedési késleltetés nagymértékben befolyásolhatja a teljesítményét.
     -   Jobb teljesítményt mutat, mint az ALOHA protokollok.
 
-A nem-perzisztens CSMA protokoll:
+### A nem-perzisztens CSMA protokoll:
 
 -   Működése:
 
@@ -55,7 +56,7 @@ A nem-perzisztens CSMA protokoll:
 -   Tulajdonságok:
     -   Jobb teljesítményt mutat, mint az 1-perzisztens CSMA protokoll. (intuitív)
 
-A p-perzisztens CSMA protokoll:
+### A p-perzisztens CSMA protokoll:
 
 -   Működése:
 
@@ -66,7 +67,7 @@ A p-perzisztens CSMA protokoll:
         2.  Ha szabad, akkor p valószínűséggel küld, illetve 1-p valószínűséggel visszalép a szándékától a következő időrésig. Várakozás esetén a következő időrésben megismétli az algoritmust.Ez addig folytatódik, amíg el nem küldi a keretet, vagy amíg egy másik állomás el nem kezd küldeni, mert ilyenkor úgy viselkedik, mintha ütközés történt volna.
     -   Ha ütközés történik, akkor az állomás véletlen hosszú ideig vár, majd újrakezdi a keret leadását.
 
-A CSMA/CD protokoll:
+### A CSMA/CD protokoll:
 
 -   (CD → Collision Detection: ütközés érzékelés) Ütközés érzékelés esetén meg lehessen szakítani az adást.(„Collision Detection”):
 
@@ -95,7 +96,8 @@ Algoritmus
 
 ## ALOHA:
 
-Egyszerű ALOHA protokoll
+### Egyszerű ALOHA protokoll
+
 A csatornakiosztás problémáját oldja meg. A rendszer lényege hogy a felhasználó bármikor adhat, ha van továbbítandó adata. De ha bárki bármikor adhat, akkor valószínű,
 hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg tudja állapítani hogy a keret tönkrement-e vagy sem. Ütközés esetén véletlen ideig vár az újraküldéssel. Tulajdonságok:
 
@@ -112,7 +114,8 @@ hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg t
     -   G>N, akkor a terhelés nagy.
     -   Áteresztő képesség: S = 𝐺𝑃_0, ahol P_0 keret sérülésmentes átvitelének valószínűsége.
 
-Réselt ALOHA protokoll
+### Réselt ALOHA protokoll
+
 Az idő diszkrét, keretidőhöz igazodó időszeletekre osztásával az ALOHA rendszer kapacitása megduplázható. (1972, Roberts)
 Következmény: a kritikus szakasz hossza a felére csökken, azaz 𝑃_0 = 𝑒^(−𝐺)
 Azaz az áteresztő képesség: S = 𝐺𝑃_0 = 𝐺𝑒^(−𝐺)
@@ -125,14 +128,14 @@ A táblázatokat a szomszédoktól származó információk alapján frissítik.
 
 Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 
-Környezet és Működés:
+### Környezet és Működés:
 
 -   Minden csomópont csak a közvetlen szomszédjaival kommunikálhat.
 -   Aszinkron működés.
 -   Minden állomásnak van saját távolság vektora. Ezt periodikusan elküldi a direkt szomszédoknak.
 -   A kapott távolság vektorok alapján minden csomópont új táblázatot állít elő.
 
-Végtelenig számolás problémája:
+### Végtelenig számolás problémája:
 
 -   A „jó hír” gyorsan terjed.
 -   A „rossz hír” lassan terjed.
@@ -142,7 +145,7 @@ Végtelenig számolás problémája:
 
 ## Link-state: Mik a link-state (kapcsolatállapot) alapú forgalomirányítás megvalósításának lépései?
 
-Link-state routing:
+### Link-state routing:
 
 1. Szomszédok felkutatása, és hálózati címeik meghatározása
 2. Megmérni a késleltetést vagy költséget minden szomszédhoz
@@ -152,7 +155,7 @@ Link-state routing:
 
 ## Address Resolution Protocol (ARP)
 
-Feladata:
+### Feladata:
 
 -   Az IP cím megfeleltetése egy fizikai címnek.
     Hozzárendelés:
@@ -192,13 +195,13 @@ Feladata:
         -   Válasz után nem kell semmit tenni a kéréssel a névszervernek.
         -   Könnyű magas terhelésű szervert építeni.
 
-Rekurzív DNS lekérdezés:
+### Rekurzív DNS lekérdezés:
 
 -   A lokális szerver terhet rak a kérdezett névszerverre (pl.root)
 -   Honnan tudja a kérdezett, hogy kinek továbbítsa a választ?
     -   Random ID a DNS lekérdezésben
 
-Iteratív DNS lekérdezés:
+### Iteratív DNS lekérdezés:
 
 -   A szerver mindig a következő kérdezendő névszerver adataival tér vissza
     -   “I don’t know this name, but this other server might”
@@ -222,9 +225,7 @@ Iteratív DNS lekérdezés:
 
 ## TCP
 
-//TODO
-
-Lassú indulás - Slow Start
+### Lassú indulás - Slow Start
 
 -   Cél, hogy gyorsan elérjük a könyök pontot
 -   Egy kapcsolat kezdetén (vagy újraindításakor)
@@ -236,3 +237,71 @@ Lassú indulás - Slow Start
     -   Vagy csomagvesztés nem történik
 -   A Slow Start valójában nem lassú
     -   cwnd exponenciálisan nő
+
+### Számos TCP változat:
+
+-   Tahoe: (az eredeti)
+    -   Slow start és AIMD
+    -   Dinamikus RTO, RTT becsléssel
+-   Reno:
+    -   fast retransmit (3 dupACKs)
+    -   fast recovery (cwnd = cwnd/2 vesztés esetén)
+-   NewReno: javított gyors újraküldés
+    -   Minden egyes duplikált ACK újraküldést vált ki
+    -   Probléma: >3 hibás sorrendben fogadott csomag is újraküldést okoz (hibásan!)
+-   Vegas: késleltetés alapú torlódás elkerülés
+
+### TCP jellemzői:
+
+-   Kapcsolatorientált:
+    -   Két résztvevő, ahol egy résztvevőt egy IP-cím és egy port azonosít.
+    -   A kapcsolat egyértelműen azonosított a résztvevő párral.
+    -   Nincs se multi-, se broadcast üzenetküldés.
+    -   A kapcsolatot fel kell építeni és le kell bontani.
+    -   Egy kapcsolat a lezárásáig aktív.
+-   Megbízható:
+    -   Minden csomag megérkezése nyugtázásra kerül.
+    -   A nem nyugtázott adatcsomagokat újraküldik.
+    -   A fejléchez és a csomaghoz ellenőrzőösszeg van rendelve.
+    -   A csomagokat számozza, és a fogadónál sorba rendezésre kerülnek a csomagok a sorszámaik alapján.
+    -   Duplikátumokat törli.
+-   Kétirányú Bájtfolyam:
+    -   Az adatok két egymással ellentétes irányú bájt-sorozatként kerülnek átvitelre.
+    -   A tartalom nem interpretálódik.
+    -   Az adatcsomagok időbeli viselkedése megváltozhat: átvitel sebessége növekedhet, csökkenhet, más késés, más sorrendben is megérkezhetnek.
+    -   Megpróbálja az adatcsomagokat időben egymáshoz közel kiszállítani.
+    -   Megpróbálja az átviteli közeget hatékonyan használni.
+
+### Kapcsolat felépítés:
+
+-   Miért van szükség kapcsolat felépítésre?
+    -   Állapot kialakítása mindkét végponton
+    -   Legfontosabb állapot: sorszámok/sequence numbers
+    -   Az elküldött bájtok számának nyilvántartása
+    -   Véletlenszerű kezdeti érték
+-   Fontos TCP flag-ek/jelölő bitek (1 bites)
+    -   SYN – szinkronizációs, kapcsolat felépítéshez
+    -   ACK – fogadott adat nyugtázása
+    -   FIN – vége, kapcsolat lezárásához
+
+### Kapcsolat felépítés problémája:
+
+-   Kapcsolódási zűrzavar
+    -   Azonos hoszt kapcsolatainak egyértelműsítése
+    -   Véletlenszerű sorszámmal - biztonság
+-   Forrás hamisítás
+    -   Kevin Mitnick
+    -   Jó random szám generátor kell hozzá!
+-   Kapcsolat állapotának kezelése
+    -   Minden SYN állapotot foglal a szerveren
+    -   SYN flood = denial of service (DoS) támadás
+    -   Megoldás: SYN cookies
+
+### Kapcsolat lezárása:
+
+-   Mindkét oldal kezdeményezheti a kapcsolat bontását
+-   A másik oldal még folytathatja a küldést
+    -   Félig nyitott kapcsolat
+    -   shutdown()
+-   Az utolsó FIN nyugtázása
+    -   Sorszám + 1
