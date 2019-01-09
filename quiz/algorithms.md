@@ -170,15 +170,17 @@ Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 ### Feladata:
 
 -   Az IP cím megfeleltetése egy fizikai címnek.
-    Hozzárendelés:
-    -   Adatszóró csomag kiküldése az Ethernetre „Ki-é a 192.60.34.12-es IP-cím?” kérdéssel az alhálózaton, és mindenegyes hoszt ellenőrzi,
-        hogy övé-e a kérdéses IP-cím. Ha egyezik az IP a hoszt saját IP-jével, akkor a saját Ethernet címével válaszol. Erre szolgál az ARP.
-    -   Opcionális javítási lehetőségek:
-        -   a fizikai cím IP hozzárendelések tárolása (cache használata);
-        -   Leképezések megváltoztathatósága (időhatály bevezetése);
-    -   Mi történik távoli hálózaton lévő hoszt esetén?
-        -   A router is válaszoljon az ARP-re a hoszt alhálózatán. (proxy ARP)
-        -   Alapértelmezett Ethernet-cím használata az összes távoli forgalomhoz
+
+### Hozzárendelés:
+
+-   Adatszóró csomag kiküldése az Ethernetre „Ki-é a 192.60.34.12-es IP-cím?” kérdéssel az alhálózaton, és mindenegyes hoszt ellenőrzi,
+    hogy övé-e a kérdéses IP-cím. Ha egyezik az IP a hoszt saját IP-jével, akkor a saját Ethernet címével válaszol. Erre szolgál az ARP.
+-   Opcionális javítási lehetőségek:
+    -   a fizikai cím IP hozzárendelések tárolása (cache használata);
+    -   Leképezések megváltoztathatósága (időhatály bevezetése);
+-   Mi történik távoli hálózaton lévő hoszt esetén?
+    -   A router is válaszoljon az ARP-re a hoszt alhálózatán. (proxy ARP)
+    -   Alapértelmezett Ethernet-cím használata az összes távoli forgalomhoz
 
 ## Bitbeszúrás
 
