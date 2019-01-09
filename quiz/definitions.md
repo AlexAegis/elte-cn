@@ -513,7 +513,7 @@
     └                     ┘
     ```
 
-    > Ahol **H(2^1)** = [[1, 1], [1, -1]]
+    > Ahol **H(2<sup>1</sup>)** = [[1, 1], [1, -1]]
 
 -   Melyek az **adatkapcsolati réteg** legfontosabb feladatai?
 
@@ -597,11 +597,11 @@
 
 -   Hogyan működik a **Hamming kód** (több paritásos módszer)?
 
-    > TODO 3/45
+    > **TODO** 3/45
 
 -   Mi a **redundancia** szerepe a hibafelügyeletben?
 
-    > TODO
+    > **TODO**
 
 ## 4. lecture
 
