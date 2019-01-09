@@ -6,9 +6,9 @@ G(x) egy generátor polinom, aminek a foka r, ezt a polinomot a küldő és a ve
 
 ### Algoritmus
 
-1. Fűzzünk r darab 0 bitet a keret alacsony helyiértékű végéhez, tehát az m + r bitet fog tartalmazni és reprezentálja a x<sup>r \* M(x)</sup> polinomot
-2. x<sup>r \* M(x)</sup> elosztása G(x)-szel modulo 2 (bitsorozatok)
-3. Az előző osztás maradékának kivonása x<sup>r \* M(x)</sup>-ből modulo 2 (bitsorozatok), az eredmény az ellenőrző összeggel ellátott, továbbítandó keret. Jelölése: T(x)
+1. Fűzzünk r darab 0 bitet a keret alacsony helyiértékű végéhez, tehát az m + r bitet fog tartalmazni és reprezentálja a x<sup>r</sup> \* M(x) polinomot
+2. x<sup>r</sup> \* M(x) elosztása G(x)-szel modulo 2 (bitsorozatok)
+3. Az előző osztás maradékának kivonása x<sup>r</sup> \* M(x)-ből modulo 2 (bitsorozatok), az eredmény az ellenőrző összeggel ellátott, továbbítandó keret. Jelölése: T(x)
 4. A vevő a T(x) + E(x) polinomnak megfelelő sorozatot kapja, ahol E(x) a hibapolinom. Ezt elosztja a G(x) generátor polinommal, ha van maradéka ennek az osztásnak, akkor hiba történt.
 
 ## CDMA
@@ -22,7 +22,7 @@ A kódosztásos többszörös hozzáférés (angolul Code Division Multiple Acce
 3. Ha 1-es bitet akar továbbítani egy állomás, akkor elküldi a saját töredéksorozatát
 4. Ha 0-es bitet akar továbbítani egy állomás, akkor elküldi a saját töredéksorozatának egyes komplemensét
 5. m-szeres sávszélesség válik szükségessé, azaz szórt spektrumú kommunikációt valósít meg
-6. Szemléltetésre bipoláris kódolást használunk
+6. Szemléltetésre bipoláris kódolást használunk:
 
     > Bináris 0 esetén -1, bináris 1 esetén +1\
     > az állomásokhoz rendelt töredék sorozatok páronként ortogonálisak
