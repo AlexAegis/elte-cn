@@ -901,8 +901,6 @@
 
 ## 6. lecture
 
----
-
 Mi a forgalomirányító algoritmusok definiciója?
 A hálózati réteg szoftverének azon része, amely eldönti, h a bejövő csomag melyik kimeneti vonalon kerüljön továbbításra.
 (táblázatok feltöltése, karbantartása + irányítás)
