@@ -901,90 +901,150 @@
 
 ## 6. lecture
 
-Mi a forgalomirányító algoritmusok definiciója?
-A hálózati réteg szoftverének azon része, amely eldönti, h a bejövő csomag melyik kimeneti vonalon kerüljön továbbításra.
-(táblázatok feltöltése, karbantartása + irányítás)
+-   Mi a **forgalomirányító algoritmusok** definiciója?
 
-Mi a statikus (nem adaptív) forgalomirányító algoritmusok fő jellemzője?
-Offline meghatározza előre a döntéseket, a router indulásakor - nem befolyásolja a topológia és a forgalom változása
+    > A hálózati réteg szoftverének azon része, amely eldönti, hogy a bejövő csomag melyik kimeneti vonalon kerüljön továbbításra.
 
-Mi az adaptív forgalomirányító algoritmusok fő jellemzője?
-A topológia és a forgalom is befolyásolhatja a döntést
+    > táblázatok feltöltése, karbantartása + irányítás
 
-Mit mond ki az optimalitási elv (forgalomirányítás esetén)?
-Ha J az I->K optimális útvonalon van, akkor J->K optimális útvonal is ugyanerre esik.
-Következmény: az összes forrásból egy célba tartó optimális utak egy nyelőfát alkotnak, aminek a gyökere a cél.
+-   Mi a **statikus (nem adaptív) forgalomirányító algoritmusok** fő jellemzője?
 
-Mi a távolságvektor (distance vector) alapú forgalomirányítás lényege?
-A routerek karbantartanak egy táblázatot, amiben minden célhoz szerepel a legrövidebb ismert távolság, és annak a vonalnak az azonosítója, amelyiken a célhoz el lehet jutni. Ezt a táblát a szomszédoktól kapott infók alapján frissítik (a routerek periodikusan elküldik a szomszédaiknak a távolságvektorukat). amikor nem változik semmi már, az algónak vége.
-Elosztott Bellman-Ford
+    > Offline meghatározza előre a döntéseket, a router indulásakor - nem befolyásolja a topológia és a forgalom változása
 
-Magyarázza el a végtelenig számolás problémáját!
-Ha egy állomás (A) meghibásodik a közvetlen szomszédja (B) észleli, hogy a költség
-végtelen lett, mert nem érkezik A-tól csomag. B-nek egy szomszédja (C), amelyik korábban
-B-n keresztül érte el A-t, elküldi A elérési költségét. B azt fogja hinni, hogy C-n keresztül
-A elérhető, és a C-től kapott költséget megnöveli B-C költséggel, majd ezt küldi vissza C-nek.
-Ezután mindketten folyamatosan azt fogják hinni, hogy a másikon keresztül A elérhető, és minden
-lépésben B-C költséggel növelik A elérési költségét a táblázatukban.
+-   Mi az **adaptív forgalomirányító algoritmusok** fő jellemzője?
 
-Mik a link-state (kapcsolatállapot) alapú forgalomirányítás megvalósításának lépései? 1. szomszédok címének felkutatása: HELLO csomag szórása, a szomszédok válaszolnak a saját címükkel 2. késleltetés meghatározása: ECHO csomag küldése, a másik oldalnak azonnal vissza kell küldenie - körbeérési idő fele kb a késleltetés 3. infócsomag összeállítása: feladó azon., sorszám, korérték és a szomszédok listája a késleltetésekkel. 4. szétküldés elárasztással. a routerek megjegyeznek minden (sorszám,forrás) párt, és csak akkor küldik tovább, ha új 5. Dijkstra algo lefuttatása ha minden infó megérkezett
+    > A topológia és a forgalom is befolyásolhatja a döntést
 
-Hasonlítsa össze a távolságvektor alapú és a link-state (kapcsolatállapot) alapú forgalomirányítást.
-Az első esetében a routerek minden más routerre vonatkozó általuk ismert költséget
-elküldenek, de csak a közvetlen szomszédaiknak, a második esetében csak a szomszédokra
-vonatkozó ismert költségeket küldik el mindenkinek.
+-   Mit mond ki az **optimalitási elv** (forgalomirányítás esetén)?
 
-Mi a hierarchikus forgalomirányítás lényege?
-nagy hálózatnál a forgalomirányító táblák arányosan nőnek
-ezért alkalmazzunk hierarchikus forgalomirányítást:
-a routereket tartományokra osztjuk. minden router ismeri a sajátját, de a többi belső szerkezetéről nem tud
-többszintű hierarchia is lehetséges
-N routerből álló alhálózathoz optimálisan lnN szint kell, amely routerenként e\*lnN bejegyzést igényel
+    > Ha J az I->K optimális útvonalon van, akkor J->K optimális útvonal is ugyanerre esik.
 
-Mit nevezünk adatszórásnak vagy broadcasting-nak?
-egy csomag mindenhová történő egyidejű elküldése
+    > _Következmény_: az összes forrásból egy célba tartó optimális utak egy nyelőfát alkotnak, aminek a gyökere a cél.
 
-Sorolja fel az adatszórás megvalósítási lehetőségeit. - külön csomag küldése minden egyes címzettnek - sávszélt pazarol, lista kell - elárasztás - kétpontos kommunikációhoz nem megfelelő - többcélú forgalomirányítás - (multidestination routing) csomagban van egy lista a rendeltetési helyekről, a router a kimenő vonalakhoz készít egy másolatot, a másolatokba csak a megfelelő célcím listát írja be - forrás routerhez tartozó nyelőfa használata: ha minden router ismeri, hogy mely vonalai tartoznak a feszfához, akkor csak azokon továbbítja az adatszóró csomagot (kivéve amelyen érkezett) - visszairányú továbbítás (reverse path forwarding): a router ellenőrzi, hogy azon a vonalon kapta-e meg a csomagot, amelyen rendszerint ő szokott az adatszórás forrásához küldeni. ha igen, akkor valszeg a csomag a legjobb utat követte idáig a forrástól, így ez az első csomag, ami megjött, szóval kimásolja minden vonalra.
+-   Mi a **távolságvektor (distance vector) alapú forgalomirányítás** lényege?
 
-Mit nevezünk többesküldésnek vagy multicasting-nak?
-egy csomag meghatározott csoporthoz történő egyidejű elküldése
-csoportkezelés is kell hozzá: létrehozása, megszüntetés, csatlakozás, leválasztás
-a router a bejövő csomagot csak a feszfa azon élein küldi tovább, amelyek csoporton beüli hoszthoz vezetnek
+    > A routerek karbantartanak egy táblázatot, amiben minden célhoz szerepel a legrövidebb ismert távolság, és annak a vonalnak az azonosítója, amelyiken a célhoz el lehet jutni. Ezt a táblát a szomszédoktól kapott infók alapján frissítik (a routerek periodikusan elküldik a szomszédaiknak a távolságvektorukat). amikor nem változik semmi már, az algónak vége.
 
-Mire szolgál a DF bit az IPv4 fejlécében?
-Ne darabold , dont fragment flag a routernek: a beérkező datagramot ne darabolja fel
+-   Mi az **Elosztott Bellman-Ford algoritmus**?
 
-Mire szolgál a MF bit az IPv4 fejlécében?
-More fragment, jelzi, hogy még az aktuális datagramhoz ez nem az utolsó darab, azaz van még több is. (sorszám)
+    > **TODO**
 
-Mire szolgál az azonosító (azonosítás) az IPv4 fejlécében?
-Datagram azonosítására szolgál, egy datagram összes darabja ugyanazt az azonosítót hordozza
+-   Magyarázza el a **végtelenig számolás** problémáját!
 
-Mire szolgál a darabeltolás (fragment offset) az IPv4 fejlécében?
-A darab helyét mutatja meg a datagramon belül
+    > Ha egy állomás (A) meghibásodik a közvetlen szomszédja (B) észleli, hogy a költség végtelen lett, mert nem érkezik A-tól csomag. B-nek egy szomszédja (C), amelyik korábban B-n keresztül érte el A-t, elküldi A elérési költségét. B azt fogja hinni, hogy C-n keresztül A elérhető, és a C-től kapott költséget megnöveli B-C költséggel, majd ezt küldi vissza C-nek.
 
-Mire szolgál az élettartam (TTL) mező az IPv4 fejlécében?
-Time To Live, minden ugrásnál eggyel csökkenti a router az értékét, ha eléri a nullát, a csomagot eldobja
+    > Ezután mindketten folyamatosan azt fogják hinni, hogy a másikon keresztül A elérhető, és mindenlépésben B-C költséggel növelik A elérési költségét a táblázatukban.
 
-Mi az IPv4 cím és hogyan ábrázoljuk?
-Minden hoszt és router az interneten rendelkezik egy IP címmel, amely a hálózat számát és a hoszt számát kódolja. ez a cím globálisan egyedi 4 bájton ábrázoljuk, leírni bájtonként decimálisan ábrázolva, a bájtokat pontokkal elválasztva szoktuk
+-   Mik a **link-state (kapcsolatállapot) alapú forgalomirányítás** megvalósításának lépései?
 
-Milyen IP cím osztályokat ismer? Jelemezze ezeket!
-A: 0, hálózat(1), hoszt(3)
-B: 10, hálózat(2), hoszt(2)
-C: 110, hálózat(3), hoszt(1)
-D: 1110, multicast address
-E: 1111, jövőbeni felhasználásra
+    1. szomszédok címének felkutatása: HELLO csomag szórása, a szomszédok válaszolnak a saját címükkel
+    2. késleltetés meghatározása: ECHO csomag küldése, a másik oldalnak azonnal vissza kell küldenie - körbeérési idő fele kb a késleltetés
+    3. infócsomag összeállítása: feladó azon., sorszám, korérték és a szomszédok listája a késleltetésekkel.
+    4. szétküldés elárasztással. a routerek megjegyeznek minden (sorszám,forrás) párt, és csak akkor küldik tovább, ha új
+    5. Dijkstra algoritmus lefuttatása ha minden infó megérkezett
 
-Milyen speciális IPv4 címek léteznek?
-csupa 0: az aktuális hoszt
-0...0, hoszt: aktuális hálózaton lévő hoszt
-csupa 1: broadcast a helyi hálózaton
-hálózat, 1...1: broadcast távoli hálózaton
-0111111, bármi: visszacsatolás (127....)
+-   Hasonlítsa össze a **távolságvektor alapú** és a **link-state (kapcsolatállapot) alapú** forgalomirányítást.
 
-Mi az alhálózati maszk és mire szolgál?
-....
+    > Az első esetében a routerek minden más routerre vonatkozó általuk ismert költséget elküldenek, de csak a közvetlen szomszédaiknak, a második esetében csak a szomszédokra vonatkozó ismert költségeket küldik el mindenkinek.
+
+-   Mi a **hierarchikus forgalomirányítás** lényege?
+
+    > Nagy hálózatnál a forgalomirányító táblák arányosan nőnek ezért alkalmazzunk hierarchikus forgalomirányítást:
+
+    > A routereket tartományokra osztjuk. Minden router ismeri a sajátját, de a többi belső szerkezetéről nem tud
+
+    > Többszintű hierarchia is lehetséges:\
+    > N routerből álló alhálózathoz optimálisan ln(N) szint kell, amely routerenként e\*ln(N) bejegyzést igényel
+
+-   Mit nevezünk **broadcasting**nak (adatszórásnak)?
+
+    > Egy csomag mindenhová történő egyidejű elküldése
+
+-   Sorolja fel az **adatszórás megvalósítási lehetőségeit**.
+
+    -   Külön csomag küldése minden egyes címzettnek
+
+        > Sávszélt pazarol, lista kell
+
+    -   Elárasztás
+
+        > Kétpontos kommunikációhoz nem megfelelő
+
+    -   többcélú forgalomirányítás (multidestination routing)
+
+        > csomagban van egy lista a rendeltetési helyekről, a router a kimenő vonalakhoz készít egy másolatot, a másolatokba csak a megfelelő célcím listát írja be
+
+    -   Forrás routerhez tartozó nyelőfa használata
+
+        > Ha minden router ismeri, hogy mely vonalai tartoznak a feszfához, akkor csak azokon továbbítja az adatszóró csomagot (kivéve amelyen érkezett)
+
+    -   Visszairányú továbbítás (reverse path forwarding)
+
+        > A router ellenőrzi, hogy azon a vonalon kapta-e meg a csomagot, amelyen rendszerint ő szokott az adatszórás forrásához küldeni. ha igen, akkor valószínűleg a csomag a legjobb utat követte idáig a forrástól, így ez az első csomag, ami megjött, szóval kimásolja minden vonalra.
+
+-   Mit nevezünk **multicastingnak** (többesküldésnek)?
+
+    > Egy csomag meghatározott csoporthoz történő egyidejű elküldése csoportkezelés is kell hozzá:\
+    > létrehozás, megszüntetés, csatlakozás, leválasztás a router a bejövő csomagot csak a feszítőfa azon élein küldi tovább, amelyek csoporton beüli hosthoz vezetnek
+
+-   Mire szolgál a **DF bit** az IPv4 fejlécében?
+
+    > Ne darabold, _don't fragment flag_ a routernek\
+    > A beérkező datagramot ne darabolja fel
+
+-   Mire szolgál a **MF bit** az IPv4 fejlécében?
+
+    > _More fragment_, jelzi, hogy még az aktuális datagramhoz ez nem az utolsó darab, azaz van még több is. (sorszám)
+
+-   Mire szolgál az **azonosító** (azonosítás) az IPv4 fejlécében?
+
+    > _Datagram azonosítására_ szolgál, egy datagram összes darabja ugyanazt az azonosítót hordozza
+
+-   Mire szolgál a **darabeltolás** (fragment offset) az IPv4 fejlécében?
+
+    > _A darab helyét mutatja_ meg a datagramon belül
+
+-   Mire szolgál az **élettartam** (TTL) mező az IPv4 fejlécében?
+
+    > _Time To Live_, minden ugrásnál eggyel csökkenti a router az értékét, ha eléri a nullát, a csomagot eldobja
+
+-   Mi az **IPv4** cím és hogyan ábrázoljuk?
+
+    > Minden host és router az interneten rendelkezik egy IP címmel, amely a hálózat számát és a hoszt számát kódolja. ez a cím globálisan egyedi 4 bájton ábrázoljuk, leírni bájtonként decimálisan ábrázolva, a bájtokat pontokkal elválasztva szoktuk
+
+-   Milyen **IP cím osztályok**at ismer? Jelemezze ezeket!
+
+    > A: 0, hálózat(1), hoszt(3)\
+    > B: 10, hálózat(2), hoszt(2)\
+    > C: 110, hálózat(3), hoszt(1)\
+    > D: 1110, multicast address\
+    > E: 1111, jövőbeni felhasználásra
+
+-   Milyen **speciális IPv4 címek** léteznek?
+
+    -   0...0
+
+        > Az aktuális host
+
+    -   0...0, hoszt
+
+        > Aktuális hálózaton lévő host
+
+    -   1...1
+
+        > Broadcast a helyi hálózaton
+
+    -   hálózat, 1...1
+
+        > Broadcast távoli hálózaton
+
+    -   0111111, bármi (127. ...)
+
+        > Visszacsatolás
+
+-   Mi az **alhálózati maszk** és mire szolgál?
+
+    > **TODO**
 
 ## 7.előadás:
 
