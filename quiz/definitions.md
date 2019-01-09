@@ -506,6 +506,8 @@
 
 -   Hogyan áll elő a **H(2<sup>k</sup>)**-nal jelölt Walsh mátrix?
 
+    > [[H(2<sup>k-1</sup>), H(2<sup>k-1</sup>)],[H(2<sup>k-1</sup>), **-** H(2<sup>k-1</sup>)]]
+
     ```bash
     ┌                     ┐
     │ H(2^k-1),  H(2^k-1) │
