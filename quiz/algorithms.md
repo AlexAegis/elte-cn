@@ -124,14 +124,19 @@ Tulajdonságok:
 ### Réselt ALOHA protokoll
 
 Az idő diszkrét, keretidőhöz igazodó időszeletekre osztásával az ALOHA rendszer kapacitása megduplázható. (1972, Roberts)
-Következmény: a kritikus szakasz hossza a felére csökken, azaz 𝑃<sub>0</sub> = 𝑒<sup>(−𝐺)</sup>
-Azaz az áteresztő képesség: S = 𝐺𝑃<sub>0</sub> = 𝐺𝑒<sup>(−𝐺)</sup>
-A csatorna terhelésének kis növekedése is drasztikusan csökkentheti a médium teljesítményét
+Következmény:
+
+-   kritikus szakasz hossza a felére csökken, azaz: 𝑃<sub>0</sub> = 𝑒<sup>(−𝐺)</sup>
+-   az áteresztő képesség: S = 𝐺𝑃<sub>0</sub> = 𝐺𝑒<sup>(−𝐺)</sup>
+-   A csatorna terhelésének kis növekedése is drasztikusan csökkentheti a médium teljesítményét.
 
 ## Távolságvektor alapú forgalomirányítás:
 
 Minden router-nek egy táblázatot kell karbantartania,amelyben minden célhoz szerepel a legrövidebb ismert távolság, s annak a vonalnak az azonosítója, amelyiken a célhoz lehet eljutni.
-A táblázatokat a szomszédoktól származó információk alapján frissítik. - Elosztott Bellman-Ford forgalomirányítási algoritmusként is nevezik. - ARPANET eredeti forgalomirányító algoritmusa ez volt. RIP (Routing Information Protocol) néven is ezt használták.
+A táblázatokat a szomszédoktól származó információk alapján frissítik.
+
+-   Elosztott Bellman-Ford forgalomirányítási algoritmusként is nevezik.
+-   ARPANET eredeti forgalomirányító algoritmusa ez volt. RIP (Routing Information Protocol) néven is ezt használták.
 
 Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 
