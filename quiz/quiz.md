@@ -3,52 +3,52 @@
 -   Az ISO/OSI modell mely rétegéhez sorlhatók a következő fogalmak:
     Optikai kábel, Wifi jel, CAT6 UTP kábel?
 
-    > Fizikai réteg/Physical
+    > Fizikai réteg / Physical
 
 -   Az ISO/OSI modell mely rétege foglalja magába a közeghozzáférés vezérlését (MAC)?
 
-    > Adatkapcsolati réteg/Data link
+    > Adatkapcsolati réteg / Data link
 
 -   Az ISO/OSI modell mely rétege definiálja az átvitelre szánt adatok keretekre tördelését?
 
-    > Adatkapcsolati réteg/Data Link
+    > Adatkapcsolati réteg / Data Link
 
 -   Az ISO/OSI modell mely rétege felel az útvonal választásért?
 
-    > Hálózati réteg/Network
+    > Hálózati réteg / Network
 
 -   Az ISO/OSI modell mely rétege felel a csomagtovábbításért?
 
-    > Hálózati réteg/Network
+    > Hálózati réteg / Network
 
 -   Az ISO/OSI modell mely rétegel felel az üzenetek adott állomáson belüli forgalom multiplexálásáért/demultiplexálásáért?
 
-    > Szállítói réteg/Transport
+    > Szállítói réteg / Transport
 
 -   Az ISO/OSI modell mely rétegéhez tartozik a TCP protokoll?
 
-    > Szállítói réteg/Transport
+    > Szállítói réteg / Transport
 
 -   Az ISO/OSI modell mely rétegéhez tartozik az UDP protokoll?
 
-    > Szállítói réteg/Transport
+    > Szállítói réteg / Transport
 
 -   Az ISO/OSI modell mely rétege felelhet szinkronizációs pont menedzsmentért (checkpoint beszúrása, stb.)?
 
-    > Munkamanet (Ülés) réteg/Session
+    > Munkamanet (Ülés) réteg / Session
 
 -   Az ISO/OSI modell mély rétege felel az adatkonverzióért különböző reprezentációk között?
 
-    > Megjelenítési réteg/Presentation
+    > Megjelenítési réteg / Presentation
 
 -   Az ISO/OSI modell mely rétegéhez sorolhatók a következő fogalmak: BitTorrent, HTTP, BitCoin kliens?
 
-    > Alkalmazási réteg/Application
+    > Alkalmazási réteg / Application
 
 -   Az ISO/OSI mely rétegeit nem használjuk az Internet architektúrájának leírásához? (Segítség: avagy mely rétegek nem képeik részét a bevezetett hibrid modellnek?)
 
-    > Megjelenítési réteg/Presentation
-    > Munkamenet (Ülés) réteg/Session
+    > Megjelenítési réteg / Presentation\
+    > Munkamenet (Ülés) réteg / Session
 
 -   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk feldolgozási késleltetésnek (processing delay) egy csomag átvitele esetén?
 
@@ -58,33 +58,31 @@
 
     > Azt az időt, amit a csomag a switch/router várakozási sorában várakozással tölt.
 
+-   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének. Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
+
+    > Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
+
 -   Adott két végpont, melyek között egy 120MB-os (megabájtos) fájl letöltése 2 percet vesz igénybe.
     Mekkora az átviteli ráta (throughput) a két oldal között? A választ Mpbs-ben (megabits/second) adja meg!
     (Segíség: 1 Mpbs = 10^6 bps, 1MB = 10^6 Bájt)
 
     > 8.0
 
--   Adott két végpont, melyeket egy switch/router és a közöttük lévő két fizikai link kapcsol össze. Mit nevezünk feldolgozási késleltetésnek (processing delay) egy csomag átvitele esetén?
-
-    > Azt az időt, amit a routeren a csomag fejléceinek feldolgozása és továbbítási döntések meghozatala igényel.
-
 -   Mennyi az átviteli késleltetése egy 1500 bájtos cosmagnak egy olyan hálózaton, ahol az elérhető adatráta 12 Gbps? A választ mikromásodpercben (us) adjuk meg! (segítség: 1us = 10^6 sec, 1Gbs = 10^9 bps (bits/second))
 
     > 1.0
 
--   Adott egy fizikai link, ami két eszközt kapcsol össze, melyek kommunikálni szeretnének. Mit nevezünk propagációs késésnek (propagation delay) ebben az esetben?
+-   Egy optikai gerinchálózaton két routert 200km üvegszál köti össze. Az üvegszálban a jelterjedési sebesség 2x10^8 m/s. Mekkor propagációs késést tapasztalunk a fenti optikai linken ezredmásodpercben kifejezve (ms)? (segítség: 1ms = 10^3 s)
 
-    > Azt az időt, ami a jelnek szükséges ahhoz, hogy áthaladjon a fizikai közegen, ami összeköti a küldő és a cél eszközöket.
-
--   Egy optikai gerinchálózaton két routert 200km üvegszál köti össze. Az üvegszálban a jelterjedési sebesség 2x10^8 m/s. Mekkor propagációs késést tapasztalunk a fenti optikai linken ezredmásodpercben kifejezve (ms)? (segítség: 1ms = 10^3 s) - 1.0
+    > 1.0
 
 -   Melyik állítások igazak a csomagtovábbításra (forwarding)?
+
+    > A csomagot egy kimenő vonal felé irányítja
 
     > Időskála: nanosecundum
 
     > Adat síkban (data plane) valósul meg
-
-    > A csomagot egy kimenő vonal felé irányítja
 
     > Helyi folyamat
 
