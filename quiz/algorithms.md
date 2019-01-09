@@ -104,7 +104,9 @@ A kódosztásos többszörös hozzáférés (angolul Code Division Multiple Acce
 ### Egyszerű ALOHA protokoll
 
 A csatornakiosztás problémáját oldja meg. A rendszer lényege hogy a felhasználó bármikor adhat, ha van továbbítandó adata. De ha bárki bármikor adhat, akkor valószínű,
-hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg tudja állapítani hogy a keret tönkrement-e vagy sem. Ütközés esetén véletlen ideig vár az újraküldéssel. Tulajdonságok:
+hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg tudja állapítani hogy a keret tönkrement-e vagy sem. Ütközés esetén véletlen ideig vár az újraküldéssel.
+
+Tulajdonságok:
 
 -   ALOHA protokollok áteresztő képessége egyforma keretméret esetén maximális.
 -   Keret idő – egy szabványos, fix hosszúságú keret átviteléhez szükséges idő
@@ -122,14 +124,19 @@ hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg t
 ### Réselt ALOHA protokoll
 
 Az idő diszkrét, keretidőhöz igazodó időszeletekre osztásával az ALOHA rendszer kapacitása megduplázható. (1972, Roberts)
-Következmény: a kritikus szakasz hossza a felére csökken, azaz 𝑃<sub>0</sub> = 𝑒<sup>(−𝐺)</sup>
-Azaz az áteresztő képesség: S = 𝐺𝑃<sub>0</sub> = 𝐺𝑒<sup>(−𝐺)</sup>
-A csatorna terhelésének kis növekedése is drasztikusan csökkentheti a médium teljesítményét
+Következmény:
+
+-   kritikus szakasz hossza a felére csökken, azaz: 𝑃<sub>0</sub> = 𝑒<sup>(−𝐺)</sup>
+-   az áteresztő képesség: S = 𝐺𝑃<sub>0</sub> = 𝐺𝑒<sup>(−𝐺)</sup>
+-   A csatorna terhelésének kis növekedése is drasztikusan csökkentheti a médium teljesítményét.
 
 ## Távolságvektor alapú forgalomirányítás:
 
 Minden router-nek egy táblázatot kell karbantartania,amelyben minden célhoz szerepel a legrövidebb ismert távolság, s annak a vonalnak az azonosítója, amelyiken a célhoz lehet eljutni.
-A táblázatokat a szomszédoktól származó információk alapján frissítik. - Elosztott Bellman-Ford forgalomirányítási algoritmusként is nevezik. - ARPANET eredeti forgalomirányító algoritmusa ez volt. RIP (Routing Information Protocol) néven is ezt használták.
+A táblázatokat a szomszédoktól származó információk alapján frissítik.
+
+-   Elosztott Bellman-Ford forgalomirányítási algoritmusként is nevezik.
+-   ARPANET eredeti forgalomirányító algoritmusa ez volt. RIP (Routing Information Protocol) néven is ezt használták.
 
 Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 
@@ -220,8 +227,11 @@ Távolságvektor alapú forgalomirányítás, Elosztott Bellman-Ford algoritmus
 2. Minden bridge megkeresi a legrövidebb utat a gyökérhez
 3. Ezen utak unióját véve megkapjuk a feszítőfát
 
--   A fa építése során a bridge-ek egymás között konfigurációs üzeneteket (Configuration Bridge Protocol Data Units [BPDUs]) cserélnek - A gyökér elem megválasztásához - A legrövidebb utak meghatározásához - A gyökérhez legközelebbi szomszéd (next hop) állomás és a
-    hozzá tartozó port azonosításához - A feszítőfához tartozó portok kiválasztása
+-   A fa építése során a bridge-ek egymás között konfigurációs üzeneteket (Configuration Bridge Protocol Data Units [BPDUs]) cserélnek
+    -   A gyökér elem megválasztásához
+    -   A legrövidebb utak meghatározásához
+    -   A gyökérhez legközelebbi szomszéd (next hop) állomás és a hozzá tartozó port azonosításához
+    -   A feszítőfához tartozó portok kiválasztása
 -   Kezdetben minden állomás feltételezi magáról, hogy
     gyökér - Bridge-ek minden irányba szétküldik a BPDU üzeneteiket:
     -   | Bridge ID | Gyökér ID | Út költség a gyökérhez |
