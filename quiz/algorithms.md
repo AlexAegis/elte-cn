@@ -12,6 +12,7 @@ G(x) egy generátor polinom, aminek a foka r, ezt a polinomot a küldő és a ve
 ## CDMA:
 
 A kódosztásos többszörös hozzáférés (angolul Code Division Multiple Access, röviden CDMA) a multiplexálás egy formája és a többszörös hozzáférés egy lehetséges megvalósítása, amely az adatokhoz csatornánként speciális kódokat rendel, és kihasználja a konstruktív interferencia tulajdonságot a multiplexáláshoz.
+
 Algoritmus:
 
 1. Minden bitidőt m darab rövid intervallumra osztunk, ezek a töredékek (angolul chip)
