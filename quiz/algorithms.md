@@ -104,7 +104,9 @@ A kódosztásos többszörös hozzáférés (angolul Code Division Multiple Acce
 ### Egyszerű ALOHA protokoll
 
 A csatornakiosztás problémáját oldja meg. A rendszer lényege hogy a felhasználó bármikor adhat, ha van továbbítandó adata. De ha bárki bármikor adhat, akkor valószínű,
-hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg tudja állapítani hogy a keret tönkrement-e vagy sem. Ütközés esetén véletlen ideig vár az újraküldéssel. Tulajdonságok:
+hogy ütközések lesznek. A küldő azonban figyelheti a csatornát, így meg tudja állapítani hogy a keret tönkrement-e vagy sem. Ütközés esetén véletlen ideig vár az újraküldéssel.
+
+Tulajdonságok:
 
 -   ALOHA protokollok áteresztő képessége egyforma keretméret esetén maximális.
 -   Keret idő – egy szabványos, fix hosszúságú keret átviteléhez szükséges idő
