@@ -6,9 +6,9 @@ G(x) egy generátor polinom, aminek a foka r, ezt a polinomot a küldő és a ve
 
 ### Algoritmus
 
-1. Fűzzünk r darab 0 bitet a keret alacsony helyiértékű végéhez, tehát az m + r bitet fog tartalmazni és reprezentálja a x<sup>r\*M(x)</sup> polinomot
-2. x<sup>r\*M(x)</sup> elosztása G(x)-szel modulo 2 (bitsorozatok)
-3. Az előző osztás maradékának kivonása x<sup>r\*M(x)</sup>-ből modulo 2 (bitsorozatok), az eredmény az ellenőrző összeggel ellátott, továbbítandó keret. Jelölése: T(x)
+1. Fűzzünk r darab 0 bitet a keret alacsony helyiértékű végéhez, tehát az m + r bitet fog tartalmazni és reprezentálja a x<sup>r \* M(x)</sup> polinomot
+2. x<sup>r \* M(x)</sup> elosztása G(x)-szel modulo 2 (bitsorozatok)
+3. Az előző osztás maradékának kivonása x<sup>r \* M(x)</sup>-ből modulo 2 (bitsorozatok), az eredmény az ellenőrző összeggel ellátott, továbbítandó keret. Jelölése: T(x)
 4. A vevő a T(x) + E(x) polinomnak megfelelő sorozatot kapja, ahol E(x) a hibapolinom. Ezt elosztja a G(x) generátor polinommal, ha van maradéka ennek az osztásnak, akkor hiba történt.
 
 ## CDMA
