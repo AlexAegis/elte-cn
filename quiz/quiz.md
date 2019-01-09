@@ -33,10 +33,6 @@
 
     > Szállítói réteg/Transport
 
--   Az ISO/OSI modell mely rétege felel az adatkonverziókért különböző reprezentációk között?
-
-    > Munkamenet (Ülés) réteg/Session
-
 -   Az ISO/OSI modell mely rétege felelhet szinkronizációs pont menedzsmentért (checkpoint beszúrása, stb.)?
 
     > Munkamanet (Ülés) réteg/Session
