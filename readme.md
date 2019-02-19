@@ -1,8 +1,10 @@
 # elte-computer-networks
 
+[![Requirements Status](https://requires.io/github/AlexAegis/elte-cn/requirements.svg?branch=master)](https://requires.io/github/AlexAegis/elte-cn/requirements/?branch=master)
+
 [ELTE IK - Számítógépes Hálózatok](http://szalaigj.web.elte.hu/index.php/szamitogepes-halozatok-gyakorlat/)
 
-[Előadás](http://lakis.web.elte.hu/szh201819I/)
+[Lecture](http://lakis.web.elte.hu/szh201819I/)
 
 Python
 
